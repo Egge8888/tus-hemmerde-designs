@@ -7,12 +7,12 @@ const designs = [
     name: "Kraft & Athletik",
     tagline: "Bold · Dark · Modern",
     description:
-      "Dunkles Farbschema mit neongrünen Akzenten, Glassmorphism-Karten und einem athletischen, kraftvollen Erscheinungsbild.",
+      "Dunkles Farbschema mit knallroten Akzenten, Glassmorphism-Karten und einem athletischen, kraftvollen Erscheinungsbild.",
     preview: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
-    accentHex: "#22c55e",
-    dotClass: "bg-green-500",
-    badgeClass: "bg-green-500/20 text-green-400 border border-green-500/30",
-    ctaClass: "bg-green-500 hover:bg-green-400 text-black",
+    accentHex: "#dc2626",
+    dotClass: "bg-red-600",
+    badgeClass: "bg-red-600/20 text-red-400 border border-red-600/30",
+    ctaClass: "bg-red-600 hover:bg-red-500 text-white",
   },
   {
     href: "/design-b",
@@ -20,12 +20,12 @@ const designs = [
     name: "Heimat & Herzblut",
     tagline: "Warm · Freundlich · Einladend",
     description:
-      "Warme Cremtöne mit orangen Akzenten, abgerundete Karten und ein einladendes, gemeinschaftliches Gefühl.",
-    preview: "bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100",
-    accentHex: "#f59e0b",
-    dotClass: "bg-amber-500",
-    badgeClass: "bg-amber-500/20 text-amber-700 border border-amber-400/40",
-    ctaClass: "bg-amber-500 hover:bg-amber-400 text-white",
+      "Warme Cremtöne mit roten Vereinsfarben, abgerundete Karten und ein einladendes, gemeinschaftliches Gefühl.",
+    preview: "bg-gradient-to-br from-red-50 via-rose-50 to-red-100",
+    accentHex: "#dc2626",
+    dotClass: "bg-red-500",
+    badgeClass: "bg-red-100 text-red-700 border border-red-200",
+    ctaClass: "bg-red-600 hover:bg-red-500 text-white",
   },
   {
     href: "/design-c",
@@ -33,12 +33,12 @@ const designs = [
     name: "Tradition trifft Moderne",
     tagline: "Klassisch · Professionell · Seriös",
     description:
-      "Royal Blau mit Gold-Akzenten, strukturiertes Layout und ein professionelles, traditionsreiches Erscheinungsbild.",
-    preview: "bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950",
-    accentHex: "#d97706",
-    dotClass: "bg-yellow-500",
-    badgeClass: "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30",
-    ctaClass: "bg-yellow-600 hover:bg-yellow-500 text-white",
+      "Rot und Dunkelblau, strukturiertes Zeitungsgrid und ein professionelles, traditionsreiches Erscheinungsbild.",
+    preview: "bg-gradient-to-br from-slate-900 via-slate-800 to-red-950",
+    accentHex: "#dc2626",
+    dotClass: "bg-red-600",
+    badgeClass: "bg-red-600/20 text-red-300 border border-red-600/30",
+    ctaClass: "bg-red-600 hover:bg-red-500 text-white",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function HomePage() {
       {/* Header */}
       <header style={{ borderBottom: "1px solid #1f2937", backgroundColor: "rgba(17,24,39,0.9)", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "#22c55e", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#000", fontSize: 14 }}>T</div>
+          <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "#dc2626", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: 14 }}>T</div>
           <span style={{ fontWeight: 700, fontSize: 18, letterSpacing: "-0.025em" }}>TuS Hemmerde 1919</span>
           <span style={{ marginLeft: "auto", fontSize: 14, color: "#6b7280" }}>Design-Auswahl</span>
         </div>
@@ -56,13 +56,13 @@ export default function HomePage() {
 
       {/* Hero */}
       <section style={{ maxWidth: 1152, margin: "0 auto", padding: "80px 24px 48px", textAlign: "center" }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#4ade80", fontSize: 12, fontWeight: 600, padding: "6px 12px", borderRadius: 999, marginBottom: 24 }}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#4ade80", display: "inline-block" }}></span>
-          3 Design-Konzepte
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "rgba(220,38,38,0.1)", border: "1px solid rgba(220,38,38,0.2)", color: "#f87171", fontSize: 12, fontWeight: 600, padding: "6px 12px", borderRadius: 999, marginBottom: 24 }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#f87171", display: "inline-block" }}></span>
+          3 Design-Konzepte · Vereinsfarben Rot & Weiß
         </div>
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.1, marginBottom: 16 }}>
           Neue Website für den<br />
-          <span style={{ color: "#4ade80" }}>TuS Hemmerde 1919 e.V.</span>
+          <span style={{ color: "#f87171" }}>TuS Hemmerde 1919 e.V.</span>
         </h1>
         <p style={{ color: "#9ca3af", fontSize: 18, maxWidth: 560, margin: "0 auto 32px", lineHeight: 1.7 }}>
           Drei visuelle Richtungen für euren Vereins-Webauftritt. Klickt auf ein Design, um eine vollständige Vorschau zu sehen.
@@ -90,8 +90,8 @@ export default function HomePage() {
               {/* Preview */}
               <div className={d.preview} style={{ height: 200, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ textAlign: "center", position: "relative", zIndex: 10 }}>
-                  <div style={{ width: 56, height: 56, borderRadius: 12, margin: "0 auto 12px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 900, color: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.4)", backgroundColor: d.accentHex }}>T</div>
-                  <div className={d.badgeClass} style={{ fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 999, display: "inline-block" }}>{d.tagline}</div>
+                  <div className={d.badgeClass} style={{ width: 56, height: 56, borderRadius: 12, margin: "0 auto 12px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 900, color: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.4)", backgroundColor: d.accentHex }}>T</div>
+                  <div style={{ fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 999, display: "inline-block", backgroundColor: "rgba(220,38,38,0.15)", color: "#fca5a5", border: "1px solid rgba(220,38,38,0.3)" }}>{d.tagline}</div>
                 </div>
               </div>
               {/* Body */}

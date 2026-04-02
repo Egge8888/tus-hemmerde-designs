@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TuS Hemmerde 1919 e.V. | Gemeinsam. Stark.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#916f6b",
+              "on-secondary-container": "#7a393b",
+              "surface-bright": "#f7f9fb",
+              "tertiary-container": "#0078b2",
+              "inverse-primary": "#ffb4ab",
+              "error-container": "#ffdad6",
+              "primary-fixed": "#ffdad6",
+              "on-surface-variant": "#5c403c",
+              "secondary-container": "#fea7a7",
+              "outline-variant": "#e6bdb8",
+              "surface-dim": "#d8dadc",
+              "on-tertiary-container": "#f3f8ff",
+              "surface-tint": "#bf0715",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#410002",
+              "tertiary-fixed-dim": "#90cdff",
+              "on-tertiary-fixed": "#001e30",
+              "surface": "#f7f9fb",
+              "primary-fixed-dim": "#ffb4ab",
+              "secondary": "#8f4a4b",
+              "error": "#ba1a1a",
+              "tertiary": "#005e8d",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-surface": "#2d3133",
+              "background": "#f7f9fb",
+              "on-primary-container": "#fff6f5",
+              "primary": "#b70011",
+              "primary-container": "#dc2626",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#93000b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f2f4f6",
+              "surface-variant": "#e0e3e5",
+              "on-surface": "#191c1e",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed": "#cbe6ff",
+              "secondary-fixed-dim": "#ffb3b2",
+              "on-background": "#191c1e",
+              "secondary-fixed": "#ffdad9",
+              "surface-container": "#eceef0",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "on-secondary-fixed-variant": "#723335",
+              "on-tertiary-fixed-variant": "#004b71",
+              "on-secondary-fixed": "#3a090d",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .liquid-bg {
+        background: radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.03) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(0, 94, 141, 0.02) 0%, transparent 40%);
+      }
+      .ghost-border {
+        border: 1px solid rgba(230, 189, 184, 0.15);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary/20 liquid-bg min-h-screen">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full px-8 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center z-50 shadow-[0_8px_32px_0_rgba(220,38,38,0.04)] font-['Manrope'] font-bold tracking-tight">
+<div class="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="text-white text-xs">TH</span>
+</div>
+<span>TuS Hemmerde</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-red-600 font-bold border-b-2 border-red-600 pb-1" href="#">Aktuelles</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-red-600 transition-colors" href="#">Sport</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-red-600 transition-colors" href="#">Mitglied werden</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-red-600 transition-colors" href="#">Kontakt</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2 rounded-full transition-all duration-200 text-sm font-bold scale-95 hover:scale-100">
+            Jetzt beitreten
+        </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-48 pb-24 px-8 max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<span class="label-md uppercase tracking-widest text-primary font-bold mb-4 block">Tradition trifft Dynamik</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                    Gemeinsam. <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Stark.</span> Seit 1919.
+                </h1>
+<p class="text-lg md:text-xl text-on-surface/70 leading-relaxed mb-10 max-w-xl">
+                    Dein Sportverein im Herzen von Unna-Hemmerde. Wir vereinen Tradition, Leidenschaft und moderne Sportangebote für jede Altersklasse.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wide shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                        Jetzt Mitglied werden
+                    </button>
+<button class="glass-card ghost-border px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wide text-on-surface hover:bg-white transition-all">
+                        Unser Sportangebot
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-[500px] object-cover" data-alt="Modern local sports complex exterior with green fields and community center in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArDs1YzLeY7cEhBxDdZl3w2XuXjDFelhNg-wV1fca7W8-gIQ3rGEG6bWFTPPp105ulwGtUXBygGRkHTaCOJYm2GWJiYvcYILFuGJBpBcfgnn5IsojkdLP43WOahxYJPqaO6QAOVC3ysI-gnuEZzjcVVxvHF6N9GUO-uxSB9uxlHNYq5dOOMCQHIyzhY0pdibRK0VMOudsibxmmQB1BvLEzrqN6MuccorWI_BXPcJ2aIKpNFlIsa1ovk3qItjNaFT0cXlAWZtYr-gg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="px-8 mb-32">
+<div class="max-w-5xl mx-auto glass-card ghost-border rounded-full py-8 px-12 flex flex-col md:flex-row justify-around items-center gap-8 shadow-xl shadow-black/5">
+<div class="text-center">
+<div class="text-4xl font-headline font-black text-primary">1919</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface/60">Gegründet</div>
+</div>
+<div class="w-px h-12 bg-on-surface/10 hidden md:block"></div>
+<div class="text-center">
+<div class="text-4xl font-headline font-black text-primary">500+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface/60">Mitglieder</div>
+</div>
+<div class="w-px h-12 bg-on-surface/10 hidden md:block"></div>
+<div class="text-center">
+<div class="text-4xl font-headline font-black text-primary">10</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface/60">Sportarten</div>
+</div>
+</div>
+</section>
+<!-- Sports Grid -->
+<section class="px-8 py-24 max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl font-bold mb-4">Vielfalt erleben</h2>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Fußball</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Von der Jugend bis zu den Senioren – wir leben Fußball auf dem Platz.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_volleyball</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Volleyball</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Dynamik und Teamgeist. Unsere Volleyball-Abteilung sucht immer Verstärkung.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_basketball</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Basketball</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Körbe werfen und Technik verbessern in unserer motivierten Basketball-Runde.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Turnen</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Für Groß und Klein: Turnen fördert Beweglichkeit und Koordination.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 5 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_run</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Leichtathletik</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Schneller, höher, weiter – entdecke deine Talente in der Leichtathletik.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Card 6 -->
+<div class="glass-card ghost-border rounded-xl p-8 hover:bg-white transition-all group border-t-4 border-t-primary">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Zumba</h3>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">Spaß an Bewegung zu rhythmischer Musik. Fitness mit guter Laune.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                    Mehr erfahren 
+                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- News Section -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="label-md uppercase tracking-widest text-primary font-bold mb-2 block">Immer Up to Date</span>
+<h2 class="font-headline text-4xl font-bold text-on-surface">Neuigkeiten aus dem Verein</h2>
+</div>
+<button class="text-on-surface/60 hover:text-primary transition-colors flex items-center gap-2 font-bold text-sm uppercase tracking-widest">
+                    Alle Beiträge ansehen <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- News 1 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Group of community members talking and laughing in a bright meeting room setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQ10qDVrC6I92QtvHKKeKmPYNZ5QzDmY5u6vVtzpRlgEuobw2SmqXEnPJAtRV77sxQs6tywIAPatBjzOpM27wuoggKP5iS3RiM8NeKbm1U29rguHf4-ugqbWnVnwFw3bHGdHmoo-qz4qrFKUPnv5F_-97QGjR1LfT1QnWm5hgQR3nwexYj05bTESQkqdnn_qjRiBXjUnES8OCjl8v3Ui-1p81Qk9n1XworD5X335hMGJRLqXGY4VO8EBC6Nhr8vezi2HWVYIZZos"/>
+</div>
+<div class="p-8">
+<time class="text-xs font-label text-primary/60 uppercase tracking-tighter mb-3 block">12. März 2026</time>
+<h4 class="font-headline text-xl font-bold mb-4 text-on-surface leading-snug">Jahreshauptversammlung 2026</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed line-clamp-3">
+                            Wir laden alle Mitglieder herzlich ein, gemeinsam die Weichen für das kommende Jahr zu stellen. Wichtige Wahlen stehen an.
+                        </p>
+</div>
+</article>
+<!-- News 2 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Close-up of a training whistle on a bright sports field background with soft morning sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFkDdqyxsvQs5BiN-_B-Y5GQ4Ut7kcLVm6Y5bIdAVSqQPpE5PvF7nXj7lTG8mP-SKo2WBolKShxnCMWJqAKwqEU5tFj8SkCda6wurJ7nhmjtEp6rs5XPXawKtIAOXvOr_HIMbJeyTj3IbzGkU5GLHMyBEBrSIt9BeBo1HpIrE5XoR4gFe_DomoOJDFl_a0-OPzWpLcMDVj7EIFxvsjFYQEvOI1PxwHmXVg9z6-D_MJ-72UZEKyGmJeNnYohkcJFUe2LKddccnkVM"/>
+</div>
+<div class="p-8">
+<time class="text-xs font-label text-primary/60 uppercase tracking-tighter mb-3 block">01. März 2026</time>
+<h4 class="font-headline text-xl font-bold mb-4 text-on-surface leading-snug">Neue Trainingszeiten ab April</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed line-clamp-3">
+                            Mit der Sommersaison passen wir unsere Zeiten im Außenbereich an. Schaut jetzt in den aktuellen Plan für eure Abteilung.
+                        </p>
+</div>
+</article>
+<!-- News 3 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Excited group of diverse young athletes cheering together on a green grass field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwBRZia1KpsM7L97JjjKEFB5mUs_TGJPG0645Mgg92psuDIbJ14X5aGOerkLoQ_nIE8fzECXM5ey3WULGk11dVn5A6Px9snZmEGwMGdWmXzT--Q5NSVPBGkjihaTgaj35wUG2ZV99cTAQceJUOOpaH1BaAMQ3ATw-a4WLNzm3F_M5yyNkdWACdX75DApSUSz4cVYI3rMak8OrfiiCrx26_Igr_OCFdBC8t0t6hmWoWJ0bux-30mBB5mItjXmOZWdtoMKeL7xa4jDg"/>
+</div>
+<div class="p-8">
+<time class="text-xs font-label text-primary/60 uppercase tracking-tighter mb-3 block">20. Feb 2026</time>
+<h4 class="font-headline text-xl font-bold mb-4 text-on-surface leading-snug">Willkommen beim TuS Hemmerde</h4>
+<p class="text-on-surface/70 text-sm leading-relaxed line-clamp-3">
+                            Wir freuen uns über 20 neue Gesichter in der letzten Woche! Danke für euer Vertrauen in unseren Verein.
+                        </p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="px-8 -mb-16 relative z-10">
+<div class="max-w-7xl mx-auto rounded-[2rem] p-12 md:p-20 bg-gradient-to-br from-primary via-primary-container to-secondary overflow-hidden relative shadow-2xl shadow-primary/30 text-center">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-white mb-6">Werde Teil unserer Gemeinschaft</h2>
+<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+                    Egal ob Hobby-Sportler oder Profi-Ambitionen – bei uns findest du dein sportliches Zuhause in Unna-Hemmerde.
+                </p>
+<button class="bg-white text-primary px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-surface hover:scale-105 transition-all shadow-xl">
+                    Jetzt Mitgliedsantrag ausfüllen
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16 px-8 pt-40 font-['Inter'] text-sm leading-relaxed flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto gap-12">
+<div class="space-y-6">
+<div class="text-2xl font-black text-red-600">TuS Hemmerde 1919 e.V.</div>
+<p class="text-slate-500 max-w-xs">
+                Dein Sportverein für Bewegung, Gemeinschaft und Tradition in Hemmerde.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-card ghost-border flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-card ghost-border flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div>
+<h5 class="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-red-600 hover:underline transition-all" href="#">Impressum</a></li>
+<li><a class="text-slate-500 hover:text-red-600 hover:underline transition-all" href="#">Datenschutz</a></li>
+<li><a class="text-slate-500 hover:text-red-600 hover:underline transition-all" href="#">Kontakt</a></li>
+<li><a class="text-slate-500 hover:text-red-600 hover:underline transition-all" href="#">Vorstand</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Kontakt</h5>
+<ul class="space-y-4 text-slate-500">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span>Sportplatz Hemmerde,<br/>59174 Unna</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+<a class="hover:text-red-600 transition-colors" href="mailto:info@tushemmerde.de">info@tushemmerde.de</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-auto border-t md:border-t-0 border-slate-200 pt-8 md:pt-0">
+<p class="text-slate-400 text-xs">© 2024 TuS Hemmerde 1919 e.V.</p>
+</div>
+</footer>
+</body></html>

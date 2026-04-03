@@ -1,8 +1,56 @@
 const designs = [
   {
-    href: "/design-g.html",
+    href: "/design-j.html",
     label: "Design 1",
-    name: "Neo-Brutalist",
+    name: "Fanzine Edition",
+    tagline: "Fanzine · Bold · Rot/Schwarz",
+    description: "Druckfrische Fanzine-Energie: rotes Hero, schwarze Flächen, harte Kontraste und aggressive Typografie.",
+    preview: "bg-gradient-to-br from-red-700 via-red-800 to-black",
+  },
+  {
+    href: "/design-k.html",
+    label: "Design 2",
+    name: "Dark Classic",
+    tagline: "Dunkel · Elegant · Strukturiert",
+    description: "Schwarze Nav mit rotem Akzentbalken, strukturiertes Layout, starke Typografie und klare Hierarchie.",
+    preview: "bg-gradient-to-br from-zinc-900 via-zinc-800 to-red-900",
+  },
+  {
+    href: "/design-l.html",
+    label: "Design 3",
+    name: "Tradition & Gemeinschaft",
+    tagline: "Warm · Serif · Gemeinschaft",
+    description: "Warmes Off-White, Serif-Typografie und Fotokollagen — persönlich und einladend wie ein Schwarzes Brett.",
+    preview: "bg-gradient-to-br from-stone-100 via-amber-50 to-red-50",
+  },
+  {
+    href: "/design-m.html",
+    label: "Design 4",
+    name: "Swiss Rationalism",
+    tagline: "Minimalist · Raster · Präzise",
+    description: "Roter 6px-Balken oben, strenge Typografie, Grid-Perfektion. Schweizer Designschule trifft Vereinssport.",
+    preview: "bg-gradient-to-br from-white via-gray-50 to-red-50",
+  },
+  {
+    href: "/design-n.html",
+    label: "Design 5",
+    name: "Noir Athletic",
+    tagline: "Schwarz · Neon-Rot · Modern",
+    description: "Tiefschwarz mit Neon-roten Highlights, moderne Kartenstruktur und kraftvolle Sportästhetik.",
+    preview: "bg-gradient-to-br from-black via-zinc-950 to-red-950",
+  },
+  {
+    href: "/design-o.html",
+    label: "Design 6",
+    name: "Editorial",
+    tagline: "Editorial · Strukturiert · Klar",
+    description: "Zeitungsartiges Layout, klare Typografie-Hierarchie, rote Akzente auf weißem Grund. Seriös und modern.",
+    preview: "bg-gradient-to-br from-white via-zinc-50 to-red-50",
+  },
+  {
+    href: "/design-g.html",
+    label: "Design 7",
+    name: "Neo-Brutalist (Fanzine)",
     tagline: "Fanzine · Aggressive · Rot/Schwarz",
     description: "Schwarze Nav, krachend rotes Hero, harter Offset-Shadow-Stil. Großbuchstaben, keine Rundungen — roh wie ein Stadion-Fanzine.",
     preview: "bg-gradient-to-br from-black via-zinc-900 to-red-950",
@@ -128,7 +176,7 @@ export default function HomePage() {
           <span style={{ color: "#f87171" }}>TuS Hemmerde 1919 e.V.</span>
         </h1>
         <p style={{ color: "#9ca3af", fontSize: 18, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.7 }}>
-          Neun Design-Vorschläge für die neue Vereinswebsite. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
+          15 Design-Vorschläge für die neue Vereinswebsite. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
         </p>
       </section>
 

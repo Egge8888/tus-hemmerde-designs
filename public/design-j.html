@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@900&amp;family=Work_Sans:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-primary": "#ffb4ab",
+                    "tertiary-container": "#717272",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary": "#5e5e5e",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e6bdb8",
+                    "on-surface-variant": "#5c403c",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-container": "#e2e2e2",
+                    "on-primary-fixed": "#410002",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dadada",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#474747",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "surface-tint": "#bf0715",
+                    "on-surface": "#1b1b1b",
+                    "surface": "#f9f9f9",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "outline": "#916f6b",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary-container": "#fff6f5",
+                    "primary": "#b70011",
+                    "on-primary-fixed-variant": "#93000b",
+                    "on-background": "#1b1b1b",
+                    "on-tertiary-container": "#f8f8f8",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#585a5a",
+                    "on-secondary-container": "#646464",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "primary-container": "#dc2626",
+                    "primary-fixed": "#ffdad6",
+                    "surface-container-high": "#e8e8e8"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Work Sans"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background m-0 p-0">
+<!-- TopNavBar -->
+<nav class="bg-black text-red-600 font-['Epilogue'] font-black uppercase tracking-tighter docked full-width top-0 rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center w-full px-6 py-4 z-50 sticky">
+<div class="flex items-center gap-2"><img src="/tus-logo.png" alt="TuS Hemmerde Logo" style="width:44px;height:44px;object-fit:contain;display:block;filter:brightness(0) invert(1);"/><div class="text-2xl font-black tracking-tighter text-white">TUS HEMMERDE</div>
+<div class="hidden md:flex gap-8">
+<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">VEREIN</a>
+<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">SPORT</a>
+<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">JUGEND</a>
+<a class="text-red-600 font-black underline decoration-2 underline-offset-4 hover:text-red-600 transition-colors duration-100" href="#">AKTUELLES</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">MITGLIED WERDEN</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[819px] w-full bg-primary-container overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="Dynamic action shot of local football players in red jerseys during a high-stakes match on a lush green field" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+<span class="font-headline text-[25vw] text-white/10 tracking-tighter leading-none">1919</span>
+</div>
+<div class="relative z-20 text-center px-4">
+<h2 class="font-headline text-white text-3xl md:text-5xl uppercase tracking-tighter leading-none mb-0">WIR SIND</h2>
+<h1 class="font-headline text-white text-7xl md:text-[10rem] uppercase tracking-tighter leading-none">HEMMERDE.</h1>
+<div class="w-full h-1 bg-white mt-4 mb-6"></div>
+<p class="font-body text-white uppercase tracking-widest font-bold text-sm md:text-xl">Dein Verein. Dein Viertel. Deine Heimat.</p>
+</div>
+</section>
+<!-- Ticker Strip -->
+<div class="bg-black py-4 overflow-hidden border-none relative z-30">
+<div class="animate-marquee whitespace-nowrap">
+<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1919 · UNNA-HEMMERDE ·</span>
+<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1919 · UNNA-HEMMERDE ·</span>
+<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1919 · UNNA-HEMMERDE ·</span>
+<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1919 · UNNA-HEMMERDE ·</span>
+</div>
+</div>
+<!-- Aktuelles Section -->
+<section class="bg-white py-20 px-6 md:px-12">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-primary-container text-6xl md:text-8xl uppercase tracking-tighter mb-12">AKTUELLES.</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
+<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Enthusiastic group of children participating in indoor gymnastics and sports exercises in a brightly lit gymnasium" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+<div class="p-6 flex-grow">
+<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">TURNEN</span>
+<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">KINDERTURNEN STARTET NEU DURCH</h3>
+<p class="font-body text-sm text-on-surface">Jeden Mittwoch ab 16:00 Uhr in der Turnhalle Hemmerde. Bewegung, Spaß und Gemeinschaft für unsere Kleinsten.</p>
+</div>
+<div class="p-6 pt-0">
+<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
+<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Close up of a dart board with multiple darts hitting the bullseye in a dark atmospheric bar setting" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+<div class="p-6 flex-grow">
+<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">DART</span>
+<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">PRÄZISION UND KONZENTRATION</h3>
+<p class="font-body text-sm text-on-surface">Unsere Dart-Abteilung sucht Verstärkung. Egal ob Anfänger oder Profi - komm vorbei und wirf deine ersten 180er.</p>
+</div>
+<div class="p-6 pt-0">
+<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
+<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Young focused football player in a red jersey dribbling a ball on a sunny pitch with trees in background" src="https://www.tushemmerde.de/images/fussballkid_02.jpg"/>
+<div class="p-6 flex-grow">
+<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">FUSSBALL</span>
+<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">NACHWUCHS IM FOKUS</h3>
+<p class="font-body text-sm text-on-surface">Erfolgreiches Wochenende für unsere F-Jugend. Mit Teamgeist und Leidenschaft zum Heimsieg gegen Unna.</p>
+</div>
+<div class="p-6 pt-0">
+<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sports Block -->
+<section class="bg-primary-container w-full py-24 flex flex-col md:flex-row items-center justify-between px-6 md:px-20 overflow-hidden">
+<div class="flex-shrink-0 mb-12 md:mb-0">
+<span class="font-headline text-white text-[15rem] md:text-[25rem] leading-none select-none">6</span>
+</div>
+<div class="flex flex-col gap-4 w-full md:w-auto">
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">FUSSBALL</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">VOLLEYBALL</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">BASKETBALL</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">TURNEN</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">LEICHTATHLETIK</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
+<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">ZUMBA</span>
+<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
+</div>
+</div>
+</section>
+<!-- Editorial Quote (Bonus for Style) -->
+<section class="bg-black py-32 px-6 flex flex-col items-center justify-center text-center">
+<span class="font-headline text-white text-2xl uppercase tracking-widest bg-primary-container px-4 py-1 mb-8 transform -rotate-2">TRADITION SEIT 1919</span>
+<h2 class="font-headline text-white text-4xl md:text-6xl uppercase tracking-tighter max-w-4xl leading-tight">
+            "IN HEMMERDE SCHLÄGT DAS HERZ <br/> <span class="text-primary-container">ROT UND WEISS.</span> ÜBERALL UND JEDERZEIT."
+        </h2>
+</section>
+<!-- Footer -->
+<footer class="bg-black text-red-600 font-['Work_Sans'] text-sm uppercase tracking-widest text-white docked full-width rounded-none border-t-4 border-red-600 flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-xl font-black text-white mb-2">TUS HEMMERDE</div>
+<p class="text-white/60 text-center md:text-left">© 1919 TuS Hemmerde e.V. Hemmerder Dorfstraße 82, 59427 Unna</p>
+</div>
+<div class="flex gap-8">
+<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Impressum</a>
+<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Datenschutz</a>
+<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Kontakt</a>
+</div>
+</footer>
+</body></html>

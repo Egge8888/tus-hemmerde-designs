@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&amp;family=Public+Sans:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1b1b1b",
+                    "secondary": "#5e5e5e",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "primary-fixed": "#ffdad6",
+                    "surface-tint": "#bf0715",
+                    "on-primary-fixed-variant": "#93000b",
+                    "primary": "#b70011",
+                    "on-tertiary-container": "#f8f8f8",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#dc2626",
+                    "tertiary-container": "#717272",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "outline": "#916f6b",
+                    "on-primary-fixed": "#410002",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-container-high": "#e8e8e8",
+                    "on-surface-variant": "#5c403c",
+                    "surface": "#f9f9f9",
+                    "surface-dim": "#dadada",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary-container": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#e6bdb8",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e2",
+                    "tertiary-fixed": "#e2e2e2",
+                    "background": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-primary": "#ffb4ab",
+                    "on-primary-container": "#fff6f5",
+                    "surface-container": "#eeeeee",
+                    "on-background": "#1b1b1b",
+                    "tertiary": "#585a5a",
+                    "inverse-surface": "#303030",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#646464",
+                    "secondary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+                    "none": "0px",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Public Sans"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .watermark-text {
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
+            color: transparent;
+        }
+        .marquee-animation {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        /* Custom scrollbar for brutalist aesthetic */
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #dc2626; border: 2px solid #000000; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body m-0 p-0 overflow-x-hidden selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Shell -->
+<nav class="bg-black dark:bg-black flex justify-between items-center w-full px-6 py-4 docked full-width top-0 border-0 rounded-none z-50 sticky">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 bg-white flex items-center justify-center">
+<img alt="Logo" class="h-10 w-10 object-contain" data-alt="Official club crest of TuS Hemmerde 1919 with red and white colors and traditional shield shape" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+</div>
+<span class="text-2xl font-black italic tracking-tighter text-white font-headline">HEMMERDE 1919</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-white opacity-80 hover:opacity-100 font-['Space_Grotesk'] uppercase tracking-widest font-bold transition-none text-red-600 border-b-4 border-red-600 pb-1" href="#">NEWS</a>
+<a class="text-white opacity-80 hover:opacity-100 font-['Space_Grotesk'] uppercase tracking-widest font-bold transition-none" href="#">FIXTURES</a>
+<a class="text-white opacity-80 hover:opacity-100 font-['Space_Grotesk'] uppercase tracking-widest font-bold transition-none" href="#">SQUAD</a>
+<a class="text-white opacity-80 hover:opacity-100 font-['Space_Grotesk'] uppercase tracking-widest font-bold transition-none" href="#">HISTORY</a>
+<a class="text-white opacity-80 hover:opacity-100 font-['Space_Grotesk'] uppercase tracking-widest font-bold transition-none" href="#">ULTRA</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 font-headline font-black uppercase tracking-tighter hover:bg-white hover:text-black transition-none">
+            JOIN THE RIOT
+        </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-primary-container">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Hero" class="w-full h-full object-cover grayscale brightness-50" data-alt="High-contrast black and white action shot of a football match on a grass pitch with dramatic clouds and intense focus" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+<div class="absolute inset-0 bg-primary-container/40 mix-blend-multiply"></div>
+</div>
+<!-- Watermark -->
+<div class="absolute inset-0 flex items-center justify-center z-1 overflow-hidden select-none pointer-events-none">
+<span class="watermark-text font-headline font-black text-[25vw] leading-none opacity-20">1919</span>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 text-center px-4 max-w-7xl w-full">
+<h2 class="text-white font-headline font-black text-6xl md:text-8xl leading-none tracking-tighter mb-0">WIR SIND</h2>
+<h1 class="text-white font-headline font-black text-[12rem] md:text-[22rem] leading-[0.8] tracking-tightest mb-8">HEMMERDE.</h1>
+<div class="w-full h-2 bg-white mb-6"></div>
+<p class="text-white font-headline font-bold text-2xl md:text-4xl uppercase tracking-[0.2em]">
+                Dein Verein. Dein Viertel. Deine Heimat.
+            </p>
+</div>
+</section>
+<!-- Ticker Strip -->
+<div class="bg-black py-4 overflow-hidden">
+<div class="marquee-animation">
+<span class="text-white font-headline font-black text-2xl uppercase tracking-widest flex items-center gap-8 pr-8">
+                400+ MITGLIEDER <span class="text-primary-container">·</span> 6 SPORTARTEN <span class="text-primary-container">·</span> SEIT 1919 <span class="text-primary-container">·</span> UNNA-HEMMERDE <span class="text-primary-container">·</span>
+                400+ MITGLIEDER <span class="text-primary-container">·</span> 6 SPORTARTEN <span class="text-primary-container">·</span> SEIT 1919 <span class="text-primary-container">·</span> UNNA-HEMMERDE <span class="text-primary-container">·</span>
+                400+ MITGLIEDER <span class="text-primary-container">·</span> 6 SPORTARTEN <span class="text-primary-container">·</span> SEIT 1919 <span class="text-primary-container">·</span> UNNA-HEMMERDE <span class="text-primary-container">·</span>
+</span>
+</div>
+</div>
+<!-- Aktuelles Section -->
+<section class="bg-white py-24 px-6 md:px-12">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-black font-headline font-black text-8xl uppercase tracking-tighter mb-16 relative">
+<span class="text-primary-container">AKTUELLES</span>.
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- News Card 1 -->
+<div class="bg-surface-container-low border-l-8 border-primary-container p-0 flex flex-col hover:bg-primary-container group transition-none">
+<div class="aspect-square overflow-hidden bg-black">
+<img alt="Kinderturnen" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-none" data-alt="Active children playing in a gym hall, bright indoor lighting, joy and movement captured in a candid shot" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+</div>
+<div class="p-8">
+<span class="bg-black text-white px-2 py-1 font-headline text-xs font-bold uppercase mb-4 inline-block">BREITENSPORT</span>
+<h3 class="text-3xl font-headline font-black uppercase leading-none mb-4 group-hover:text-white">KINDER-TURNEN STARTET NEU</h3>
+<p class="text-secondary group-hover:text-white/80 font-body mb-6">Wir erweitern unser Angebot für die kleinsten Sportler im Viertel. Jeden Dienstag ab 16 Uhr in der Turnhalle.</p>
+<a class="inline-flex items-center gap-2 font-headline font-black text-black group-hover:text-white uppercase tracking-tighter" href="#">
+                            READ MORE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="bg-surface-container-high border-l-8 border-primary-container p-0 flex flex-col hover:bg-primary-container group transition-none">
+<div class="aspect-square overflow-hidden bg-black">
+<img alt="Dart" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-none" data-alt="Close-up of a professional dartboard with three red darts hitting the triple twenty, atmospheric dark background" src="https://www.tushemmerde.de/images/fussballkid_02.jpg"/>
+</div>
+<div class="p-8">
+<span class="bg-black text-white px-2 py-1 font-headline text-xs font-bold uppercase mb-4 inline-block">COMPETITION</span>
+<h3 class="text-3xl font-headline font-black uppercase leading-none mb-4 group-hover:text-white">DART-TURNIER ANMELDUNG</h3>
+<p class="text-secondary group-hover:text-white/80 font-body mb-6">Das legendäre Hemmerde-Open geht in die nächste Runde. Sichere dir jetzt deinen Platz am Board.</p>
+<a class="inline-flex items-center gap-2 font-headline font-black text-black group-hover:text-white uppercase tracking-tighter" href="#">
+                            READ MORE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="bg-surface-container-highest border-l-8 border-primary-container p-0 flex flex-col hover:bg-primary-container group transition-none">
+<div class="aspect-square overflow-hidden bg-black">
+<img alt="Fussball Kid" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-none" data-alt="Young football player in action on a green field, wearing club colors, sun lighting from the side, determination on face" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+</div>
+<div class="p-8">
+<span class="bg-black text-white px-2 py-1 font-headline text-xs font-bold uppercase mb-4 inline-block">JUGEND</span>
+<h3 class="text-3xl font-headline font-black uppercase leading-none mb-4 group-hover:text-white">TALENTSCHMIEDE HEMMERDE</h3>
+<p class="text-secondary group-hover:text-white/80 font-body mb-6">Sichtungstraining für die U12-Junioren. Komm vorbei und zeig was du am Ball drauf hast.</p>
+<a class="inline-flex items-center gap-2 font-headline font-black text-black group-hover:text-white uppercase tracking-tighter" href="#">
+                            READ MORE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sports List Block -->
+<section class="bg-primary-container text-white py-24 flex flex-col md:flex-row items-stretch">
+<div class="md:w-1/3 flex items-center justify-center border-b-8 md:border-b-0 md:border-r-8 border-black py-12">
+<span class="text-[20rem] font-headline font-black leading-none select-none">6</span>
+</div>
+<div class="md:w-2/3 flex flex-col justify-center px-6 md:px-20 py-12">
+<h4 class="font-headline font-black text-4xl mb-12 uppercase tracking-tight">UNSERE ABTEILUNGEN</h4>
+<ul class="flex flex-col gap-4">
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">FUSSBALL</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="sports_soccer">sports_soccer</span>
+</li>
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">VOLLEYBALL</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="sports_volleyball">sports_volleyball</span>
+</li>
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">BASKETBALL</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="sports_basketball">sports_basketball</span>
+</li>
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">TURNEN</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="accessibility_new">accessibility_new</span>
+</li>
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">LEICHTATHLETIK</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="directions_run">directions_run</span>
+</li>
+<li class="group cursor-pointer flex justify-between items-center border-b-4 border-black/20 pb-4 hover:border-black transition-none">
+<span class="text-5xl md:text-7xl font-headline font-black uppercase group-hover:translate-x-4 transition-transform duration-150">ZUMBA</span>
+<span class="material-symbols-outlined text-4xl group-hover:scale-150 transition-transform" data-icon="nightlife">nightlife</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black dark:bg-black w-full py-12 px-6 flex flex-col items-center gap-4 border-t-8 border-red-600 rounded-none">
+<div class="text-lg font-bold text-white font-headline">HEMMERDE 1919</div>
+<div class="flex gap-8">
+<a class="text-white font-['Space_Grotesk'] text-xs uppercase tracking-tighter hover:underline decoration-2" href="#">IMPRINT</a>
+<a class="text-white font-['Space_Grotesk'] text-xs uppercase tracking-tighter hover:underline decoration-2" href="#">PRIVACY</a>
+<a class="text-white font-['Space_Grotesk'] text-xs uppercase tracking-tighter hover:underline decoration-2" href="#">TERMS</a>
+</div>
+<div class="text-red-600 font-['Space_Grotesk'] text-xs uppercase tracking-tighter font-black mt-4">
+            © 1919-2024 TUS HEMMERDE. NO SURRENDER.
+        </div>
+<div class="mt-8 flex gap-4">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span>
+</div>
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="camera_alt">camera_alt</span>
+</div>
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+</div>
+</div>
+</footer>
+<!-- Side Navigation Shell (Hidden by default, used for interaction/structure reference) -->
+<aside class="hidden fixed left-0 top-0 h-screen w-64 bg-black border-r-4 border-red-600 flex-col z-[60]">
+<div class="p-6">
+<h2 class="text-3xl font-black text-white font-headline">HEMMERDE 1919</h2>
+<p class="text-red-600 font-headline font-bold uppercase text-xs">EST. 1919</p>
+</div>
+<nav class="flex-grow flex flex-col">
+<a class="px-6 py-4 flex items-center gap-4 text-white hover:bg-red-600 transition-none font-headline uppercase font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="sports_soccer">sports_soccer</span> MATCH DAY
+            </a>
+<a class="px-6 py-4 flex items-center gap-4 text-white hover:bg-red-600 transition-none font-headline uppercase font-bold bg-red-600 text-white font-black" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span> TICKETS
+            </a>
+<a class="px-6 py-4 flex items-center gap-4 text-white hover:bg-red-600 transition-none font-headline uppercase font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span> FAN SHOP
+            </a>
+<a class="px-6 py-4 flex items-center gap-4 text-white hover:bg-red-600 transition-none font-headline uppercase font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span> ARCHIVE
+            </a>
+<a class="px-6 py-4 flex items-center gap-4 text-white hover:bg-red-600 transition-none font-headline uppercase font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span> CONTACT
+            </a>
+</nav>
+<button class="m-6 bg-red-600 text-white py-4 font-headline font-black uppercase">SUPPORT THE CLUB</button>
+</aside>
+</body></html>

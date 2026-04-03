@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TuS Hemmerde 1919 e.V. - Tradition und Gemeinschaft</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#410002",
+                      "outline": "#916f6b",
+                      "surface-dim": "#dadad6",
+                      "on-tertiary-fixed-variant": "#004b71",
+                      "on-error": "#ffffff",
+                      "surface-container": "#eeeee9",
+                      "surface-container-highest": "#e2e3de",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#0078b2",
+                      "surface-container-high": "#e8e8e4",
+                      "background": "#fafaf5",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#ffb4ab",
+                      "on-tertiary-container": "#f3f8ff",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e2e3de",
+                      "surface": "#fafaf5",
+                      "secondary": "#a73831",
+                      "outline-variant": "#e6bdb8",
+                      "on-secondary-fixed-variant": "#86211c",
+                      "primary-container": "#dc2626",
+                      "on-secondary-container": "#700f0f",
+                      "inverse-on-surface": "#f1f1ec",
+                      "on-primary-container": "#fff6f5",
+                      "primary": "#b70011",
+                      "tertiary": "#005e8d",
+                      "primary-fixed-dim": "#ffb4ab",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#ffb4ab",
+                      "secondary-container": "#fd786c",
+                      "on-secondary-fixed": "#410002",
+                      "on-primary-fixed-variant": "#93000b",
+                      "on-surface": "#1a1c19",
+                      "surface-container-low": "#f4f4ef",
+                      "secondary-fixed": "#ffdad6",
+                      "on-tertiary-fixed": "#001e30",
+                      "on-background": "#1a1c19",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffdad6",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#cbe6ff",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fafaf5",
+                      "on-surface-variant": "#5c403c",
+                      "surface-tint": "#bf0715",
+                      "inverse-surface": "#2f312e",
+                      "tertiary-fixed-dim": "#90cdff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Noto Serif", "serif"],
+                      "body": ["Plus Jakarta Sans", "sans-serif"],
+                      "label": ["Plus Jakarta Sans", "sans-serif"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafaf5; color: #1a1c19; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .polaroid { transition: transform 0.3s ease-out; }
+        .polaroid:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 50; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="bg-[#fafaf5] shadow-[0_10px_30px_rgba(26,28,25,0.06)] border-b border-stone-200/50 sticky top-0 z-[100]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="sports_soccer">sports_soccer</span>
+</div>
+<img src="/tus-logo.png" alt="TuS Hemmerde Logo" style="width:44px;height:44px;object-fit:contain;"/><span class="text-xl font-bold font-serif text-[#b70011]">TuS Hemmerde 1919</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#b70011] border-b-2 border-[#b70011] pb-1 font-bold font-serif tracking-tight" href="#">Aktuelles</a>
+<a class="text-stone-600 font-sans hover:text-[#dc2626] hover:scale-105 transition-transform" href="#">Teams</a>
+<a class="text-stone-600 font-sans hover:text-[#dc2626] hover:scale-105 transition-transform" href="#">Verein</a>
+<a class="text-stone-600 font-sans hover:text-[#dc2626] hover:scale-105 transition-transform" href="#">Termine</a>
+<a class="text-stone-600 font-sans hover:text-[#dc2626] hover:scale-105 transition-transform" href="#">Kontakt</a>
+</nav>
+<button class="bg-gradient-to-br from-[#b70011] to-[#dc2626] text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95">
+                Mitmachen!
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<h1 class="text-6xl md:text-8xl font-serif font-bold text-on-background leading-tight mb-6">
+                    Gemeinsam<br/>
+<span class="text-primary italic">bewegen.</span>
+</h1>
+<p class="text-xl text-stone-600 max-w-md mb-10 leading-relaxed">
+                    Dein Sportverein in Unna-Hemmerde seit 1919. Tradition, Leidenschaft und starke Gemeinschaft für alle Generationen.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-br from-[#b70011] to-[#dc2626] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:-translate-y-1 transition-all">
+                        Mitglied werden
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-highest transition-all">
+                        Spielplan ansehen
+                    </button>
+</div>
+</div>
+<!-- Polaroid Mosaic -->
+<div class="relative h-[500px] w-full">
+<div class="absolute top-0 left-10 polaroid bg-surface-container-lowest p-3 pb-12 shadow-[0_10px_30px_rgba(26,28,25,0.06)] rotate-[-4deg] w-64 border border-stone-100">
+<img alt="" class="w-full h-48 object-cover rounded-sm" data-alt="vibrant green soccer field with players in motion during a sunset match, capturing team spirit and local energy" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+</div>
+<div class="absolute top-20 right-10 polaroid bg-surface-container-lowest p-3 pb-12 shadow-[0_10px_30px_rgba(26,28,25,0.06)] rotate-[3deg] w-64 border border-stone-100">
+<img alt="" class="w-full h-48 object-cover rounded-sm" data-alt="community gymnastics class in a bright gym with sunlight streaming through large windows, warm and welcoming atmosphere" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+</div>
+<div class="absolute bottom-10 left-4 polaroid bg-surface-container-lowest p-3 pb-12 shadow-[0_10px_30px_rgba(26,28,25,0.06)] rotate-[2deg] w-64 border border-stone-100">
+<img alt="" class="w-full h-48 object-cover rounded-sm" data-alt="close-up of darts in a dartboard, selective focus, local club environment with soft ambient lighting" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+</div>
+<div class="absolute bottom-0 right-20 polaroid bg-surface-container-lowest p-3 pb-12 shadow-[0_10px_30px_rgba(26,28,25,0.06)] rotate-[-5deg] w-64 border border-stone-100">
+<img alt="" class="w-full h-48 object-cover rounded-sm" data-alt="group of kids laughing on a sports field wearing club jerseys, joyful community moment, bright daylight" src="https://www.tushemmerde.de/images/fussballkid_02.jpg"/>
+</div>
+</div>
+</section>
+<!-- Stats Band -->
+<section class="bg-[#dc2626] py-12">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div class="flex flex-col gap-1">
+<span class="text-white text-4xl md:text-5xl font-serif font-bold">400+</span>
+<span class="text-primary-container brightness-200 font-medium uppercase tracking-widest text-xs">Mitglieder</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-white text-4xl md:text-5xl font-serif font-bold">6</span>
+<span class="text-primary-container brightness-200 font-medium uppercase tracking-widest text-xs">Sportarten</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-white text-4xl md:text-5xl font-serif font-bold">105</span>
+<span class="text-primary-container brightness-200 font-medium uppercase tracking-widest text-xs">Jahre</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-white text-4xl md:text-5xl font-serif font-bold">1</span>
+<span class="text-primary-container brightness-200 font-medium uppercase tracking-widest text-xs">Gemeinschaft</span>
+</div>
+</div>
+</section>
+<!-- Sports Section -->
+<section class="bg-surface-container-lowest py-24 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-serif font-bold text-on-surface mb-4 italic">Was bewegt uns.</h2>
+<p class="text-stone-500 max-w-lg">Entdecke unser vielfältiges Sportangebot für jedes Alter und Leistungsniveau.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                        Alle Abteilungen ansehen
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Football -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer">
+<span class="text-4xl mb-6 block">⚽</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Fußball</h3>
+<p class="text-stone-600 text-sm">Von der Jugend bis zu den Alten Herren – wir leben Fußball.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">180 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Darts -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer rotate-[0.5deg]">
+<span class="text-4xl mb-6 block">🎯</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Darts</h3>
+<p class="text-stone-600 text-sm">Präzision und Geselligkeit in unserer wachsenden Darts-Abteilung.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">45 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Gymnastics -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer">
+<span class="text-4xl mb-6 block">🤸</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Turnen &amp; Gymnastik</h3>
+<p class="text-stone-600 text-sm">Fitness und Beweglichkeit für Jung und Alt.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">120 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Badminton -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer rotate-[-0.5deg]">
+<span class="text-4xl mb-6 block">🏸</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Badminton</h3>
+<p class="text-stone-600 text-sm">Schnelligkeit und Taktik auf dem Hallenparkett.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">35 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Children -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer">
+<span class="text-4xl mb-6 block">🧒</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Kinderturnen</h3>
+<p class="text-stone-600 text-sm">Spielerische Bewegungsförderung für unsere Jüngsten.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">60 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Table Tennis -->
+<div class="bg-[#fff1f2] p-8 rounded-xl border border-stone-100 hover:scale-[1.02] transition-all cursor-pointer rotate-[0.3deg]">
+<span class="text-4xl mb-6 block">🏓</span>
+<h3 class="text-2xl font-serif font-bold mb-2">Tischtennis</h3>
+<p class="text-stone-600 text-sm">Reaktionsschnelle Ballwechsel an der grünen Platte.</p>
+<div class="mt-6 flex items-center justify-between">
+<span class="bg-white/50 px-3 py-1 rounded-full text-xs font-bold text-primary tracking-wide">25 Mitglieder</span>
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News Section -->
+<section class="bg-surface-container-low py-24 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-center mb-12">
+<h2 class="text-4xl md:text-5xl font-serif font-bold text-on-surface">Aus dem Verein.</h2>
+<div class="flex gap-2">
+<button class="p-3 rounded-full border border-stone-200 bg-white hover:bg-stone-50 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-3 rounded-full border border-stone-200 bg-white hover:bg-stone-50 transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-10">
+<!-- News Card 1 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="h-48 w-full object-cover" data-alt="cheerful group of club members at an outdoor summer party, communal table, laughter and rustic charm" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+<div class="p-8">
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-3 block">12. August 2024</span>
+<h4 class="text-xl font-serif font-bold mb-4 leading-tight">Sommerfest ein voller Erfolg: Rekordbesuch am Vereinsheim</h4>
+<p class="text-stone-500 text-sm leading-relaxed mb-6">Über 300 Gäste feierten bei strahlendem Sonnenschein unser traditionelles Sommerfest...</p>
+<a class="text-on-surface font-bold text-sm flex items-center gap-1 group" href="#">
+                                Weiterlesen
+                                <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- News Card 2 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="h-48 w-full object-cover" data-alt="architectural sketch of a modern local sports pavilion with sustainable features, warm evening sky" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+<div class="p-8">
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-3 block">05. August 2024</span>
+<h4 class="text-xl font-serif font-bold mb-4 leading-tight">Neue Flutlichtanlage für den Hauptplatz geplant</h4>
+<p class="text-stone-500 text-sm leading-relaxed mb-6">Dank einer großzügigen Förderung können wir die Sanierung unserer Flutlichtmasten im Herbst angehen...</p>
+<a class="text-on-surface font-bold text-sm flex items-center gap-1 group" href="#">
+                                Weiterlesen
+                                <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- News Card 3 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="h-48 w-full object-cover" data-alt="action shot of children playing soccer on grass, dynamic movement, focused expressions, bright outdoors" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+<div class="p-8">
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-3 block">28. Juli 2024</span>
+<h4 class="text-xl font-serif font-bold mb-4 leading-tight">Jugendcamp: 40 Talente trainierten wie die Profis</h4>
+<p class="text-stone-500 text-sm leading-relaxed mb-6">Drei Tage voller Fußball, Spaß und neuen Freundschaften – unser Jugendcamp war ein Highlight der Ferien...</p>
+<a class="text-on-surface font-bold text-sm flex items-center gap-1 group" href="#">
+                                Weiterlesen
+                                <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 border-t-4 border-primary rounded-t-xl mt-12 overflow-hidden">
+<div class="w-full px-8 py-12 flex flex-col items-center gap-10 max-w-7xl mx-auto">
+<div class="w-full grid md:grid-cols-3 gap-12 text-center md:text-left">
+<!-- Branding -->
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="shield">shield</span>
+</div>
+<h5 class="font-serif font-bold text-xl text-stone-900">TuS Hemmerde e.V.</h5>
+</div>
+<p class="text-stone-600 text-sm max-w-xs">Dein Sportverein für Unna-Hemmerde. Seit über 100 Jahren verbinden wir Generationen durch Sport.</p>
+</div>
+<!-- Contact Info -->
+<div class="flex flex-col gap-4">
+<h6 class="font-serif font-bold text-stone-900">Kontakt &amp; Anfahrt</h6>
+<ul class="text-stone-600 text-sm flex flex-col gap-2">
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="location_on">location_on</span>
+                            Hemmerder Dorfstraße, 59427 Unna
+                        </li>
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="mail">mail</span>
+                            info@tus-hemmerde.de
+                        </li>
+<li class="flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="call">call</span>
+                            +49 (0) 2308 12345
+                        </li>
+</ul>
+</div>
+<!-- Links & Social -->
+<div class="flex flex-col gap-4">
+<h6 class="font-serif font-bold text-stone-900">Verein</h6>
+<div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+<a class="text-stone-500 hover:text-stone-800 transition-all hover:underline text-sm" href="#">Impressum</a>
+<a class="text-stone-500 hover:text-stone-800 transition-all hover:underline text-sm" href="#">Datenschutz</a>
+<a class="text-stone-500 hover:text-stone-800 transition-all hover:underline text-sm" href="#">Satzung</a>
+<a class="text-stone-500 hover:text-stone-800 transition-all hover:underline text-sm" href="#">Sponsoren</a>
+</div>
+<div class="flex justify-center md:justify-start gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center text-stone-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center text-stone-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-stone-200 w-full text-center">
+<p class="font-sans text-sm text-stone-600">© 1919-2024 TuS Hemmerde e.V. - Tradition und Gemeinschaft</p>
+</div>
+</div>
+</footer>
+</body></html>

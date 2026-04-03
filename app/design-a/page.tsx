@@ -42,7 +42,7 @@ export default function DesignA() {
       <nav style={{ position: "sticky", top: 0, zIndex: 50, borderBottom: "1px solid rgba(255,255,255,0.06)", backdropFilter: "blur(20px)", backgroundColor: "rgba(15,23,42,0.9)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginRight: "auto" }}>
-            <div style={{ width: 44, height: 44, borderRadius: 10, background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 20, color: "#fff", boxShadow: "0 0 20px rgba(220,38,38,0.5)" }}>T</div>
+            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 44, height: 44, objectFit: "contain", filter: "drop-shadow(0 0 12px rgba(220,38,38,0.6))" }} />
             <div>
               <div style={{ fontWeight: 900, fontSize: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>TuS Hemmerde</div>
               <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.1em" }}>1919 E.V.</div>

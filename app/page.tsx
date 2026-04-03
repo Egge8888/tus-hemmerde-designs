@@ -95,7 +95,7 @@ function DesignCard({ d }: { d: typeof designsHandcrafted[0] & { isStitch?: bool
       {/* Preview */}
       <div className={d.preview} style={{ height: 200, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ textAlign: "center", position: "relative", zIndex: 10 }}>
-          <div style={{ width: 56, height: 56, borderRadius: 12, margin: "0 auto 12px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 900, color: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.4)", backgroundColor: d.accentHex }}>T</div>
+          <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 56, height: 56, objectFit: "contain", margin: "0 auto 12px", display: "block", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.4))" }} />
           <div style={{ fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 999, display: "inline-block", backgroundColor: "rgba(220,38,38,0.15)", color: "#fca5a5", border: "1px solid rgba(220,38,38,0.3)" }}>{d.tagline}</div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function HomePage() {
       {/* Header */}
       <header style={{ borderBottom: "1px solid #1f2937", backgroundColor: "rgba(17,24,39,0.9)", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "#dc2626", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: 14 }}>T</div>
+          <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 36, height: 36, objectFit: "contain" }} />
           <span style={{ fontWeight: 700, fontSize: 18, letterSpacing: "-0.025em" }}>TuS Hemmerde 1919</span>
           <span style={{ marginLeft: "auto", fontSize: 14, color: "#6b7280" }}>Design-Auswahl</span>
         </div>

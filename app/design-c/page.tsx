@@ -49,12 +49,7 @@ export default function DesignC() {
       <nav style={{ backgroundColor: "#fff", borderBottom: "3px solid #dc2626", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginRight: "auto" }}>
-            <div style={{ width: 52, height: 52, borderRadius: 8, background: "linear-gradient(135deg, #dc2626 0%, #991b1b 100%)", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #1e3a8a", boxShadow: "0 2px 8px rgba(220,38,38,0.3)" }}>
-              <div style={{ textAlign: "center", lineHeight: 1 }}>
-                <div style={{ fontSize: 16, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif" }}>TuS</div>
-                <div style={{ fontSize: 8, color: "#bfdbfe", fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>1919</div>
-              </div>
-            </div>
+            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 52, height: 52, objectFit: "contain" }} />
             <div>
               <div style={{ fontWeight: 700, fontSize: 18, color: "#1e3a8a", letterSpacing: "-0.01em", lineHeight: 1.1 }}>TuS Hemmerde 1919 e.V.</div>
               <div style={{ fontSize: 12, color: "#64748b", fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>Turn- und Sportverein · Unna-Hemmerde</div>

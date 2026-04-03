@@ -45,7 +45,7 @@ export default function DesignB() {
       <nav style={{ backgroundColor: "#fff", borderBottom: "2px solid #fee2e2", position: "sticky", top: 0, zIndex: 50, boxShadow: "0 2px 20px rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginRight: "auto" }}>
-            <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: "#fff", fontWeight: 900, boxShadow: "0 4px 12px rgba(220,38,38,0.35)" }}>T</div>
+            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 48, height: 48, objectFit: "contain" }} />
             <div>
               <div style={{ fontWeight: 800, fontSize: 17, color: "#1c1917", lineHeight: 1.1 }}>TuS Hemmerde</div>
               <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600 }}>1919 e.V. · Unna-Hemmerde</div>

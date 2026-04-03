@@ -1,7 +1,31 @@
 const designs = [
   {
-    href: "/design-stitch-mega.html",
+    href: "/design-g.html",
     label: "Design 1",
+    name: "Neo-Brutalist",
+    tagline: "Fanzine · Aggressive · Rot/Schwarz",
+    description: "Schwarze Nav, krachend rotes Hero, harter Offset-Shadow-Stil. Großbuchstaben, keine Rundungen — roh wie ein Stadion-Fanzine.",
+    preview: "bg-gradient-to-br from-black via-zinc-900 to-red-950",
+  },
+  {
+    href: "/design-h.html",
+    label: "Design 2",
+    name: "Cyber-Athletic",
+    tagline: "Dark · Neon · Futuristisch",
+    description: "Tiefschwarzer Hintergrund, rote Neon-Akzente, Grid-Raster-Ästhetik. Futuristisch und athletisch zugleich.",
+    preview: "bg-gradient-to-br from-zinc-950 via-zinc-900 to-red-900",
+  },
+  {
+    href: "/design-i.html",
+    label: "Design 3",
+    name: "Liquid Crystal",
+    tagline: "Glassmorphism · Kristall · Modern",
+    description: "Weiße Transparenz-Elemente, Glaseffekte und rote Akzente. Leicht, modern, elegant.",
+    preview: "bg-gradient-to-br from-zinc-100 via-white to-red-50",
+  },
+  {
+    href: "/design-stitch-mega.html",
+    label: "Design 4",
     name: "1919 Gegründet.",
     tagline: "Editorial · Sportfotografie · Bold",
     description: "Großformatige Sportfotos, markante Typografie und eine klare Kapitel-Struktur. Rot als zentrales Gestaltungselement.",
@@ -9,7 +33,7 @@ const designs = [
   },
   {
     href: "/design-d.html",
-    label: "Design 2",
+    label: "Design 5",
     name: "Liquid Light",
     tagline: "Glassmorphism · Hell · Modern",
     description: "Floating Navigation, Glasskarten und rote Akzente auf hellem Hintergrund. Gemeinsam. Stark. Seit 1919.",
@@ -17,7 +41,7 @@ const designs = [
   },
   {
     href: "/design-f.html",
-    label: "Design 3",
+    label: "Design 6",
     name: "Klassisch Modern",
     tagline: "Editorial · Serif · Elegant",
     description: "\"Tradition. Sport. Gemeinschaft.\" mit großer Serif-Schrift, rotem Akzent und klarem Zeitungslayout.",
@@ -25,7 +49,7 @@ const designs = [
   },
   {
     href: "/design-a",
-    label: "Design 4",
+    label: "Design 7",
     name: "Kraft & Athletik",
     tagline: "Bold · Dark · Modern",
     description: "Dunkles Farbschema mit knallroten Akzenten, Glassmorphism-Karten und athletischem Erscheinungsbild.",
@@ -33,7 +57,7 @@ const designs = [
   },
   {
     href: "/design-b",
-    label: "Design 5",
+    label: "Design 8",
     name: "Heimat & Herzblut",
     tagline: "Warm · Freundlich · Einladend",
     description: "Warme Cremetöne mit roten Vereinsfarben, abgerundete Karten und ein gemeinschaftliches Gefühl.",
@@ -41,7 +65,7 @@ const designs = [
   },
   {
     href: "/design-c",
-    label: "Design 6",
+    label: "Design 9",
     name: "Tradition trifft Moderne",
     tagline: "Klassisch · Professionell · Seriös",
     description: "Rot und Dunkelblau, strukturiertes Zeitungsgrid und professionelles Erscheinungsbild.",
@@ -104,7 +128,7 @@ export default function HomePage() {
           <span style={{ color: "#f87171" }}>TuS Hemmerde 1919 e.V.</span>
         </h1>
         <p style={{ color: "#9ca3af", fontSize: 18, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.7 }}>
-          Sechs Design-Vorschläge für die neue Vereinswebsite. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
+          Neun Design-Vorschläge für die neue Vereinswebsite. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
         </p>
       </section>
 

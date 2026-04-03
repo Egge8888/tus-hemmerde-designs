@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TuS Hemmerde - Liquid Crystal Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#b70011",
+                    "on-secondary-container": "#636262",
+                    "surface-container-high": "#e8e8e8",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#737272",
+                    "primary-container": "#dc2626",
+                    "secondary": "#5f5e5e",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#93000b",
+                    "on-primary-container": "#fff6f5",
+                    "on-primary-fixed": "#410002",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e4e2e1",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#5c403c",
+                    "on-surface": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-background": "#1a1c1c",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "outline-variant": "#e6bdb8",
+                    "inverse-primary": "#ffb4ab",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-tint": "#bf0715",
+                    "tertiary": "#5a5959",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-container": "#faf8f7",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-dim": "#dadada",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#f1f1f1",
+                    "primary-fixed": "#ffdad6",
+                    "background": "#f9f9f9",
+                    "secondary-container": "#e2dfde",
+                    "outline": "#916f6b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .liquid-blob {
+            filter: blur(60px);
+            z-index: -1;
+        }
+        .crystalline-border {
+            position: relative;
+        }
+        .crystalline-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(183, 0, 17, 0.1);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+<!-- Liquid Background Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<div class="liquid-blob absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full"></div>
+<div class="liquid-blob absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-surface-variant/40 rounded-full"></div>
+<div class="liquid-blob absolute top-[40%] right-[20%] w-[300px] h-[300px] bg-primary/10 rounded-full"></div>
+</div>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<img src="/tus-logo.png" alt="TuS Hemmerde Logo" style="width:44px;height:44px;object-fit:contain;"/><span class="text-2xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50">TuS Hemmerde</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-manrope font-bold tracking-tight uppercase text-xs">
+<a class="text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="#">Aktuelles</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Sport</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Mitglied werden</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Kontakt</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-zinc-600 hover:bg-zinc-100/50 p-2 rounded-full transition-all">search</button>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary-container scale-95 active:scale-90 transition-all duration-200">Mitglied werden</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-8 max-w-7xl mx-auto min-h-[819px] flex flex-col justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="inline-block py-1 px-3 bg-secondary-container text-secondary text-[10px] font-bold tracking-[0.2em] rounded-full mb-6">EST. 1910</span>
+<h1 class="text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.9] mb-8">
+                    TRADITION <br/>
+<span class="text-primary italic">TRIFFT</span> INNOVATION.
+                </h1>
+<p class="text-lg text-secondary max-w-xl leading-relaxed mb-10">
+                    Seit über einem Jahrhundert das sportliche Herz von Hemmerde. Wir vereinen Leidenschaft, Gemeinschaft und modernen Sportsgeist in einer kristallklaren Mission: Bewegung für alle.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-xl transition-all">
+                        Jetzt Entdecken
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="glass-panel px-8 py-4 rounded-xl font-bold border border-primary/10 hover:bg-white transition-all">
+                        Abteilungen
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square rounded-[2rem] overflow-hidden shadow-2xl relative z-20">
+<img alt="Action Sports Image" class="w-full h-full object-cover" data-alt="dynamic close up shot of a red soccer jersey in motion on a sunlit green pitch with soft bokeh background" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"></div>
+</div>
+<!-- Crystalline Floating Element -->
+<div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl shadow-xl z-30 crystalline-border">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<div>
+<div class="text-2xl font-black text-on-surface">114+</div>
+<div class="text-[10px] uppercase font-bold text-secondary tracking-widest">Jahre Erfolg</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Stats Bento Grid -->
+<section class="px-8 py-20 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 glass-panel p-10 rounded-[2rem] flex flex-col justify-between border border-white/40">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">groups</span>
+<div>
+<h3 class="text-4xl font-black mb-2">600+</h3>
+<p class="text-secondary font-semibold uppercase text-xs tracking-widest">Aktive Mitglieder</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-10 rounded-[2rem] flex flex-col justify-between shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined text-4xl mb-4">sports_soccer</span>
+<div>
+<h3 class="text-4xl font-black mb-2">12</h3>
+<p class="text-on-primary/80 font-semibold uppercase text-xs tracking-widest">Mannschaften</p>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-[2rem] flex flex-col justify-between border border-white/40">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">workspace_premium</span>
+<div>
+<h3 class="text-4xl font-black mb-2">08</h3>
+<p class="text-secondary font-semibold uppercase text-xs tracking-widest">Sportarten</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Departments Section -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl font-black tracking-tighter mb-6">UNSERE <span class="text-primary">DISZIPLINEN</span></h2>
+<p class="text-secondary leading-relaxed">Vielfalt ist unsere Stärke. Von klassischem Fußball bis hin zu modernem Breitensport – im TuS Hemmerde findet jeder seinen Platz.</p>
+</div>
+<button class="group flex items-center gap-3 font-bold text-sm uppercase tracking-widest text-primary">
+                    Alle Sparten
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">east</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Football -->
+<div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden crystalline-border">
+<img alt="Football" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="dramatic wide shot of a pristine soccer stadium at twilight with stadium lights creating long shadows on the grass" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<span class="inline-block py-1 px-3 bg-primary text-white text-[9px] font-bold tracking-widest rounded-full mb-4 uppercase">Leistungssport</span>
+<h4 class="text-3xl font-black text-white uppercase tracking-tighter">Fußball</h4>
+<div class="h-0 group-hover:h-12 overflow-hidden transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center">
+<p class="text-white/70 text-sm">3 Herren- &amp; 8 Jugendteams</p>
+</div>
+</div>
+</div>
+<!-- Volleyball -->
+<div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden crystalline-border">
+<img alt="Volleyball" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="athlete jumping for a volleyball spike in a modern indoor sports hall with vibrant colored court markings" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<span class="inline-block py-1 px-3 bg-secondary text-white text-[9px] font-bold tracking-widest rounded-full mb-4 uppercase">Teamsport</span>
+<h4 class="text-3xl font-black text-white uppercase tracking-tighter">Volleyball</h4>
+<div class="h-0 group-hover:h-12 overflow-hidden transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center">
+<p class="text-white/70 text-sm">Mixed &amp; Jugendgruppen</p>
+</div>
+</div>
+</div>
+<!-- Breitensport -->
+<div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden crystalline-border">
+<img alt="Fitness" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="bright modern gym interior with yoga mats and light weights at dawn with soft natural light streaming in" src="https://www.tushemmerde.de/images/fussballkid_02.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<span class="inline-block py-1 px-3 bg-surface-container-high text-on-surface text-[9px] font-bold tracking-widest rounded-full mb-4 uppercase">Fitness</span>
+<h4 class="text-3xl font-black text-white uppercase tracking-tighter">Breitensport</h4>
+<div class="h-0 group-hover:h-12 overflow-hidden transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center">
+<p class="text-white/70 text-sm">Turnen, Yoga &amp; Gymnastik</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News (Liquid Crystal Cards) -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<h2 class="text-4xl font-black tracking-tighter mb-12 flex items-center gap-4">
+<span class="w-12 h-[2px] bg-primary"></span>
+            NEUES VOM VEREIN
+        </h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+<!-- News Card 1 -->
+<div class="flex flex-col gap-6 group">
+<div class="aspect-video rounded-3xl overflow-hidden glass-panel crystalline-border relative">
+<img alt="News 1" class="w-full h-full object-cover" data-alt="overhead shot of several happy people in red jerseys cheering together in a huddle" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Verein</div>
+</div>
+<div>
+<span class="text-primary font-bold text-[10px] tracking-widest uppercase">12. Mai 2024</span>
+<h3 class="text-2xl font-bold mt-2 leading-tight group-hover:text-primary transition-colors">Jahreshauptversammlung 2024: Ein Rückblick auf ein starkes Jahr</h3>
+<p class="text-secondary mt-4 line-clamp-2">In der gestrigen Versammlung wurden wegweisende Entscheidungen für die Modernisierung unserer Sportanlagen getroffen...</p>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="flex flex-col gap-6 group">
+<div class="aspect-video rounded-3xl overflow-hidden glass-panel crystalline-border relative">
+<img alt="News 2" class="w-full h-full object-cover" data-alt="dynamic shot of runners at a starting line with a blurred track surface and high contrast lighting" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+<div class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Sport</div>
+</div>
+<div>
+<span class="text-primary font-bold text-[10px] tracking-widest uppercase">08. Mai 2024</span>
+<h3 class="text-2xl font-bold mt-2 leading-tight group-hover:text-primary transition-colors">Hemmerder Dorflauf: Anmeldung ab sofort möglich</h3>
+<p class="text-secondary mt-4 line-clamp-2">Der Termin steht! Am 15. Juni verwandelt sich unser Dorf wieder in eine Laufstrecke für Jung und Alt.</p>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="flex flex-col gap-6 group">
+<div class="aspect-video rounded-3xl overflow-hidden glass-panel crystalline-border relative">
+<img alt="News 3" class="w-full h-full object-cover" data-alt="close up of a new pristine soccer ball resting on dew-covered grass in the early morning" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Jugend</div>
+</div>
+<div>
+<span class="text-primary font-bold text-[10px] tracking-widest uppercase">05. Mai 2024</span>
+<h3 class="text-2xl font-bold mt-2 leading-tight group-hover:text-primary transition-colors">Neuer Trainer für unsere E-Jugend vorgestellt</h3>
+<p class="text-secondary mt-4 line-clamp-2">Wir begrüßen Marco Schmidt in unserem Trainerteam und freuen uns auf die Impulse für unsere Nachwuchstalente.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership CTA -->
+<section class="py-24 px-8">
+<div class="max-w-7xl mx-auto glass-panel rounded-[3rem] p-12 md:p-20 relative overflow-hidden crystalline-border">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-24"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-5xl md:text-6xl font-black tracking-tighter leading-none mb-8">
+                        WERDE TEIL <br/> DER <span class="text-primary italic">FAMILIE.</span>
+</h2>
+<p class="text-lg text-secondary mb-10 max-w-md">
+                        Sport, Gemeinschaft und jede Menge Spaß warten auf dich. Egal welches Alter, egal welches Level – wir freuen uns auf dich!
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-all">
+                            Mitgliedsantrag laden
+                        </button>
+<button class="flex items-center gap-2 font-bold px-8 py-4 hover:text-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+                            Fragen? Schreib uns
+                        </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square bg-surface-container-high rounded-2xl p-8 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-black text-xl">Fairplay</span>
+</div>
+<div class="aspect-square bg-primary rounded-2xl p-8 flex flex-col justify-center items-center text-center text-on-primary mt-8">
+<span class="material-symbols-outlined text-5xl mb-2" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<span class="font-black text-xl">Teamgeist</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full mt-20 pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto font-manrope text-sm leading-relaxed">
+<div class="md:col-span-1">
+<span class="text-xl font-bold text-zinc-900 dark:text-zinc-50 block mb-6">TuS Hemmerde</span>
+<p class="text-zinc-500 dark:text-zinc-400">
+                    Traditionsverein seit 1910. <br/>
+                    Hemmerde, Unna, NRW.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-zinc-900 dark:text-zinc-50 uppercase tracking-widest text-[10px] mb-6">Navigation</h4>
+<ul class="flex flex-col gap-4 text-zinc-500 dark:text-zinc-400">
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Startseite</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Verein</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Sportangebot</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Events</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-zinc-900 dark:text-zinc-50 uppercase tracking-widest text-[10px] mb-6">Rechtliches</h4>
+<ul class="flex flex-col gap-4 text-zinc-500 dark:text-zinc-400">
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Impressum</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Datenschutz</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Satzung</a></li>
+<li><a class="hover:text-red-600 dark:hover:text-red-400 transition-colors" href="#">Sponsoren</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-zinc-900 dark:text-zinc-50 uppercase tracking-widest text-[10px] mb-6">Social Media</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-zinc-300 dark:border-zinc-800 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-zinc-300 dark:border-zinc-800 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row justify-between gap-4">
+<p class="text-zinc-500 dark:text-zinc-400 text-xs">© 2024 TuS Hemmerde. Alle Rechte vorbehalten.</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs">Gestaltet mit Leidenschaft für den Sport.</p>
+</div>
+</footer>
+</body></html>

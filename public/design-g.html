@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eded",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-container": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed": "#410002",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface": "#fcf9f8",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-secondary-container": "#636262",
+                    "primary": "#bf0014",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary-fixed-variant": "#93000c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#767777",
+                    "primary-container": "#e82025",
+                    "secondary": "#5f5e5e",
+                    "surface-dim": "#dcd9d9",
+                    "secondary-container": "#e2dfde",
+                    "outline": "#926e6a",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-fixed": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "outline-variant": "#e7bdb8",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-primary": "#ffb4ab",
+                    "on-surface": "#1b1c1c",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-background": "#1b1c1c",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-tertiary-container": "#040506",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-tint": "#c00014",
+                    "tertiary": "#5d5e5f",
+                    "inverse-surface": "#303030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Space Grotesk", "sans-serif"],
+                    "label": ["Space Grotesk", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .hero-text-overlap { text-shadow: 4px 4px 0px #1b1c1c; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#E82025] dark:bg-[#BF0014] border-b-4 border-black shadow-[4px_4px_0px_0px_rgba(27,28,28,1)]">
+<div class="flex items-center gap-3"><img src="/tus-logo.png" alt="TuS Hemmerde Logo" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);"/><span class="text-2xl font-black italic tracking-tighter text-white font-['Space_Grotesk'] uppercase">TUS HEMMERDE</span></div>
+<nav class="hidden md:flex gap-8 font-['Space_Grotesk'] uppercase tracking-tighter font-black text-white">
+<a class="border-b-4 border-white pb-1 text-white" href="#">AKTUELLES</a>
+<a class="text-white/80 hover:text-white transition-all hover:translate-x-[2px] hover:translate-y-[2px]" href="#">SPORT</a>
+<a class="text-white/80 hover:text-white transition-all hover:translate-x-[2px] hover:translate-y-[2px]" href="#">MITGLIED WERDEN</a>
+<a class="text-white/80 hover:text-white transition-all hover:translate-x-[2px] hover:translate-y-[2px]" href="#">KONTAKT</a>
+</nav>
+<button class="bg-white text-black px-6 py-2 font-black uppercase border-2 border-black shadow-[4px_4px_0px_0px_rgba(27,28,28,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+            LOGIN
+        </button>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center items-start px-8 py-20 bg-primary-container overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover grayscale" data-alt="high contrast black and white action shot of a soccer player kicking a ball on a foggy morning field with sharp lighting" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+</div>
+<div class="relative z-10 max-w-6xl">
+<h1 class="font-headline italic text-7xl md:text-9xl text-white font-black leading-none uppercase tracking-tighter hero-text-overlap mb-6">
+                    MEHR ALS NUR EIN <span class="bg-black text-primary px-4 inline-block">VEREIN.</span>
+</h1>
+<p class="font-body text-xl md:text-3xl text-white font-bold max-w-2xl bg-black p-4 inline-block uppercase">
+                    Ehrgeiz. Gemeinschaft. Hemmerde. Seit 1912 am Ball.
+                </p>
+<div class="mt-12 flex flex-col sm:flex-row gap-6">
+<button class="bg-white text-black text-2xl px-10 py-6 font-black uppercase border-4 border-black shadow-[8px_8px_0px_0px_rgba(27,28,28,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+                        SPIELPLAN CHECKEN
+                    </button>
+<button class="bg-black text-white text-2xl px-10 py-6 font-black uppercase border-4 border-white shadow-[8px_8px_0px_0px_rgba(232,32,37,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+                        JETZT BEITRETEN
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats Graphic Blocks -->
+<section class="bg-surface py-24 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 border-4 border-black">
+<div class="bg-white p-12 border-b-4 md:border-b-0 md:border-r-4 border-black hover:bg-primary group transition-colors">
+<span class="block font-body font-black text-7xl group-hover:text-white">1912</span>
+<span class="block font-body font-bold text-xl uppercase tracking-widest group-hover:text-white">Gründungsjahr</span>
+</div>
+<div class="bg-primary p-12 border-b-4 md:border-b-0 md:border-r-4 border-black">
+<span class="block font-body font-black text-7xl text-white">450+</span>
+<span class="block font-body font-bold text-xl uppercase tracking-widest text-white">Mitglieder</span>
+</div>
+<div class="bg-white p-12 border-b-4 md:border-b-0 md:border-r-4 border-black hover:bg-black group transition-colors">
+<span class="block font-body font-black text-7xl group-hover:text-primary">12</span>
+<span class="block font-body font-bold text-xl uppercase tracking-widest group-hover:text-white">Abteilungen</span>
+</div>
+<div class="bg-surface-container-highest p-12 hover:bg-primary-container group transition-colors">
+<span class="block font-body font-black text-7xl group-hover:text-white">100%</span>
+<span class="block font-body font-bold text-xl uppercase tracking-widest group-hover:text-white">Leidenschaft</span>
+</div>
+</div>
+</section>
+<!-- Departments: Zine-Style Cards -->
+<section class="bg-surface-container-low py-24 px-8 overflow-hidden">
+<h2 class="font-headline italic text-6xl md:text-8xl font-black uppercase mb-16 tracking-tighter">UNSERE <span class="text-primary">SPARTEN</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Football -->
+<div class="relative bg-white border-4 border-black p-4 shadow-[12px_12px_0px_0px_rgba(191,0,20,1)] -rotate-1 hover:rotate-0 transition-transform">
+<div class="h-64 bg-black overflow-hidden mb-6">
+<img class="w-full h-full object-cover mix-blend-screen opacity-80" data-alt="close up of muddy soccer cleats on a green grass field with water splashes, high contrast sports photography" src="https://www.tushemmerde.de/images/kinderturnen_tus.jpg"/>
+</div>
+<h3 class="font-body text-4xl font-black uppercase mb-2">FUSSBALL</h3>
+<p class="font-body font-bold mb-6 text-secondary">Vom Rasenplatz bis in die Halle. Wir leben den Fußball.</p>
+<a class="inline-block bg-black text-white px-6 py-2 font-black uppercase hover:bg-primary transition-colors" href="#">MEHR ERFAHREN</a>
+</div>
+<!-- Gymnastics -->
+<div class="relative bg-white border-4 border-black p-4 shadow-[12px_12px_0px_0px_rgba(27,28,28,1)] rotate-2 hover:rotate-0 transition-transform md:mt-12">
+<div class="h-64 bg-primary-container overflow-hidden mb-6">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-70" data-alt="abstract rhythmic gymnastics movement with colorful ribbons and dramatic motion blur, high-end editorial style" src="https://www.tushemmerde.de/images/dart_hp.jpg"/>
+</div>
+<h3 class="font-body text-4xl font-black uppercase mb-2">GYMNASTIK</h3>
+<p class="font-body font-bold mb-6 text-secondary">Fitness, Gesundheit und Spaß in der Gemeinschaft.</p>
+<a class="inline-block bg-black text-white px-6 py-2 font-black uppercase hover:bg-primary transition-colors" href="#">MEHR ERFAHREN</a>
+</div>
+<!-- Youth -->
+<div class="relative bg-white border-4 border-black p-4 shadow-[12px_12px_0px_0px_rgba(191,0,20,1)] -rotate-2 hover:rotate-0 transition-transform">
+<div class="h-64 bg-secondary overflow-hidden mb-6">
+<img class="w-full h-full object-cover grayscale" data-alt="group of kids in sports jerseys high-fiving on a sunny playground, cinematic lighting, grain texture" src="https://www.tushemmerde.de/images/fussballkid_02.jpg"/>
+</div>
+<h3 class="font-body text-4xl font-black uppercase mb-2">JUGEND</h3>
+<p class="font-body font-bold mb-6 text-secondary">Nachwuchsförderung wird bei uns großgeschrieben.</p>
+<a class="inline-block bg-black text-white px-6 py-2 font-black uppercase hover:bg-primary transition-colors" href="#">MEHR ERFAHREN</a>
+</div>
+</div>
+</section>
+<!-- News Gazette Section -->
+<section class="bg-black text-white py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16 border-b-8 border-primary pb-4">
+<h2 class="font-headline italic text-6xl md:text-8xl font-black uppercase tracking-tighter">THE <span class="text-primary">GAZETTE</span></h2>
+<span class="font-body font-bold text-xl hidden md:block">EDITION NO. 42 / 2024</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Story -->
+<div class="lg:col-span-7 flex flex-col">
+<img class="w-full h-[500px] object-cover border-4 border-white mb-8" data-alt="dramatic wide shot of a stadium lighting up at night with intense floodlights and silhouettes of spectators" src="https://www.tushemmerde.de/images/fussball_01.jpg"/>
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary px-3 py-1 font-black uppercase">TOP NEWS</span>
+<span class="font-bold">24. OKTOBER 2024</span>
+</div>
+<h3 class="font-headline text-5xl font-black italic leading-tight mb-6 hover:text-primary transition-colors cursor-pointer">HEIMSPIEGEL: DERBY-SIEG UNTER FLUTLICHT</h3>
+<p class="font-body text-xl text-surface-variant mb-8 line-clamp-3">In einem packenden Spiel gegen den Lokalrivalen sicherte sich unsere Erste Mannschaft drei wichtige Punkte. Die Stimmung am Platz war elektrisierend...</p>
+<button class="self-start border-b-4 border-primary pb-1 font-black text-2xl hover:text-primary transition-colors">GANZEN ARTIKEL LESEN</button>
+</div>
+<!-- Sidebar News -->
+<div class="lg:col-span-5 flex flex-col gap-12">
+<div class="border-l-4 border-primary pl-6">
+<span class="font-bold text-primary">VORSTANDSNEWS</span>
+<h4 class="font-body text-2xl font-black uppercase mt-2 mb-4">NEUE FLUTLICHTANLAGE GEPLANT</h4>
+<p class="text-surface-variant font-bold">Investition in die Zukunft: Der TuS rüstet auf nachhaltige LED-Technik um.</p>
+</div>
+<div class="border-l-4 border-white pl-6">
+<span class="font-bold text-white">TERMINE</span>
+<h4 class="font-body text-2xl font-black uppercase mt-2 mb-4">JAHRESHAUPTVERSAMMLUNG 2024</h4>
+<p class="text-surface-variant font-bold">Am 15. November im Vereinsheim. Alle Mitglieder sind herzlich eingeladen.</p>
+</div>
+<div class="bg-primary p-8 border-4 border-white">
+<h4 class="font-headline text-3xl font-black italic mb-4">WIR SUCHEN TRAINER!</h4>
+<p class="font-body font-bold mb-6">Für unsere F-Jugend suchen wir Verstärkung. Melde dich bei uns!</p>
+<span class="material-symbols-outlined text-5xl">mail</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- High-Impact Membership CTA -->
+<section class="py-24 px-8 bg-surface-bright relative overflow-hidden">
+<div class="absolute -right-20 top-0 opacity-10 rotate-12">
+<span class="font-black text-[20rem] leading-none uppercase select-none">JOIN</span>
+</div>
+<div class="max-w-5xl mx-auto relative z-10 text-center">
+<h2 class="font-headline italic text-7xl md:text-9xl font-black uppercase mb-8 leading-none tracking-tighter">
+                    WERDE TEIL DER <span class="bg-primary text-white px-6">LEGENDE.</span>
+</h2>
+<p class="font-body text-2xl md:text-3xl font-bold mb-12 uppercase max-w-3xl mx-auto">
+                    Komm zum Probetraining oder werde Fördermitglied. Wir brauchen dich an der Seitenlinie!
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<div class="bg-white border-4 border-black p-12 shadow-[12px_12px_0px_0px_rgba(27,28,28,1)] flex flex-col items-center">
+<span class="material-symbols-outlined text-7xl mb-4 text-primary" data-weight="fill">person_add</span>
+<h3 class="text-3xl font-black uppercase mb-4">MITGLIED WERDEN</h3>
+<p class="font-bold text-secondary mb-8">Voller Zugriff auf alle Sportangebote.</p>
+<button class="bg-primary text-white px-8 py-4 font-black uppercase border-2 border-black hover:bg-black transition-colors w-full">ANTRAG LADEN</button>
+</div>
+<div class="bg-black border-4 border-primary p-12 shadow-[12px_12px_0px_0px_rgba(191,0,20,1)] flex flex-col items-center text-white">
+<span class="material-symbols-outlined text-7xl mb-4 text-primary">volunteer_activism</span>
+<h3 class="text-3xl font-black uppercase mb-4">SPONSORING</h3>
+<p class="font-bold text-surface-variant mb-8">Unterstütze den lokalen Sport als Partner.</p>
+<button class="bg-white text-black px-8 py-4 font-black uppercase border-2 border-white hover:bg-primary hover:text-white transition-colors w-full">KONTAKT AUFNEHMEN</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start gap-8 bg-[#FCF9F8] dark:bg-[#1B1C1C] border-t-8 border-black dark:border-white">
+<div class="flex flex-col gap-4">
+<div class="text-4xl font-black text-black dark:text-white font-['Space_Grotesk'] uppercase">
+                TUS HEMMERDE
+            </div>
+<p class="font-['Space_Grotesk'] font-bold uppercase text-black dark:text-white opacity-60 max-w-sm">
+                DER TRADITIONSVEREIN AUS UNNA-HEMMERDE. SEIT ÜBER 110 JAHREN FÜR EUCH DA.
+            </p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined bg-black text-white p-2 border-2 border-black hover:bg-primary cursor-pointer transition-colors">social_leaderboard</span>
+<span class="material-symbols-outlined bg-black text-white p-2 border-2 border-black hover:bg-primary cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined bg-black text-white p-2 border-2 border-black hover:bg-primary cursor-pointer transition-colors">mail</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Space_Grotesk'] font-bold uppercase text-black dark:text-white border-b-4 border-primary inline-block self-start">NAVIGATION</h4>
+<div class="flex flex-col gap-2 font-['Space_Grotesk'] font-bold uppercase">
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">SPIELPLAN</a>
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">GALERIE</a>
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">DOWNLOADS</a>
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">SHOP</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-['Space_Grotesk'] font-bold uppercase text-black dark:text-white border-b-4 border-primary inline-block self-start">RECHTLICHES</h4>
+<div class="flex flex-col gap-2 font-['Space_Grotesk'] font-bold uppercase">
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">IMPRESSUM</a>
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">DATENSCHUTZ</a>
+<a class="text-black dark:text-white hover:bg-[#E82025] hover:text-white transition-colors p-1" href="#">VEREINSSATZUNG</a>
+</div>
+<div class="mt-8 font-['Space_Grotesk'] font-bold uppercase text-black dark:text-white text-xs opacity-50">
+                © 2024 TUS HEMMERDE. RAW EDITORIAL EDITION.
+            </div>
+</div>
+</footer>
+</body></html>

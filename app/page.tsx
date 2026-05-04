@@ -143,7 +143,7 @@ function DesignCard({ d }: { d: typeof designs[0] }) {
       {/* Preview */}
       <div className={d.preview} style={{ height: 200, display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ textAlign: "center" }}>
-          <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 56, height: 56, objectFit: "contain", margin: "0 auto 12px", display: "block", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.35))" }} />
+          <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 56, height: 56, objectFit: "contain", margin: "0 auto 12px", display: "block", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.35))" }} />
           <div style={{ fontSize: 12, fontWeight: 600, padding: "4px 12px", borderRadius: 999, display: "inline-block", backgroundColor: "rgba(220,38,38,0.12)", color: "#dc2626", border: "1px solid rgba(220,38,38,0.25)" }}>{d.tagline}</div>
         </div>
       </div>
@@ -166,8 +166,8 @@ export default function HomePage() {
       {/* Header */}
       <header style={{ borderBottom: "1px solid #1f2937", backgroundColor: "rgba(17,24,39,0.9)", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", gap: 12 }}>
-          <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 36, height: 36, objectFit: "contain" }} />
-          <span style={{ fontWeight: 700, fontSize: 18, letterSpacing: "-0.025em" }}>TuS Hemmerde 1919</span>
+          <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 36, height: 36, objectFit: "contain" }} />
+          <span style={{ fontWeight: 700, fontSize: 18, letterSpacing: "-0.025em" }}>Sport Club Unna</span>
           <span style={{ marginLeft: "auto", fontSize: 14, color: "#6b7280" }}>Design-Auswahl</span>
         </div>
       </header>
@@ -176,10 +176,10 @@ export default function HomePage() {
       <section style={{ maxWidth: 1152, margin: "0 auto", padding: "80px 24px 48px", textAlign: "center" }}>
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.1, marginBottom: 16 }}>
           Neue Website für den<br />
-          <span style={{ color: "#f87171" }}>TuS Hemmerde 1919 e.V.</span>
+          <span style={{ color: "#f87171" }}>Sport Club Unna</span>
         </h1>
         <p style={{ color: "#9ca3af", fontSize: 18, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.7 }}>
-          15 Design-Vorschläge für die neue Vereinswebsite. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
+          15 Design-Vorschläge für die neue Vereinswebsite des Sport Club Unna. Klickt auf ein Design, um die vollständige Vorschau zu sehen.
         </p>
       </section>
 
@@ -192,7 +192,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer style={{ borderTop: "1px solid #1f2937", padding: "32px 24px", textAlign: "center", color: "#4b5563", fontSize: 14 }}>
-        TuS Hemmerde 1919 e.V. · Sportplatz Hemmerde, 59174 Unna · info@tushemmerde.de
+        Sport Club Unna · Stralsunder Straße 63, 59427 Unna · info@scunna.de
       </footer>
 
       <style>{`

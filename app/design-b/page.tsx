@@ -2,37 +2,37 @@
 import Link from "next/link";
 
 const sports = [
-  { name: "Fußball", emoji: "⚽", members: "180+", color: "#dc2626" },
-  { name: "Volleyball", emoji: "🏐", members: "60+", color: "#b91c1c" },
-  { name: "Basketball", emoji: "🏀", members: "45+", color: "#ef4444" },
-  { name: "Turnen", emoji: "🤸", members: "80+", color: "#991b1b" },
-  { name: "Kinderturnen", emoji: "🧒", members: "55+", color: "#dc2626" },
-  { name: "Zumba", emoji: "💃", members: "55+", color: "#b91c1c" },
+  { name: "Badminton", emoji: "🏸", members: "50+", color: "#dc2626" },
+  { name: "Yoga", emoji: "🧘", members: "30+", color: "#b91c1c" },
+  { name: "Wassergymnastik", emoji: "🏊", members: "40+", color: "#ef4444" },
+  { name: "Pilates", emoji: "🤸", members: "25+", color: "#991b1b" },
+  { name: "Skifreizeiten", emoji: "⛷️", members: "80+", color: "#dc2626" },
+  { name: "Sommersport", emoji: "🚴", members: "40+", color: "#b91c1c" },
 ];
 
 const news = [
   {
-    date: "28. März 2026",
+    date: "1. April 2026",
     tag: "Verein",
     tagColor: "#dc2626",
-    title: "Jahreshauptversammlung 2026",
-    excerpt: "Am 15. April findet unsere diesjährige Hauptversammlung statt. Alle Mitglieder sind herzlich eingeladen. Auf der Agenda stehen Neuwahlen und die Vorstellung unserer Zukunftspläne für den Verein.",
+    title: "Sport Club Unna gegründet! 🎉",
+    excerpt: "Ski-Club Unna und Badminton-Sport-Club Unna fusionieren zum Sport Club Unna. Ein neues Kapitel für den Vereinssport in Unna — mit gemeinsamer Leidenschaft seit 1963.",
     featured: true,
   },
   {
-    date: "15. März 2026",
-    tag: "Training",
+    date: "Oktober 2025",
+    tag: "Sport",
     tagColor: "#b91c1c",
-    title: "Neue Trainingszeiten ab April",
-    excerpt: "Ab dem 1. April gelten neue Trainingszeiten für mehrere Abteilungen. Besonders die Fußball-Jugend ist betroffen.",
+    title: "Neue Yoga-Trainerin: Katrin Koning",
+    excerpt: "Katrin Koning übernimmt seit Herbst 2025 den beliebten Yoga-Kurs. Jeden Donnerstag ab 18:00 Uhr im PWG.",
     featured: false,
   },
   {
-    date: "2. März 2026",
-    tag: "Willkommen",
+    date: "Januar 2026",
+    tag: "Freizeit",
     tagColor: "#991b1b",
-    title: "Willkommen beim TuS Hemmerde",
-    excerpt: "Wir freuen uns über 23 neue Mitglieder in diesem Quartal! Besonders im Bereich Kinderturnen.",
+    title: "Skifreizeit 2026: Ein voller Erfolg! ⛷️",
+    excerpt: "79 Teilnehmer bei Familien- und Bus-Skifreizeit in Zell am See und St. Ulrich. Anmeldungen für 2027 sind bereits offen.",
     featured: false,
   },
 ];
@@ -45,10 +45,10 @@ export default function DesignB() {
       <nav style={{ backgroundColor: "#fff", borderBottom: "2px solid #fee2e2", position: "sticky", top: 0, zIndex: 50, boxShadow: "0 2px 20px rgba(0,0,0,0.05)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginRight: "auto" }}>
-            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 48, height: 48, objectFit: "contain" }} />
+            <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 48, height: 48, objectFit: "contain" }} />
             <div>
-              <div style={{ fontWeight: 800, fontSize: 17, color: "#1c1917", lineHeight: 1.1 }}>TuS Hemmerde</div>
-              <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600 }}>1919 e.V. · Unna-Hemmerde</div>
+              <div style={{ fontWeight: 800, fontSize: 17, color: "#1c1917", lineHeight: 1.1 }}>Sport Club Unna</div>
+              <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600 }}>Gegründet 1963 · Unna</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: 28, fontSize: 15, fontWeight: 600 }}>
@@ -76,7 +76,7 @@ export default function DesignB() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "#fff", border: "2px solid #fecdd3", padding: "8px 20px", borderRadius: 99, marginBottom: 28, fontSize: 14, fontWeight: 600, color: "#991b1b", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
-              🏆 Seit über 100 Jahren in Hemmerde
+              🏋️ Sport & Gemeinschaft seit 1963
             </div>
             <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.15, color: "#1c1917", marginBottom: 24, letterSpacing: "-0.02em" }}>
               Dein Zuhause<br />
@@ -84,7 +84,7 @@ export default function DesignB() {
               <span style={{ color: "#dc2626" }}>Gemeinschaft</span>
             </h1>
             <p style={{ fontSize: 18, color: "#78716c", lineHeight: 1.75, marginBottom: 40, maxWidth: 440 }}>
-              Beim TuS Hemmerde findet jeder seinen Platz. 10 Sportarten, über 500 Mitglieder und jede Menge Spaß warten auf dich! 😊
+              Beim Sport Club Unna findet jeder seinen Platz. Badminton, Yoga, Skifreizeiten und mehr warten auf dich! 😊
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "#dc2626", color: "#fff", fontWeight: 700, fontSize: 16, padding: "16px 32px", borderRadius: 99, textDecoration: "none", boxShadow: "0 8px 24px rgba(220,38,38,0.35)" }}>
@@ -99,9 +99,9 @@ export default function DesignB() {
           {/* Photo placeholder */}
           <div style={{ position: "relative" }}>
             <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.15)", background: "linear-gradient(135deg, #dc2626 0%, #991b1b 40%, #7f1d1d 70%, #450a0a 100%)", height: 480, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-              <div style={{ fontSize: 72 }}>⚽🏐🏀</div>
-              <div style={{ color: "#fff", fontWeight: 700, fontSize: 18, textAlign: "center", opacity: 0.9 }}>TuS Hemmerde<br />in Aktion</div>
-              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>Rot-Weiß seit 1919</div>
+              <div style={{ fontSize: 72 }}>🏸⛷️🧘</div>
+              <div style={{ color: "#fff", fontWeight: 700, fontSize: 18, textAlign: "center", opacity: 0.9 }}>Sport Club Unna<br />beim Sport</div>
+              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>Rot-Weiß seit 1963</div>
             </div>
             <div style={{ position: "absolute", bottom: -20, left: -20, backgroundColor: "#fff", borderRadius: 20, padding: "20px 24px", boxShadow: "0 12px 32px rgba(0,0,0,0.12)", border: "2px solid #fecdd3" }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: "#dc2626", lineHeight: 1 }}>500+</div>
@@ -109,7 +109,7 @@ export default function DesignB() {
             </div>
             <div style={{ position: "absolute", top: -16, right: -16, backgroundColor: "#fff", borderRadius: 16, padding: "14px 18px", boxShadow: "0 8px 24px rgba(0,0,0,0.1)", border: "2px solid #fecdd3" }}>
               <div style={{ fontSize: 22 }}>🏆</div>
-              <div style={{ fontSize: 11, color: "#78716c", fontWeight: 600, marginTop: 4 }}>Seit 1919</div>
+              <div style={{ fontSize: 11, color: "#78716c", fontWeight: 600, marginTop: 4 }}>Seit 1963</div>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function DesignB() {
       <div style={{ backgroundColor: "#fff", borderTop: "2px solid #fee2e2", borderBottom: "2px solid #fee2e2", boxShadow: "0 4px 12px rgba(0,0,0,0.04)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
-            { value: "1919", label: "Gegründet", emoji: "📅" },
+            { value: "1963", label: "Gegründet", emoji: "📅" },
             { value: "500+", label: "Mitglieder", emoji: "👥" },
             { value: "10", label: "Sportarten", emoji: "🏅" },
           ].map((stat, i) => (
@@ -143,7 +143,7 @@ export default function DesignB() {
               Für jeden ist etwas dabei! 🎯
             </h2>
             <p style={{ fontSize: 17, color: "#78716c", maxWidth: 480, margin: "0 auto" }}>
-              Von Fußball bis Zumba — entdecke unser vielfältiges Angebot für Jung und Alt.
+              Von Badminton bis Skifahren — entdecke unser vielfältiges Angebot für Jung und Alt.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
@@ -230,7 +230,7 @@ export default function DesignB() {
                 Werde Teil unserer Familie!
               </h2>
               <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", maxWidth: 520, margin: "0 auto 40px", lineHeight: 1.7 }}>
-                Beim TuS Hemmerde bist du nicht nur Sportler — du bist Teil einer lebendigen Gemeinschaft. Wir freuen uns auf dich! 😊
+                Beim Sport Club Unna bist du nicht nur Sportler — du bist Teil einer lebendigen Gemeinschaft. Wir freuen uns auf dich! 😊
               </p>
               <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
                 <a href="#" style={{ backgroundColor: "#fff", color: "#dc2626", fontWeight: 800, fontSize: 16, padding: "16px 40px", borderRadius: 99, textDecoration: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}>
@@ -253,18 +253,18 @@ export default function DesignB() {
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
                 <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: "#fff", fontWeight: 900 }}>T</div>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: 17, color: "#1c1917" }}>TuS Hemmerde</div>
-                  <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600 }}>1919 e.V.</div>
+                  <div style={{ fontWeight: 800, fontSize: 17, color: "#1c1917" }}>Sport Club Unna</div>
+                  <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600 }}>Gegründet 1963</div>
                 </div>
               </div>
               <p style={{ color: "#a8a29e", fontSize: 15, lineHeight: 1.7, maxWidth: 260 }}>
-                Sport, Gemeinschaft und Tradition seit über 100 Jahren in Unna-Hemmerde. ❤️
+                Sport, Gemeinschaft und Tradition seit 1963 in Unna. ❤️
               </p>
             </div>
             {[
-              { title: "Sport", links: ["⚽ Fußball", "🏐 Volleyball", "🏀 Basketball", "🤸 Turnen", "💃 Zumba"] },
+              { title: "Sport", links: ["🏸 Badminton", "🧘 Yoga", "🏊 Wassergymnastik", "🤸 Pilates", "⛷️ Skifreizeiten"] },
               { title: "Verein", links: ["Über uns", "Geschichte", "Vorstand", "Mitglied werden"] },
-              { title: "Kontakt", links: ["📍 Sportplatz Hemmerde", "59174 Unna", "✉️ info@tushemmerde.de"] },
+              { title: "Kontakt", links: ["📍 Stralsunder Straße 63", "59427 Unna", "✉️ info@scunna.de"] },
             ].map((col) => (
               <div key={col.title}>
                 <div style={{ fontWeight: 700, color: "#dc2626", fontSize: 14, marginBottom: 16 }}>{col.title}</div>
@@ -275,7 +275,7 @@ export default function DesignB() {
             ))}
           </div>
           <div style={{ borderTop: "2px solid #fecdd3", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 13, color: "#a8a29e" }}>© 2026 TuS Hemmerde 1919 e.V. · Mit ❤️ aus Hemmerde</span>
+            <span style={{ fontSize: 13, color: "#a8a29e" }}>© 2026 Sport Club Unna · Mit ❤️ aus Unna</span>
             <Link href="/" style={{ fontSize: 13, color: "#dc2626", textDecoration: "none", fontWeight: 600 }}>← Zurück zur Designauswahl</Link>
           </div>
         </div>

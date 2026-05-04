@@ -2,32 +2,32 @@
 import Link from "next/link";
 
 const sports = [
-  { name: "Fußball", icon: "⚽", members: "180+", desc: "Jugend & Erwachsene" },
-  { name: "Volleyball", icon: "🏐", members: "60+", desc: "Mixed & Damen" },
-  { name: "Basketball", icon: "🏀", members: "45+", desc: "Training & Liga" },
-  { name: "Turnen", icon: "🤸", members: "80+", desc: "Alle Altersgruppen" },
-  { name: "Leichtathletik", icon: "🏃", members: "35+", desc: "Laufen & Feld" },
-  { name: "Zumba", icon: "💃", members: "55+", desc: "Fitness & Spaß" },
+  { name: "Badminton", icon: "🏸", members: "50+", desc: "Jugend, Hobby & Liga" },
+  { name: "Yoga", icon: "🧘", members: "30+", desc: "Do 18:00 Uhr · PWG Unna" },
+  { name: "Wassergymnastik", icon: "🏊", members: "40+", desc: "Do · Bergenkamp" },
+  { name: "Pilates", icon: "🤸", members: "25+", desc: "Fr 18:30–19:30 · Falkschule" },
+  { name: "Skifreizeiten", icon: "⛷️", members: "80+", desc: "Zell am See & Dolomiti" },
+  { name: "Sommersport", icon: "🚴", members: "40+", desc: "Mountainbiken & Wandern" },
 ];
 
 const news = [
   {
-    date: "28. März 2026",
+    date: "1. April 2026",
     category: "VEREIN",
+    title: "Sport Club Unna gegründet!",
+    excerpt: "Ski-Club Unna und Badminton-Sport-Club Unna fusionieren zum Sport Club Unna. Ein neues Kapitel für den Vereinssport in Unna beginnt — mit langer Tradition seit 1963.",
+  },
+  {
+    date: "17. März 2026",
+    category: "EINLADUNG",
     title: "Jahreshauptversammlung 2026",
-    excerpt: "Am 15. April findet unsere diesjährige Hauptversammlung statt. Alle Mitglieder sind herzlich eingeladen. Auf der Agenda stehen Neuwahlen und die Vorstellung unserer Zukunftspläne.",
+    excerpt: "Die JHV findet am 17.03.2026 um 18 Uhr in der Neuen Schmiede statt. Auf der Tagesordnung steht die Fusion und die Wahl des neuen Vorstands.",
   },
   {
-    date: "15. März 2026",
-    category: "TRAINING",
-    title: "Neue Trainingszeiten ab April",
-    excerpt: "Ab dem 1. April gelten neue Trainingszeiten für mehrere Abteilungen. Besonders die Fußball-Jugend und die Zumba-Gruppe sind von den Änderungen betroffen.",
-  },
-  {
-    date: "2. März 2026",
-    category: "WILLKOMMEN",
-    title: "Willkommen beim TuS Hemmerde",
-    excerpt: "Wir freuen uns über 23 neue Mitglieder in diesem Quartal! Besonders im Bereich Kinderturnen und Workout verzeichnen wir starkes Wachstum.",
+    date: "Oktober 2025",
+    category: "SPORT",
+    title: "Neue Yoga-Trainerin: Katrin Koning",
+    excerpt: "Seit Herbst 2025 leitet Katrin Koning unsere Yoga-Kurse. Jeden Donnerstag ab 18:00 Uhr in der Dreifachhalle des PWG — Einsteiger herzlich willkommen!",
   },
 ];
 
@@ -42,10 +42,10 @@ export default function DesignA() {
       <nav style={{ position: "sticky", top: 0, zIndex: 50, borderBottom: "1px solid rgba(255,255,255,0.06)", backdropFilter: "blur(20px)", backgroundColor: "rgba(15,23,42,0.9)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginRight: "auto" }}>
-            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 44, height: 44, objectFit: "contain", filter: "drop-shadow(0 0 12px rgba(220,38,38,0.6))" }} />
+            <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 44, height: 44, objectFit: "contain", filter: "drop-shadow(0 0 12px rgba(220,38,38,0.6))" }} />
             <div>
-              <div style={{ fontWeight: 900, fontSize: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>TuS Hemmerde</div>
-              <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.1em" }}>1919 E.V.</div>
+              <div style={{ fontWeight: 900, fontSize: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>Sport Club Unna</div>
+              <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.1em" }}>Gegründet 1963</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: 32, fontSize: 14, fontWeight: 700, letterSpacing: "0.05em" }}>
@@ -69,7 +69,7 @@ export default function DesignA() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px", position: "relative", zIndex: 10 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1px solid rgba(220,38,38,0.35)", padding: "6px 16px", borderRadius: 999, marginBottom: 32, fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: "#f87171", backgroundColor: "rgba(220,38,38,0.06)" }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#f87171", display: "inline-block", boxShadow: "0 0 8px #f87171" }}></span>
-            GEGRÜNDET 1919 · UNNA-HEMMERDE · NRW
+            GEGRÜNDET 1963 · UNNA · NRW
           </div>
           <h1 style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)", fontWeight: 900, lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: 32, textTransform: "uppercase" }}>
             DEIN<br />
@@ -78,7 +78,7 @@ export default function DesignA() {
             <span style={{ WebkitTextStroke: "2px #dc2626", color: "transparent" }}>STÄRKE.</span>
           </h1>
           <p style={{ fontSize: 18, color: "#94a3b8", maxWidth: 480, lineHeight: 1.7, marginBottom: 48, fontFamily: "system-ui, sans-serif", fontWeight: 400 }}>
-            Sport verbindet. Seit über 100 Jahren bringen wir Menschen in Hemmerde zusammen — für Fitness, Teamgeist und Gemeinschaft.
+            Sport verbindet. Seit 1963 bringen wir Menschen in Hemmerde zusammen — für Fitness, Teamgeist und Gemeinschaft.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "#dc2626", color: "#fff", fontWeight: 900, fontSize: 15, padding: "16px 32px", borderRadius: 8, textDecoration: "none", letterSpacing: "0.05em", boxShadow: "0 0 36px rgba(220,38,38,0.4)", transition: "box-shadow 0.2s" }}>
@@ -89,16 +89,16 @@ export default function DesignA() {
             </a>
           </div>
         </div>
-        <div style={{ position: "absolute", right: "5%", top: "50%", transform: "translateY(-50%)", fontSize: "clamp(8rem, 20vw, 18rem)", fontWeight: 900, color: "rgba(220,38,38,0.05)", lineHeight: 1, userSelect: "none", letterSpacing: "-0.05em" }}>1919</div>
+        <div style={{ position: "absolute", right: "5%", top: "50%", transform: "translateY(-50%)", fontSize: "clamp(8rem, 20vw, 18rem)", fontWeight: 900, color: "rgba(220,38,38,0.05)", lineHeight: 1, userSelect: "none", letterSpacing: "-0.05em" }}>1963</div>
       </section>
 
       {/* STATS BAR */}
       <div style={{ backgroundColor: "#0f172a", borderTop: "1px solid rgba(220,38,38,0.2)", borderBottom: "1px solid rgba(220,38,38,0.2)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
-            { value: "1919", label: "Gegründet" },
-            { value: "500+", label: "Mitglieder" },
-            { value: "10", label: "Sportarten" },
+            { value: "1963", label: "Gegründet" },
+            { value: "2026", label: "Fusion SC Unna" },
+            { value: "6+", label: "Sportangebote" },
           ].map((stat, i) => (
             <div key={stat.label} style={{ padding: "32px 24px", textAlign: "center", borderRight: i < 2 ? "1px solid rgba(220,38,38,0.12)" : "none" }}>
               <div style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#f87171", lineHeight: 1, letterSpacing: "-0.04em", textShadow: "0 0 30px rgba(220,38,38,0.35)" }}>{stat.value}</div>
@@ -175,7 +175,7 @@ export default function DesignA() {
                 WERDE TEIL<br />DES VEREINS
               </h2>
               <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", fontFamily: "system-ui, sans-serif", fontWeight: 400, maxWidth: 480, margin: "0 auto 40px" }}>
-                Über 500 Mitglieder. 10 Sportarten. Eine Gemeinschaft. Der TuS Hemmerde ist dein Zuhause.
+                Über 500 Mitglieder. 10 Sportarten. Eine Gemeinschaft. Der Sport Club Unna ist dein Zuhause.
               </p>
               <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
                 <a href="#" style={{ backgroundColor: "#fff", color: "#dc2626", fontWeight: 900, fontSize: 15, padding: "16px 40px", borderRadius: 8, textDecoration: "none", letterSpacing: "0.05em" }}>JETZT ANMELDEN</a>
@@ -194,18 +194,18 @@ export default function DesignA() {
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
                 <div style={{ width: 44, height: 44, borderRadius: 10, background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 20, color: "#fff" }}>T</div>
                 <div>
-                  <div style={{ fontWeight: 900, fontSize: 16 }}>TuS Hemmerde</div>
-                  <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.1em" }}>1919 E.V.</div>
+                  <div style={{ fontWeight: 900, fontSize: 16 }}>Sport Club Unna</div>
+                  <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.1em" }}>Gegründet 1963</div>
                 </div>
               </div>
               <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.7, fontFamily: "system-ui, sans-serif", maxWidth: 260 }}>
-                Sport, Gemeinschaft und Tradition seit über 100 Jahren in Unna-Hemmerde.
+                Sport, Gemeinschaft und Tradition seit 1963 in Unna.
               </p>
             </div>
             {[
               { title: "SPORT", links: ["Fußball", "Volleyball", "Basketball", "Turnen", "Zumba", "Mehr..."] },
               { title: "VEREIN", links: ["Über uns", "Geschichte", "Vorstand", "Mitglied werden"] },
-              { title: "KONTAKT", links: ["Sportplatz Hemmerde", "59174 Unna", "info@tushemmerde.de"] },
+              { title: "KONTAKT", links: ["Stralsunder Straße 63", "59427 Unna", "info@scunna.de"] },
             ].map((col) => (
               <div key={col.title}>
                 <div style={{ fontSize: 11, color: "#f87171", fontWeight: 700, letterSpacing: "0.12em", marginBottom: 16 }}>{col.title}</div>
@@ -216,7 +216,7 @@ export default function DesignA() {
             ))}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 13, color: "#334155", fontFamily: "system-ui, sans-serif" }}>© 2026 TuS Hemmerde 1919 e.V. Alle Rechte vorbehalten.</span>
+            <span style={{ fontSize: 13, color: "#334155", fontFamily: "system-ui, sans-serif" }}>© 2026 Sport Club Unna Alle Rechte vorbehalten.</span>
             <Link href="/" style={{ fontSize: 13, color: "#475569", textDecoration: "none" }}>← Zurück zur Designauswahl</Link>
           </div>
         </div>

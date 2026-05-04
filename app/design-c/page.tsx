@@ -2,12 +2,12 @@
 import Link from "next/link";
 
 const sports = [
-  { name: "Fußball", sub: "Jugend & Erwachsene", members: "180+" },
-  { name: "Volleyball", sub: "Mixed & Damen", members: "60+" },
-  { name: "Basketball", sub: "Training & Liga", members: "45+" },
-  { name: "Turnen", sub: "Alle Altersgruppen", members: "80+" },
-  { name: "Leichtathletik", sub: "Laufen & Feld", members: "35+" },
-  { name: "Fitness", sub: "Workout & Calisthenics", members: "45+" },
+  { name: "Badminton", sub: "Mo & Mi · Sporthalle Herder-Str.", members: "50+" },
+  { name: "Yoga", sub: "Do 18:00 Uhr · PWG Unna", members: "30+" },
+  { name: "Wassergymnastik", sub: "Do · Schwimmsporthalle Bergenkamp", members: "40+" },
+  { name: "Pilates", sub: "Fr 18:30–19:30 · Falkschule", members: "25+" },
+  { name: "Skifreizeiten", sub: "Zell am See & Dolomiti Superski", members: "80+" },
+  { name: "Sommersportfreizeit", sub: "Mountainbiken & Wandern", members: "40+" },
 ];
 
 const news = [
@@ -21,13 +21,13 @@ const news = [
     date: "15. März 2026",
     category: "Training",
     title: "Neue Trainingszeiten ab April",
-    excerpt: "Ab dem 1. April gelten neue Trainingszeiten für mehrere Abteilungen. Besonders die Fußball-Jugend und die Zumba-Gruppe sind von den Änderungen betroffen.",
+    excerpt: "Ab dem 1. April gelten neue Trainingszeiten für mehrere Abteilungen. Badminton-Kurse starten ab April montags 30 Minuten früher.",
   },
   {
     date: "2. März 2026",
     category: "Mitglieder",
-    title: "Willkommen beim TuS Hemmerde",
-    excerpt: "Wir freuen uns über 23 neue Mitglieder in diesem Quartal! Besonders im Bereich Kinderturnen verzeichnen wir starkes Wachstum.",
+    title: "Willkommen beim Sport Club Unna",
+    excerpt: "Wir freuen uns über 18 neue Mitglieder seit der Fusion! Besonders der Badminton-Bereich wächst.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function DesignC() {
       {/* TOP BAR */}
       <div style={{ backgroundColor: "#dc2626", padding: "8px 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ color: "rgba(255,255,255,0.85)", fontSize: 12, fontFamily: "'Arial', sans-serif" }}>📍 Sportplatz Hemmerde, 59174 Unna  ·  ✉️ info@tushemmerde.de</span>
-          <span style={{ color: "#fff", fontSize: 12, fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.08em" }}>GEGRÜNDET 1919</span>
+          <span style={{ color: "rgba(255,255,255,0.85)", fontSize: 12, fontFamily: "'Arial', sans-serif" }}>📍 Stralsunder Straße 63, 59427 Unna  ·  ✉️ info@scunna.de</span>
+          <span style={{ color: "#fff", fontSize: 12, fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.08em" }}>GEGRÜNDET 1963</span>
         </div>
       </div>
 
@@ -49,10 +49,10 @@ export default function DesignC() {
       <nav style={{ backgroundColor: "#fff", borderBottom: "3px solid #dc2626", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginRight: "auto" }}>
-            <img src="/tus-logo.png" alt="TuS Hemmerde Logo" style={{ width: 52, height: 52, objectFit: "contain" }} />
+            <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 52, height: 52, objectFit: "contain" }} />
             <div>
-              <div style={{ fontWeight: 700, fontSize: 18, color: "#1e3a8a", letterSpacing: "-0.01em", lineHeight: 1.1 }}>TuS Hemmerde 1919 e.V.</div>
-              <div style={{ fontSize: 12, color: "#64748b", fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>Turn- und Sportverein · Unna-Hemmerde</div>
+              <div style={{ fontWeight: 700, fontSize: 18, color: "#1e3a8a", letterSpacing: "-0.01em", lineHeight: 1.1 }}>Sport Club Unna</div>
+              <div style={{ fontSize: 12, color: "#64748b", fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>Turn- und Sportverein · Unna</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: 0, fontFamily: "'Arial', sans-serif" }}>
@@ -78,8 +78,8 @@ export default function DesignC() {
           {/* Club crest */}
           <div style={{ width: 96, height: 96, borderRadius: 16, background: "rgba(255,255,255,0.12)", border: "3px solid #fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 40, backdropFilter: "blur(10px)" }}>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 24, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>TuS</div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>1919</div>
+              <div style={{ fontSize: 24, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>SC</div>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>1963</div>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ export default function DesignC() {
             <span style={{ color: "#bfdbfe" }}>Leidenschaft.</span>
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, fontFamily: "'Arial', sans-serif", fontWeight: 400, maxWidth: 360, marginBottom: 40 }}>
-            Seit 1919 verbindet der TuS Hemmerde Menschen im Herzen von Unna. Mit 10 Sportarten und über 500 Mitgliedern sind wir Ihr Sportverein in der Region.
+            Seit 1963 verbindet der Sport Club Unna Menschen im Herzen von Unna. Mit Badminton, Yoga, Skifreizeiten und mehr sind wir Ihr Sportverein in Unna.
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <a href="#" style={{ backgroundColor: "#1e3a8a", color: "#fff", fontWeight: 700, fontSize: 14, padding: "14px 28px", borderRadius: 4, textDecoration: "none", fontFamily: "'Arial', sans-serif", letterSpacing: "0.03em", boxShadow: "0 4px 12px rgba(30,58,138,0.4)" }}>
@@ -117,10 +117,10 @@ export default function DesignC() {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {[
-              { icon: "⚽", label: "10 Sportarten", sub: "Von Fußball bis Zumba" },
-              { icon: "👥", label: "500+ Mitglieder", sub: "Aktive Vereinsfamilie" },
-              { icon: "🏆", label: "Seit 1919", sub: "Über 100 Jahre Tradition" },
-              { icon: "📍", label: "Unna-Hemmerde", sub: "Im Herzen von NRW" },
+              { icon: "🏸", label: "6+ Sportangebote", sub: "Von Badminton bis Skifahren" },
+              { icon: "📅", label: "Seit 1963", sub: "Über 60 Jahre Vereinsgeschichte" },
+              { icon: "⛷️", label: "Skifreizeiten", sub: "Zell am See & Dolomiti" },
+              { icon: "📍", label: "Stralsunder Str. 63", sub: "59427 Unna" },
             ].map((f) => (
               <div key={f.label} style={{ padding: 20, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0", display: "flex", gap: 14, alignItems: "flex-start" }}>
                 <div style={{ fontSize: 24, flexShrink: 0 }}>{f.icon}</div>
@@ -138,9 +138,9 @@ export default function DesignC() {
       <div style={{ backgroundColor: "#1e3a8a" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
-            { value: "Gegründet 1919", label: "Über 100 Jahre Vereinsgeschichte" },
-            { value: "500+ Mitglieder", label: "Aktive Sporttreibende in Hemmerde" },
-            { value: "10 Sportarten", label: "Vielfältiges Angebot für alle" },
+            { value: "Gegründet 1963", label: "Über 60 Jahre Vereinsgeschichte" },
+            { value: "Aktive Mitglieder", label: "Badminton, Yoga, Ski & mehr" },
+            { value: "6+ Sportangebote", label: "Ganzjährig aktiv in Unna" },
           ].map((stat, i) => (
             <div key={stat.value} style={{ padding: "32px 24px", textAlign: "center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
               <div style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700, color: "#fff", letterSpacing: "-0.01em", marginBottom: 6 }}>{stat.value}</div>
@@ -220,13 +220,13 @@ export default function DesignC() {
           <div>
             <div style={{ width: 48, height: 4, backgroundColor: "#dc2626", borderRadius: 2, marginBottom: 20 }}></div>
             <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 20, letterSpacing: "-0.01em" }}>
-              Werden Sie Mitglied des TuS Hemmerde 1919 e.V.
+              Werden Sie Mitglied des Sport Club Unna
             </h2>
             <p style={{ fontSize: 17, color: "#93c5fd", fontFamily: "'Arial', sans-serif", lineHeight: 1.75, marginBottom: 36 }}>
-              Treten Sie einer aktiven Gemeinschaft bei, die seit über 100 Jahren Sport und Zusammenhalt in Unna-Hemmerde lebt. Für Einzelpersonen, Familien und Firmen.
+              Treten Sie einer aktiven Gemeinschaft bei, die seit 1963 Sport und Zusammenhalt in Unna lebt. Für Einzelpersonen, Familien und Firmen.
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 40px" }}>
-              {["10 Sportarten zur Auswahl", "Über 500 aktive Mitglieder", "Familienmitgliedschaft möglich", "Professionelle Trainer"].map((item) => (
+              {["Badminton, Yoga, Skifahren & mehr", "Aktive Vereinsgemeinschaft", "Familien- & Einzelmitgliedschaft", "Erfahrene Trainerinnen & Trainer"].map((item) => (
                 <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, color: "#bfdbfe", fontFamily: "'Arial', sans-serif", fontSize: 15, marginBottom: 12 }}>
                   <span style={{ color: "#dc2626", fontWeight: 700, fontSize: 18, backgroundColor: "#fff", borderRadius: "50%", width: 22, height: 22, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>✓</span>
                   {item}
@@ -256,7 +256,7 @@ export default function DesignC() {
               Anfrage senden
             </div>
             <div style={{ textAlign: "center", fontSize: 12, color: "#94a3b8", fontFamily: "'Arial', sans-serif", marginTop: 16 }}>
-              Oder schreiben Sie uns: info@tushemmerde.de
+              Oder schreiben Sie uns: info@scunna.de
             </div>
           </div>
         </div>
@@ -270,23 +270,23 @@ export default function DesignC() {
               <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
                 <div style={{ width: 52, height: 52, borderRadius: 8, background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #1e3a8a" }}>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: 16, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>TuS</div>
-                    <div style={{ fontSize: 8, color: "#bfdbfe", fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>1919</div>
+                    <div style={{ fontSize: 16, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>SC</div>
+                    <div style={{ fontSize: 8, color: "#bfdbfe", fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>1963</div>
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 16, color: "#fff" }}>TuS Hemmerde 1919 e.V.</div>
+                  <div style={{ fontWeight: 700, fontSize: 16, color: "#fff" }}>Sport Club Unna</div>
                   <div style={{ fontSize: 12, color: "#475569", fontFamily: "'Arial', sans-serif" }}>Turn- und Sportverein</div>
                 </div>
               </div>
               <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.7, fontFamily: "'Arial', sans-serif", maxWidth: 260 }}>
-                Tradition, Sport und Gemeinschaft seit über 100 Jahren in Unna-Hemmerde.
+                Tradition, Sport und Gemeinschaft seit 1963 in Unna.
               </p>
             </div>
             {[
-              { title: "Sport", links: ["Fußball", "Volleyball", "Basketball", "Turnen", "Leichtathletik", "Mehr..."] },
+              { title: "Sport", links: ["Badminton", "Yoga", "Wassergymnastik", "Pilates", "Skifreizeiten"] },
               { title: "Verein", links: ["Über uns", "Geschichte", "Vorstand", "Satzung", "Mitglied werden"] },
-              { title: "Kontakt", links: ["Sportplatz Hemmerde", "59174 Unna", "info@tushemmerde.de"] },
+              { title: "Kontakt", links: ["Stralsunder Straße 63", "59427 Unna", "info@scunna.de"] },
             ].map((col) => (
               <div key={col.title}>
                 <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Arial', sans-serif", marginBottom: 16 }}>{col.title}</div>
@@ -297,7 +297,7 @@ export default function DesignC() {
             ))}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 13, color: "#334155", fontFamily: "'Arial', sans-serif" }}>© 2026 TuS Hemmerde 1919 e.V. · Alle Rechte vorbehalten.</span>
+            <span style={{ fontSize: 13, color: "#334155", fontFamily: "'Arial', sans-serif" }}>© 2026 Sport Club Unna · Alle Rechte vorbehalten.</span>
             <Link href="/" style={{ fontSize: 13, color: "#475569", textDecoration: "none", fontFamily: "'Arial', sans-serif" }}>← Zurück zur Designauswahl</Link>
           </div>
         </div>

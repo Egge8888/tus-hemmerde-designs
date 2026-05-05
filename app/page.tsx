@@ -117,10 +117,10 @@ const designs = [
   {
     href: "/design-c",
     label: "Design 15",
-    name: "Tradition trifft Moderne",
-    tagline: "Klassisch · Professionell · Seriös",
-    description: "Rot und Dunkelblau, strukturiertes Zeitungsgrid und professionelles Erscheinungsbild.",
-    preview: "bg-gradient-to-br from-slate-900 via-slate-800 to-red-950",
+    name: "SC Unna – Live-Design",
+    tagline: "Roter Header · Dropdown-Nav · Vollständig",
+    description: "Vollständige Website mit rotem Sticky-Header, Dropdown-Navigation, Sportarten-Grid, News und Footer — das ausgearbeitete Design aus der Live-Demo.",
+    preview: "bg-gradient-to-br from-red-700 via-red-800 to-slate-900",
   },
 ];
 

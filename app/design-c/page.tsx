@@ -1,311 +1,493 @@
 "use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const navLinks = [
+  { label: "Home", href: "#" },
+  { label: "Aktuelles", href: "#aktuelles" },
+  {
+    label: "Sport",
+    href: "#sport",
+    children: [
+      { label: "Badminton", href: "#sport" },
+      { label: "Yoga", href: "#sport" },
+      { label: "Wassergymnastik", href: "#sport" },
+      { label: "Pilates", href: "#sport" },
+      { label: "Skifreizeiten", href: "#sport" },
+      { label: "Sommersport", href: "#sport" },
+    ],
+  },
+  {
+    label: "Verein",
+    href: "#verein",
+    children: [
+      { label: "Über uns", href: "#verein" },
+      { label: "Fusion 2026", href: "#verein" },
+      { label: "Vorstand", href: "#verein" },
+    ],
+  },
+  { label: "Kontakt", href: "#kontakt" },
+];
 
 const sports = [
-  { name: "Badminton", sub: "Mo & Mi · Sporthalle Herder-Str.", members: "50+" },
-  { name: "Yoga", sub: "Do 18:00 Uhr · PWG Unna", members: "30+" },
-  { name: "Wassergymnastik", sub: "Do · Schwimmsporthalle Bergenkamp", members: "40+" },
-  { name: "Pilates", sub: "Fr 18:30–19:30 · Falkschule", members: "25+" },
-  { name: "Skifreizeiten", sub: "Zell am See & Dolomiti Superski", members: "80+" },
-  { name: "Sommersportfreizeit", sub: "Mountainbiken & Wandern", members: "40+" },
+  {
+    icon: "🏸",
+    label: "Badminton",
+    sub: "Mo & Mi · Sporthalle Herder-Str.",
+    desc: "Für alle Altersklassen — Einsteiger bis Ligaspieler. Flexible Hallenzeiten in Unna.",
+    color: "from-yellow-900 to-slate-950",
+  },
+  {
+    icon: "🧘",
+    label: "Yoga",
+    sub: "Do 18:00 Uhr · PWG Unna",
+    desc: "Kursleitung: Katrin Koning. Jeden Donnerstag ab 18 Uhr in der Dreifachhalle des PWG.",
+    color: "from-purple-900 to-slate-950",
+  },
+  {
+    icon: "🏊",
+    label: "Wassergymnastik",
+    sub: "Do · Schwimmsporthalle Bergenkamp",
+    desc: "Sanfte Bewegung im Wasser für Gesundheit und Fitness. Offen für alle Altersgruppen.",
+    color: "from-blue-900 to-slate-950",
+  },
+  {
+    icon: "🤸",
+    label: "Pilates",
+    sub: "Fr 18:30–19:30 · Falkschule",
+    desc: "Gezieltes Körpertraining für Kraft und Flexibilität. Kleine Gruppen, große Wirkung.",
+    color: "from-pink-900 to-slate-950",
+  },
+  {
+    icon: "⛷️",
+    label: "Skifreizeiten",
+    sub: "Zell am See · Dolomiti Superski",
+    desc: "Jährliche Vereinsreisen — Ski-Tradition seit der Gründung des Ski-Clubs Unna 1963.",
+    color: "from-sky-900 to-slate-950",
+  },
+  {
+    icon: "🚴",
+    label: "Sommersport",
+    sub: "Mountainbiken · Wandern",
+    desc: "Outdoor-Aktivitäten rund um Unna — Radtouren und Wanderungen den ganzen Sommer.",
+    color: "from-green-900 to-slate-950",
+  },
 ];
 
 const news = [
   {
-    date: "28. März 2026",
-    category: "Vereinsnachrichten",
+    date: "1. April 2026",
+    category: "VEREIN",
+    title: "Sport Club Unna gegründet!",
+    excerpt: "Ski-Club Unna und Badminton-Sport-Club Unna fusionieren zum Sport Club Unna. Ein neues Kapitel für den Vereinssport in Unna beginnt — mit langer Tradition seit 1963.",
+  },
+  {
+    date: "17. März 2026",
+    category: "EINLADUNG",
     title: "Jahreshauptversammlung 2026",
-    excerpt: "Am 15. April findet unsere diesjährige Hauptversammlung statt. Alle Mitglieder sind herzlich eingeladen. Auf der Agenda stehen Neuwahlen und die Vorstellung unserer Zukunftspläne.",
+    excerpt: "Die JHV fand am 17.03.2026 um 18 Uhr in der Neuen Schmiede statt. Der neue Vorstand für den Sport Club Unna wurde gewählt.",
   },
   {
-    date: "15. März 2026",
-    category: "Training",
-    title: "Neue Trainingszeiten ab April",
-    excerpt: "Ab dem 1. April gelten neue Trainingszeiten für mehrere Abteilungen. Badminton-Kurse starten ab April montags 30 Minuten früher.",
+    date: "Oktober 2025",
+    category: "SPORT",
+    title: "Neue Yoga-Trainerin: Katrin Koning",
+    excerpt: "Seit Herbst 2025 leitet Katrin Koning unsere Yoga-Kurse. Jeden Donnerstag ab 18:00 Uhr in der Dreifachhalle des PWG — Einsteiger herzlich willkommen!",
   },
   {
-    date: "2. März 2026",
-    category: "Mitglieder",
-    title: "Willkommen beim Sport Club Unna",
-    excerpt: "Wir freuen uns über 18 neue Mitglieder seit der Fusion! Besonders der Badminton-Bereich wächst.",
+    date: "2025",
+    category: "SPORT",
+    title: "Skifreizeit Zell am See — Plätze verfügbar",
+    excerpt: "Die jährliche Vereinsreise führt uns wieder nach Zell am See. Anmeldung für Mitglieder ab sofort möglich. 80+ Mitglieder fahren jedes Jahr mit.",
   },
 ];
 
-// Design C: Rot (#dc2626) + Dunkelblau (#1e3a8a / #1d4ed8) — Klassisch & Professionell
+export default function Design15() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-export default function DesignC() {
   return (
-    <div style={{ backgroundColor: "#f8fafc", color: "#0f172a", fontFamily: "'Georgia', 'Times New Roman', serif", minHeight: "100vh" }}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: "system-ui, Arial, sans-serif" }}>
 
-      {/* TOP BAR */}
-      <div style={{ backgroundColor: "#dc2626", padding: "8px 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ color: "rgba(255,255,255,0.85)", fontSize: 12, fontFamily: "'Arial', sans-serif" }}>📍 Stralsunder Straße 63, 59427 Unna  ·  ✉️ info@scunna.de</span>
-          <span style={{ color: "#fff", fontSize: 12, fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.08em" }}>GEGRÜNDET 1963</span>
-        </div>
-      </div>
+      {/* ── NAVBAR ── */}
+      <header className="bg-[#cc0000] text-white w-full sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-14 md:h-16">
+            {/* Logo */}
+            <a href="#" className="flex items-center gap-2.5 flex-shrink-0 min-w-0">
+              <Image
+                src="/sc-unna-logo.png"
+                alt="Sport Club Unna"
+                width={44}
+                height={44}
+                className="w-9 h-9 md:w-11 md:h-11 object-contain bg-white rounded-full p-0.5 shadow-md flex-shrink-0"
+              />
+              <div className="leading-tight min-w-0">
+                <div className="font-black text-base md:text-lg uppercase tracking-tight leading-none">Sport Club Unna</div>
+                <div className="text-xs font-semibold opacity-80 uppercase tracking-widest leading-none hidden sm:block">Gegründet 1963</div>
+              </div>
+            </a>
 
-      {/* NAV */}
-      <nav style={{ backgroundColor: "#fff", borderBottom: "3px solid #dc2626", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", position: "sticky", top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 72, display: "flex", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginRight: "auto" }}>
-            <img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style={{ width: 52, height: 52, objectFit: "contain" }} />
-            <div>
-              <div style={{ fontWeight: 700, fontSize: 18, color: "#1e3a8a", letterSpacing: "-0.01em", lineHeight: 1.1 }}>Sport Club Unna</div>
-              <div style={{ fontSize: 12, color: "#64748b", fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>Turn- und Sportverein · Unna</div>
-            </div>
-          </div>
-          <div style={{ display: "flex", gap: 0, fontFamily: "'Arial', sans-serif" }}>
-            {["Aktuelles", "Sport", "Mitglied werden", "Kontakt"].map((item, i) => (
-              <a key={item} href="#" style={{ color: "#374151", textDecoration: "none", padding: "0 20px", fontSize: 14, fontWeight: 600, letterSpacing: "0.02em", height: 72, display: "flex", alignItems: "center", borderBottom: "3px solid transparent", marginBottom: -3, transition: "all 0.2s", borderRight: i < 3 ? "1px solid #f1f5f9" : "none" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#dc2626"; e.currentTarget.style.borderBottomColor = "#dc2626"; e.currentTarget.style.backgroundColor = "#fff5f5"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "#374151"; e.currentTarget.style.borderBottomColor = "transparent"; e.currentTarget.style.backgroundColor = "transparent"; }}>
-                {item}
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {navLinks.map((link) =>
+                link.children ? (
+                  <div key={link.label} className="relative">
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
+                      className="px-3 py-2 text-sm font-semibold uppercase tracking-wide hover:bg-white/20 rounded transition-colors flex items-center gap-1 min-h-[44px]"
+                    >
+                      {link.label}
+                      <svg className={`w-3 h-3 opacity-70 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.5 8l4.5 4.5L14.5 8H5.5z" />
+                      </svg>
+                    </button>
+                    {openDropdown === link.label && (
+                      <div className="absolute top-full left-0 bg-white text-[#111] shadow-xl min-w-[200px] border-t-2 border-[#cc0000] z-50">
+                        {link.children.map((child) => (
+                          <a
+                            key={child.label}
+                            href={child.href}
+                            onClick={() => setOpenDropdown(null)}
+                            className="block px-4 py-3 text-sm font-semibold hover:bg-[#cc0000] hover:text-white transition-colors border-b border-gray-100 last:border-0 min-h-[44px] flex items-center"
+                          >
+                            {child.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="px-3 py-2 text-sm font-semibold uppercase tracking-wide hover:bg-white/20 rounded transition-colors min-h-[44px] flex items-center"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
+              <a
+                href="#kontakt"
+                className="ml-2 bg-white text-[#cc0000] font-black uppercase text-sm px-4 py-2 hover:bg-gray-100 transition-colors rounded shadow min-h-[44px] flex items-center"
+              >
+                Mitglied werden
               </a>
-            ))}
+            </nav>
+
+            {/* Mobile toggle */}
+            <button
+              className="lg:hidden w-11 h-11 flex items-center justify-center hover:bg-white/20 rounded transition-colors flex-shrink-0"
+              onClick={() => { setMobileOpen(!mobileOpen); setOpenDropdown(null); }}
+              aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
+            >
+              <span className="relative w-5 h-4 flex flex-col justify-between">
+                <span className={`block h-0.5 bg-white rounded-full transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+                <span className={`block h-0.5 bg-white rounded-full transition-all duration-200 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
+                <span className={`block h-0.5 bg-white rounded-full transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[9px]" : ""}`} />
+              </span>
+            </button>
           </div>
-        </div>
-      </nav>
 
-      {/* HERO — Split layout */}
-      <section style={{ display: "grid", gridTemplateColumns: "45% 55%", minHeight: "88vh" }}>
-        {/* Left: Red side */}
-        <div style={{ backgroundColor: "#dc2626", padding: "80px 64px", display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: -80, left: -80, width: 320, height: 320, borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.06)" }}></div>
-          <div style={{ position: "absolute", bottom: -60, right: -40, width: 280, height: 280, borderRadius: "50%", backgroundColor: "rgba(0,0,0,0.1)" }}></div>
-          <div style={{ position: "absolute", top: 0, right: 0, width: 4, height: "100%", backgroundColor: "#1e3a8a" }}></div>
-
-          {/* Club crest */}
-          <div style={{ width: 96, height: 96, borderRadius: 16, background: "rgba(255,255,255,0.12)", border: "3px solid #fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 40, backdropFilter: "blur(10px)" }}>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 24, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>SC</div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 700, fontFamily: "'Arial', sans-serif", letterSpacing: "0.05em" }}>1963</div>
+          {/* Mobile menu */}
+          <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"}`}>
+            <div className="border-t border-white/20 pt-2 pb-4 overflow-y-auto max-h-[75vh]">
+              {navLinks.map((link) => (
+                <div key={link.label}>
+                  {link.children ? (
+                    <>
+                      <button
+                        onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
+                        className="w-full flex items-center justify-between px-2 py-3 font-semibold uppercase text-sm hover:bg-white/20 rounded min-h-[44px]"
+                      >
+                        <span>{link.label}</span>
+                        <svg className={`w-3 h-3 opacity-70 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M5.5 8l4.5 4.5L14.5 8H5.5z" />
+                        </svg>
+                      </button>
+                      <div className={`overflow-hidden transition-all duration-200 ${openDropdown === link.label ? "max-h-96" : "max-h-0"}`}>
+                        <div className="pl-4 border-l-2 border-white/30 ml-2 mb-1">
+                          {link.children.map((child) => (
+                            <a
+                              key={child.label}
+                              href={child.href}
+                              className="block px-2 py-2.5 text-sm font-medium opacity-90 hover:opacity-100 hover:bg-white/10 rounded min-h-[44px] flex items-center"
+                              onClick={() => { setMobileOpen(false); setOpenDropdown(null); }}
+                            >
+                              {child.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="block px-2 py-3 font-semibold uppercase text-sm hover:bg-white/20 rounded min-h-[44px] flex items-center"
+                      onClick={() => { setMobileOpen(false); setOpenDropdown(null); }}
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </div>
+              ))}
+              <div className="mt-3 px-2">
+                <a
+                  href="#kontakt"
+                  className="block bg-white text-[#cc0000] font-black uppercase text-sm px-4 py-3 text-center rounded min-h-[44px] flex items-center justify-center"
+                  onClick={() => { setMobileOpen(false); setOpenDropdown(null); }}
+                >
+                  Mitglied werden
+                </a>
+              </div>
             </div>
           </div>
-
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", fontFamily: "'Arial', sans-serif", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
-            Turn- und Sportverein
-          </div>
-          <h1 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 24, letterSpacing: "-0.01em" }}>
-            Tradition.<br />
-            Gemeinschaft.<br />
-            <span style={{ color: "#bfdbfe" }}>Leidenschaft.</span>
-          </h1>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, fontFamily: "'Arial', sans-serif", fontWeight: 400, maxWidth: 360, marginBottom: 40 }}>
-            Seit 1963 verbindet der Sport Club Unna Menschen im Herzen von Unna. Mit Badminton, Yoga, Skifreizeiten und mehr sind wir Ihr Sportverein in Unna.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a href="#" style={{ backgroundColor: "#1e3a8a", color: "#fff", fontWeight: 700, fontSize: 14, padding: "14px 28px", borderRadius: 4, textDecoration: "none", fontFamily: "'Arial', sans-serif", letterSpacing: "0.03em", boxShadow: "0 4px 12px rgba(30,58,138,0.4)" }}>
-              Mitglied werden
-            </a>
-            <a href="#" style={{ backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontWeight: 600, fontSize: 14, padding: "14px 24px", borderRadius: 4, textDecoration: "none", fontFamily: "'Arial', sans-serif", border: "1px solid rgba(255,255,255,0.3)" }}>
-              Mehr erfahren →
-            </a>
-          </div>
         </div>
+      </header>
 
-        {/* Right: White side */}
-        <div style={{ backgroundColor: "#fff", padding: "80px 64px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div style={{ borderLeft: "4px solid #dc2626", paddingLeft: 24, marginBottom: 48 }}>
-            <div style={{ fontSize: 11, color: "#64748b", fontFamily: "'Arial', sans-serif", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Neueste Nachricht</div>
-            <h2 style={{ fontSize: 26, fontWeight: 700, color: "#1e3a8a", lineHeight: 1.3, marginBottom: 12 }}>Jahreshauptversammlung 2026</h2>
-            <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, fontFamily: "'Arial', sans-serif", marginBottom: 16 }}>Am 15. April findet unsere diesjährige Hauptversammlung statt. Alle Mitglieder sind herzlich eingeladen.</p>
-            <a href="#" style={{ color: "#dc2626", fontWeight: 600, textDecoration: "none", fontFamily: "'Arial', sans-serif", fontSize: 14, display: "flex", alignItems: "center", gap: 6 }}>
-              Weiterlesen <span style={{ color: "#1e3a8a" }}>→</span>
-            </a>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-            {[
-              { icon: "🏸", label: "6+ Sportangebote", sub: "Von Badminton bis Skifahren" },
-              { icon: "📅", label: "Seit 1963", sub: "Über 60 Jahre Vereinsgeschichte" },
-              { icon: "⛷️", label: "Skifreizeiten", sub: "Zell am See & Dolomiti" },
-              { icon: "📍", label: "Stralsunder Str. 63", sub: "59427 Unna" },
-            ].map((f) => (
-              <div key={f.label} style={{ padding: 20, backgroundColor: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0", display: "flex", gap: 14, alignItems: "flex-start" }}>
-                <div style={{ fontSize: 24, flexShrink: 0 }}>{f.icon}</div>
-                <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "#1e3a8a" }}>{f.label}</div>
-                  <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'Arial', sans-serif", marginTop: 2 }}>{f.sub}</div>
-                </div>
+      {/* ── HERO ── */}
+      <section className="relative w-full min-h-[580px] flex items-end overflow-hidden bg-[#0a0a0a]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0000] via-[#0a0a0a] to-[#0a0a0a]" />
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#cc0000]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-12 sm:pb-16 w-full">
+          <div className="flex items-end gap-4 sm:gap-6">
+            <Image
+              src="/sc-unna-logo.png"
+              alt="Sport Club Unna"
+              width={96}
+              height={96}
+              className="hidden sm:block w-20 h-20 md:w-24 md:h-24 object-contain bg-white rounded-full p-2 shadow-2xl border-2 border-white/30 flex-shrink-0"
+            />
+            <div className="min-w-0">
+              <div className="inline-block bg-[#cc0000] text-white text-xs font-black uppercase tracking-widest px-3 py-1 mb-3">
+                Ski-Club + Badminton-Sport-Club Unna · Fusion 2026
               </div>
-            ))}
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white uppercase leading-none mb-2" style={{ letterSpacing: "-0.03em" }}>
+                Sport Club<br />Unna
+              </h1>
+              <p className="text-base sm:text-xl font-bold text-white/60 uppercase tracking-widest mb-6">
+                Gemeinsam. Aktiv. Seit 1963.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#kontakt"
+                  className="bg-[#cc0000] hover:bg-[#a30000] transition-colors text-white font-black py-3.5 px-7 text-sm shadow-xl uppercase tracking-wide min-h-[44px] flex items-center justify-center"
+                >
+                  Mitglied werden
+                </a>
+                <a
+                  href="#sport"
+                  className="bg-white/10 hover:bg-white/20 transition-colors text-white font-black py-3.5 px-7 text-sm border-2 border-white/30 shadow-xl uppercase tracking-wide backdrop-blur-sm min-h-[44px] flex items-center justify-center"
+                >
+                  Unsere Sportarten →
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <div style={{ backgroundColor: "#1e3a8a" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-          {[
-            { value: "Gegründet 1963", label: "Über 60 Jahre Vereinsgeschichte" },
-            { value: "Aktive Mitglieder", label: "Badminton, Yoga, Ski & mehr" },
-            { value: "6+ Sportangebote", label: "Ganzjährig aktiv in Unna" },
-          ].map((stat, i) => (
-            <div key={stat.value} style={{ padding: "32px 24px", textAlign: "center", borderRight: i < 2 ? "1px solid rgba(255,255,255,0.12)" : "none" }}>
-              <div style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", fontWeight: 700, color: "#fff", letterSpacing: "-0.01em", marginBottom: 6 }}>{stat.value}</div>
-              <div style={{ fontSize: 13, color: "#93c5fd", fontFamily: "'Arial', sans-serif" }}>{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* SPORTS SECTION */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#f8fafc" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 16 }}>
-            <div>
-              <div style={{ width: 48, height: 4, backgroundColor: "#dc2626", borderRadius: 2, marginBottom: 16 }}></div>
-              <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", fontWeight: 700, color: "#1e3a8a", letterSpacing: "-0.01em" }}>Unsere Sportabteilungen</h2>
-              <p style={{ fontSize: 15, color: "#64748b", fontFamily: "'Arial', sans-serif", marginTop: 8 }}>Aktiv in 10 Disziplinen — für jedes Alter und jede Leistungsstufe.</p>
-            </div>
-            <a href="#" style={{ color: "#dc2626", fontWeight: 600, textDecoration: "none", fontFamily: "'Arial', sans-serif", fontSize: 14, border: "1px solid #dc2626", padding: "10px 20px", borderRadius: 4, transition: "all 0.2s" }}>
-              Alle Sportarten →
-            </a>
+      {/* ── SPORTARTEN ── */}
+      <section className="bg-[#f4f4f4] py-16" id="sport">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-10">
+            <div className="text-[#cc0000] text-xs font-black uppercase tracking-widest mb-1">Was wir bieten</div>
+            <h2 className="text-3xl font-black uppercase" style={{ letterSpacing: "-0.02em" }}>Unsere Sportarten</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-            {sports.map((sport) => (
-              <div key={sport.name}
-                style={{ backgroundColor: "#fff", borderRadius: 8, overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", cursor: "pointer", transition: "all 0.3s" }}
-                className="sport-card-c">
-                <div style={{ height: 6, background: "linear-gradient(90deg, #dc2626, #ef4444)", borderBottom: "3px solid #1e3a8a" }}></div>
-                <div style={{ padding: 24 }}>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1e3a8a", marginBottom: 4 }}>{sport.name}</h3>
-                  <div style={{ fontSize: 13, color: "#94a3b8", fontFamily: "'Arial', sans-serif", marginBottom: 20 }}>{sport.sub}</div>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: 13, color: "#64748b", fontFamily: "'Arial', sans-serif" }}>{sport.members} Mitglieder</span>
-                    <span style={{ fontSize: 13, color: "#dc2626", fontWeight: 600, fontFamily: "'Arial', sans-serif" }}>Details →</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sports.map((s) => (
+              <div
+                key={s.label}
+                className={`group bg-gradient-to-br ${s.color} overflow-hidden shadow hover:shadow-lg transition-shadow cursor-pointer`}
+              >
+                <div className="p-6 pb-4 flex items-start gap-4">
+                  <div className="text-4xl flex-shrink-0">{s.icon}</div>
+                  <div className="min-w-0">
+                    <div className="inline-block bg-[#cc0000] text-white text-xs font-black uppercase px-2 py-0.5 mb-2">
+                      {s.sub}
+                    </div>
+                    <h3 className="text-white font-black text-xl uppercase leading-tight">{s.label}</h3>
                   </div>
                 </div>
+                <div className="px-6 pb-6 border-t-2 border-[#cc0000] pt-4">
+                  <p className="text-white/70 text-sm leading-relaxed">{s.desc}</p>
+                  <span className="text-[#cc0000] font-bold text-sm uppercase mt-3 inline-block group-hover:underline">
+                    Mehr erfahren →
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* NEWS SECTION */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#fff", borderTop: "1px solid #e2e8f0" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ borderBottom: "3px solid #dc2626", paddingBottom: 16, marginBottom: 40, display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+      {/* ── VEREIN INFO ── */}
+      <section className="py-16 bg-white" id="verein">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div style={{ fontSize: 11, color: "#64748b", fontFamily: "'Arial', sans-serif", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>Vereinsnachrichten</div>
-              <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.2rem)", fontWeight: 700, color: "#1e3a8a", letterSpacing: "-0.01em" }}>Aktuelles &amp; Berichte</h2>
+              <div className="text-[#cc0000] text-xs font-black uppercase tracking-widest mb-2">Unsere Geschichte</div>
+              <h2 className="text-3xl md:text-4xl font-black uppercase mb-6" style={{ letterSpacing: "-0.02em" }}>
+                Tradition seit 1963
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed mb-4">
+                Der Ski-Club Unna und der Badminton-Sport-Club Unna haben sich 2026 zum <strong>Sport Club Unna</strong> zusammengeschlossen. Was vereint bleibt: jahrzehntelange Leidenschaft für Sport und ein starker Gemeinschaftsgeist.
+              </p>
+              <p className="text-gray-600 text-base leading-relaxed mb-6">
+                Mit über 500 Mitgliedern und 6 aktiven Sportabteilungen bieten wir für jede Altersgruppe das passende Angebot — vom Badminton-Nachwuchs bis zur Ski-Freizeit für Familien.
+              </p>
+              <a
+                href="#kontakt"
+                className="inline-block bg-[#cc0000] hover:bg-[#a30000] transition-colors text-white font-black uppercase px-8 py-3 shadow"
+              >
+                Jetzt Mitglied werden
+              </a>
             </div>
-            <a href="#" style={{ color: "#dc2626", fontWeight: 600, textDecoration: "none", fontFamily: "'Arial', sans-serif", fontSize: 13 }}>Alle Nachrichten →</a>
+            <div className="bg-[#111] text-white p-8">
+              <div className="text-[#cc0000] text-xs font-black uppercase tracking-widest mb-6">Sport Club Unna in Zahlen</div>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { value: "500+", label: "Mitglieder" },
+                  { value: "6+", label: "Sportarten" },
+                  { value: "1963", label: "Gegründet" },
+                  { value: "2026", label: "Fusion" },
+                ].map((s) => (
+                  <div key={s.label} className="border-l-4 border-[#cc0000] pl-4">
+                    <p className="text-3xl font-black text-white leading-none">{s.value}</p>
+                    <p className="text-white/40 text-xs uppercase font-semibold tracking-widest mt-1">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* 3-column newspaper grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr 1px 1fr", gap: 0 }}>
+      {/* ── NEWS ── */}
+      <section className="py-16 bg-[#f4f4f4]" id="aktuelles">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-10">
+            <div className="text-[#cc0000] text-xs font-black uppercase tracking-widest mb-1">Vereinsnachrichten</div>
+            <h2 className="text-3xl font-black uppercase" style={{ letterSpacing: "-0.02em" }}>Neuigkeiten</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {news.map((item, i) => (
-              <>
-                <div key={item.title} style={{ padding: i === 0 ? "0 32px 0 0" : i === 2 ? "0 0 0 32px" : "0 32px" }}>
-                  <div style={{ display: "inline-block", backgroundColor: "#dc2626", color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 2, marginBottom: 12, fontFamily: "'Arial', sans-serif", letterSpacing: "0.06em" }}>
-                    {item.category.toUpperCase()}
+              <div
+                key={i}
+                className="group flex gap-0 bg-white hover:bg-gray-50 transition-colors overflow-hidden shadow-sm hover:shadow cursor-pointer"
+              >
+                <div className="w-2 bg-[#cc0000] flex-shrink-0" />
+                <div className="flex flex-col justify-between p-5 min-w-0">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[#cc0000] text-white text-xs font-black uppercase px-2 py-0.5">{item.category}</span>
+                      <span className="text-gray-400 text-xs font-semibold">{item.date}</span>
+                    </div>
+                    <h3 className="font-black text-base leading-tight group-hover:text-[#cc0000] transition-colors mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{item.excerpt}</p>
                   </div>
-                  <div style={{ fontSize: 12, color: "#94a3b8", fontFamily: "'Arial', sans-serif", marginBottom: 10 }}>{item.date}</div>
-                  <h3 style={{ fontSize: 20, fontWeight: 700, color: "#1e3a8a", lineHeight: 1.3, marginBottom: 12 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, fontFamily: "'Arial', sans-serif", marginBottom: 16 }}>{item.excerpt}</p>
-                  <a href="#" style={{ color: "#dc2626", fontWeight: 600, textDecoration: "none", fontFamily: "'Arial', sans-serif", fontSize: 13 }}>Weiterlesen →</a>
+                  <span className="text-[#cc0000] font-bold text-xs uppercase mt-3">Weiterlesen →</span>
                 </div>
-                {i < 2 && <div key={`div-${i}`} style={{ backgroundColor: "#e2e8f0" }}></div>}
-              </>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* MEMBERSHIP CTA */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#1e3a8a" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+      {/* ── CTA ── */}
+      <section className="bg-[#111] py-16" id="kontakt">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="text-[#cc0000] text-xs font-black uppercase tracking-widest mb-2">Werde Teil der Familie</div>
+          <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4" style={{ letterSpacing: "-0.02em" }}>
+            Gemeinsam aktiv seit 1963
+          </h2>
+          <p className="text-white/50 text-base font-medium max-w-xl mx-auto mb-8 leading-relaxed">
+            Ob Badminton, Yoga, Ski oder Sommersport — beim Sport Club Unna ist jeder willkommen, der Freude an Bewegung und Gemeinschaft hat.
+          </p>
+          <div className="flex justify-center gap-6 sm:gap-12 mb-10 flex-wrap">
+            {[
+              { value: "500+", label: "Mitglieder" },
+              { value: "6+", label: "Sportarten" },
+              { value: "60+", label: "Jahre Tradition" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="text-3xl font-black text-white">{s.value}</p>
+                <p className="text-white/40 text-xs uppercase font-semibold tracking-widest mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:info@scunna.de"
+              className="bg-[#cc0000] hover:bg-[#a30000] transition-colors text-white font-black uppercase px-10 py-4 shadow-lg"
+            >
+              Jetzt Mitglied werden
+            </a>
+            <a
+              href="mailto:info@scunna.de"
+              className="bg-white/10 hover:bg-white/20 transition-colors text-white font-black uppercase px-10 py-4 border border-white/20"
+            >
+              info@scunna.de →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="bg-[#111] text-white border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-sm">
           <div>
-            <div style={{ width: 48, height: 4, backgroundColor: "#dc2626", borderRadius: 2, marginBottom: 20 }}></div>
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", lineHeight: 1.2, marginBottom: 20, letterSpacing: "-0.01em" }}>
-              Werden Sie Mitglied des Sport Club Unna
-            </h2>
-            <p style={{ fontSize: 17, color: "#93c5fd", fontFamily: "'Arial', sans-serif", lineHeight: 1.75, marginBottom: 36 }}>
-              Treten Sie einer aktiven Gemeinschaft bei, die seit 1963 Sport und Zusammenhalt in Unna lebt. Für Einzelpersonen, Familien und Firmen.
-            </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 40px" }}>
-              {["Badminton, Yoga, Skifahren & mehr", "Aktive Vereinsgemeinschaft", "Familien- & Einzelmitgliedschaft", "Erfahrene Trainerinnen & Trainer"].map((item) => (
-                <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, color: "#bfdbfe", fontFamily: "'Arial', sans-serif", fontSize: 15, marginBottom: 12 }}>
-                  <span style={{ color: "#dc2626", fontWeight: 700, fontSize: 18, backgroundColor: "#fff", borderRadius: "50%", width: 22, height: 22, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>✓</span>
-                  {item}
+            <div className="flex items-center gap-2 mb-4">
+              <Image src="/sc-unna-logo.png" alt="Sport Club Unna" width={36} height={36} className="w-9 h-9 object-contain bg-white rounded-full p-0.5 flex-shrink-0" />
+              <h4 className="font-black text-base uppercase tracking-wide">Sport Club Unna</h4>
+            </div>
+            <p className="font-semibold text-white/90">Sport Club Unna e.V.</p>
+            <p className="text-white/70 mt-1">Stralsunder Straße 63</p>
+            <p className="text-white/70">59427 Unna</p>
+            <p className="mt-3 text-[#cc0000] font-bold">Gemeinschaft seit 1963.</p>
+          </div>
+          <div>
+            <h4 className="font-black text-base uppercase tracking-wide mb-4">Kontakt</h4>
+            <ul className="space-y-2 text-white/80">
+              <li>E-Mail: <a href="mailto:info@scunna.de" className="text-[#cc0000] font-bold hover:underline">info@scunna.de</a></li>
+              <li><a href="#kontakt" className="hover:text-white transition-colors">Mitglied werden →</a></li>
+            </ul>
+            <div className="flex gap-3 mt-5">
+              <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#cc0000] rounded flex items-center justify-center transition-colors" aria-label="Facebook">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
+              </a>
+              <a href="#" className="w-9 h-9 bg-white/10 hover:bg-[#cc0000] rounded flex items-center justify-center transition-colors" aria-label="Instagram">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" /></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-black text-base uppercase tracking-wide mb-4">Navigation</h4>
+            <ul className="space-y-2 text-white/80">
+              {[
+                { label: "Startseite", href: "#" },
+                { label: "Aktuelles", href: "#aktuelles" },
+                { label: "Sportarten", href: "#sport" },
+                { label: "Vereinsgeschichte", href: "#verein" },
+                { label: "Kontakt", href: "#kontakt" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="hover:text-white transition-colors">{item.label}</a>
                 </li>
               ))}
             </ul>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="#" style={{ backgroundColor: "#dc2626", color: "#fff", fontWeight: 700, fontSize: 15, padding: "16px 36px", borderRadius: 4, textDecoration: "none", fontFamily: "'Arial', sans-serif", letterSpacing: "0.02em", boxShadow: "0 4px 16px rgba(220,38,38,0.4)" }}>
-                Jetzt Mitglied werden
-              </a>
-              <a href="#" style={{ backgroundColor: "transparent", color: "#93c5fd", fontWeight: 600, fontSize: 15, padding: "16px 28px", borderRadius: 4, textDecoration: "none", fontFamily: "'Arial', sans-serif", border: "1px solid rgba(147,197,253,0.4)" }}>
-                Beitragsinfo →
-              </a>
-            </div>
-          </div>
-          {/* Right side contact card */}
-          <div style={{ backgroundColor: "#fff", borderRadius: 12, padding: 48, boxShadow: "0 16px 48px rgba(0,0,0,0.2)", border: "2px solid #dc2626" }}>
-            <h3 style={{ fontSize: 22, fontWeight: 700, color: "#1e3a8a", marginBottom: 8 }}>Mitgliedschaft anfragen</h3>
-            <p style={{ fontSize: 14, color: "#64748b", fontFamily: "'Arial', sans-serif", marginBottom: 32 }}>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-            {["Name", "E-Mail-Adresse", "Gewünschte Sportart"].map((placeholder) => (
-              <div key={placeholder} style={{ marginBottom: 16 }}>
-                <div style={{ fontSize: 13, color: "#374151", fontWeight: 600, fontFamily: "'Arial', sans-serif", marginBottom: 6 }}>{placeholder}</div>
-                <div style={{ height: 44, borderRadius: 6, border: "1px solid #cbd5e1", backgroundColor: "#f8fafc" }}></div>
-              </div>
-            ))}
-            <div style={{ height: 44, borderRadius: 6, backgroundColor: "#dc2626", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: 14, fontFamily: "'Arial', sans-serif", marginTop: 8, cursor: "pointer", boxShadow: "0 4px 12px rgba(220,38,38,0.3)" }}>
-              Anfrage senden
-            </div>
-            <div style={{ textAlign: "center", fontSize: 12, color: "#94a3b8", fontFamily: "'Arial', sans-serif", marginTop: 16 }}>
-              Oder schreiben Sie uns: info@scunna.de
-            </div>
           </div>
         </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer style={{ backgroundColor: "#0f172a", padding: "64px 24px 32px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
-                <div style={{ width: 52, height: 52, borderRadius: 8, background: "linear-gradient(135deg, #dc2626, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #1e3a8a" }}>
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: 16, fontWeight: 900, color: "#fff", fontFamily: "'Arial Black', sans-serif", lineHeight: 1 }}>SC</div>
-                    <div style={{ fontSize: 8, color: "#bfdbfe", fontWeight: 700, fontFamily: "'Arial', sans-serif" }}>1963</div>
-                  </div>
-                </div>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: 16, color: "#fff" }}>Sport Club Unna</div>
-                  <div style={{ fontSize: 12, color: "#475569", fontFamily: "'Arial', sans-serif" }}>Turn- und Sportverein</div>
-                </div>
-              </div>
-              <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.7, fontFamily: "'Arial', sans-serif", maxWidth: 260 }}>
-                Tradition, Sport und Gemeinschaft seit 1963 in Unna.
-              </p>
-            </div>
-            {[
-              { title: "Sport", links: ["Badminton", "Yoga", "Wassergymnastik", "Pilates", "Skifreizeiten"] },
-              { title: "Verein", links: ["Über uns", "Geschichte", "Vorstand", "Satzung", "Mitglied werden"] },
-              { title: "Kontakt", links: ["Stralsunder Straße 63", "59427 Unna", "info@scunna.de"] },
-            ].map((col) => (
-              <div key={col.title}>
-                <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "'Arial', sans-serif", marginBottom: 16 }}>{col.title}</div>
-                {col.links.map((link) => (
-                  <div key={link} style={{ fontSize: 14, color: "#475569", marginBottom: 8, fontFamily: "'Arial', sans-serif" }}>{link}</div>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 13, color: "#334155", fontFamily: "'Arial', sans-serif" }}>© 2026 Sport Club Unna · Alle Rechte vorbehalten.</span>
-            <Link href="/" style={{ fontSize: 13, color: "#475569", textDecoration: "none", fontFamily: "'Arial', sans-serif" }}>← Zurück zur Designauswahl</Link>
-          </div>
+        <div className="bg-[#cc0000] text-white text-center py-3 text-xs font-semibold">
+          <p>© 2026 Sport Club Unna e.V. —{" "}
+            <Link href="/" className="underline hover:no-underline">Zurück zur Designauswahl</Link>
+          </p>
         </div>
       </footer>
 
-      <style>{`
-        .sport-card-c:hover { border-color: #dc2626 !important; box-shadow: 0 8px 24px rgba(220,38,38,0.15) !important; transform: translateY(-2px); }
-      `}</style>
     </div>
   );
 }

@@ -78,7 +78,7 @@ export default function DesignA() {
             <span style={{ WebkitTextStroke: "2px #dc2626", color: "transparent" }}>STÄRKE.</span>
           </h1>
           <p style={{ fontSize: 18, color: "#94a3b8", maxWidth: 480, lineHeight: 1.7, marginBottom: 48, fontFamily: "system-ui, sans-serif", fontWeight: 400 }}>
-            Sport verbindet. Seit 1963 bringen wir Menschen in Hemmerde zusammen — für Fitness, Teamgeist und Gemeinschaft.
+            Sport verbindet. Seit 1963 bringen wir Menschen in Unna zusammen — Badminton, Yoga, Wassergymnastik, Pilates, Skifreizeiten und mehr.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 8, backgroundColor: "#dc2626", color: "#fff", fontWeight: 900, fontSize: 15, padding: "16px 32px", borderRadius: 8, textDecoration: "none", letterSpacing: "0.05em", boxShadow: "0 0 36px rgba(220,38,38,0.4)", transition: "box-shadow 0.2s" }}>
@@ -203,7 +203,7 @@ export default function DesignA() {
               </p>
             </div>
             {[
-              { title: "SPORT", links: ["Fußball", "Volleyball", "Basketball", "Turnen", "Zumba", "Mehr..."] },
+              { title: "SPORT", links: ["Badminton", "Yoga", "Wassergymnastik", "Pilates", "Skifreizeiten", "Sommersport"] },
               { title: "VEREIN", links: ["Über uns", "Geschichte", "Vorstand", "Mitglied werden"] },
               { title: "KONTAKT", links: ["Stralsunder Straße 63", "59427 Unna", "info@scunna.de"] },
             ].map((col) => (

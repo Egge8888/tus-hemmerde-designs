@@ -96,12 +96,18 @@ export default function DesignB() {
             </div>
           </div>
 
-          {/* Photo placeholder */}
+          {/* Photo */}
           <div style={{ position: "relative" }}>
-            <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.15)", background: "linear-gradient(135deg, #dc2626 0%, #991b1b 40%, #7f1d1d 70%, #450a0a 100%)", height: 480, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-              <div style={{ fontSize: 72 }}>🏸⛷️🧘</div>
-              <div style={{ color: "#fff", fontWeight: 700, fontSize: 18, textAlign: "center", opacity: 0.9 }}>Sport Club Unna<br />beim Sport</div>
-              <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>Rot-Weiß seit 1963</div>
+            <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.15)" }}>
+              <img
+                src="https://www.scunna.de/wp-content/uploads/2023/11/YOGA-1.jpg"
+                alt="Yoga beim Sport Club Unna"
+                style={{ width: "100%", height: 480, objectFit: "cover", display: "block" }}
+              />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px", background: "linear-gradient(to top, rgba(220,38,38,0.85), transparent)" }}>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>Sport Club Unna · Yoga mit Katrin Koning</div>
+                <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 13 }}>Do 18:00 Uhr · Dreifachhalle PWG Unna</div>
+              </div>
             </div>
             <div style={{ position: "absolute", bottom: -20, left: -20, backgroundColor: "#fff", borderRadius: 20, padding: "20px 24px", boxShadow: "0 12px 32px rgba(0,0,0,0.12)", border: "2px solid #fecdd3" }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: "#dc2626", lineHeight: 1 }}>500+</div>
@@ -121,7 +127,7 @@ export default function DesignB() {
           {[
             { value: "1963", label: "Gegründet", emoji: "📅" },
             { value: "500+", label: "Mitglieder", emoji: "👥" },
-            { value: "10", label: "Sportarten", emoji: "🏅" },
+            { value: "6+", label: "Sportangebote", emoji: "🏅" },
           ].map((stat, i) => (
             <div key={stat.label} style={{ padding: "36px 24px", textAlign: "center", borderRight: i < 2 ? "2px solid #fee2e2" : "none" }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{stat.emoji}</div>

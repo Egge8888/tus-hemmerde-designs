@@ -122,6 +122,14 @@ const designs = [
     description: "Vollständige Website mit rotem Sticky-Header, Dropdown-Navigation, Sportarten-Grid, News und Footer — das ausgearbeitete Design aus der Live-Demo.",
     preview: "bg-gradient-to-br from-red-700 via-red-800 to-slate-900",
   },
+  {
+    href: "/design-p.html",
+    label: "Design 16",
+    name: "Sport Club Unna – Rainers Entwurf",
+    tagline: "3-Kachel Hero · Alle Sportarten · Chatbot",
+    description: "Hero mit 3 gestapelten Sport-Kacheln links (Ski/Badminton/Radfahren) und großem Logo rechts. Vollständig mit Fusion-Geschichte, allen Sportarten, Terminen, Vorstand, Downloads und Chatbot.",
+    preview: "bg-gradient-to-br from-red-600 via-red-800 to-gray-900",
+  },
 ];
 
 function DesignCard({ d }: { d: typeof designs[0] }) {

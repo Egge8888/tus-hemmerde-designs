@@ -1,224 +1,680 @@
 <!DOCTYPE html>
-
-<html lang="de"><head>
+<html lang="de">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sport Club Unna – Fanzine Edition</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@900&amp;family=Work_Sans:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,900&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-fixed-dim": "#c6c6c7",
-                    "inverse-primary": "#ffb4ab",
-                    "tertiary-container": "#717272",
-                    "on-tertiary-fixed": "#1a1c1c",
-                    "tertiary-fixed": "#e2e2e2",
-                    "on-secondary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "secondary": "#5e5e5e",
-                    "inverse-on-surface": "#f1f1f1",
-                    "surface-container-low": "#f3f3f3",
-                    "surface-container-lowest": "#ffffff",
-                    "outline-variant": "#e6bdb8",
-                    "on-surface-variant": "#5c403c",
-                    "surface-container-highest": "#e2e2e2",
-                    "secondary-container": "#e2e2e2",
-                    "on-primary-fixed": "#410002",
-                    "secondary-fixed": "#e2e2e2",
-                    "on-error-container": "#93000a",
-                    "surface-dim": "#dadada",
-                    "error": "#ba1a1a",
-                    "on-secondary-fixed-variant": "#474747",
-                    "error-container": "#ffdad6",
-                    "on-secondary-fixed": "#1b1b1b",
-                    "primary-fixed-dim": "#ffb4ab",
-                    "on-primary": "#ffffff",
-                    "surface-variant": "#e2e2e2",
-                    "surface-tint": "#bf0715",
-                    "on-surface": "#1b1b1b",
-                    "surface": "#f9f9f9",
-                    "secondary-fixed-dim": "#c6c6c6",
-                    "surface-container": "#eeeeee",
-                    "background": "#f9f9f9",
-                    "outline": "#916f6b",
-                    "on-tertiary-fixed-variant": "#454747",
-                    "on-primary-container": "#fff6f5",
-                    "primary": "#b70011",
-                    "on-primary-fixed-variant": "#93000b",
-                    "on-background": "#1b1b1b",
-                    "on-tertiary-container": "#f8f8f8",
-                    "surface-bright": "#f9f9f9",
-                    "tertiary": "#585a5a",
-                    "on-secondary-container": "#646464",
-                    "on-tertiary": "#ffffff",
-                    "inverse-surface": "#303030",
-                    "primary-container": "#dc2626",
-                    "primary-fixed": "#ffdad6",
-                    "surface-container-high": "#e8e8e8"
-            },
-            "borderRadius": {
-                    "none": "0px",
-                    "DEFAULT": "0px",
-                    "lg": "0px",
-                    "xl": "0px",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Epilogue"],
-                    "body": ["Work Sans"],
-                    "label": ["Work Sans"]
-            }
-          },
-        },
-      }
-    </script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { headline: ["Epilogue"], body: ["Work Sans"] },
+      colors: { "primary": "#bf0715", "primary-container": "#dc2626" },
+      borderRadius: { none:"0px", DEFAULT:"0px", lg:"0px", xl:"0px", full:"9999px" }
+    }
+  }
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 20s linear infinite;
-        }
-    </style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+  html{scroll-behavior:smooth;}
+  @keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+  .animate-marquee{display:flex;width:max-content;animation:marquee 22s linear infinite;}
+  .chat-btn{position:fixed;bottom:28px;right:28px;z-index:9999;width:62px;height:62px;border-radius:50%;background:#dc2626;box-shadow:0 4px 20px rgba(220,38,38,.5),4px 4px 0 #000;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s;}
+  .chat-btn:hover{transform:scale(1.08);}
+  .chat-pulse{position:absolute;top:-3px;right:-3px;width:14px;height:14px;background:#22c55e;border-radius:50%;border:2px solid #fff;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.35);}}
+  #mobile-menu{display:none;}
+  #mobile-menu.open{display:flex;}
+</style>
 </head>
-<body class="bg-background font-body text-on-background m-0 p-0">
-<!-- TopNavBar -->
-<nav class="bg-black text-red-600 font-['Epilogue'] font-black uppercase tracking-tighter docked full-width top-0 rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center w-full px-6 py-4 z-50 sticky">
-<div class="flex items-center gap-2"><img src="/sc-unna-logo.png" alt="Sport Club Unna Logo" style="width:44px;height:44px;object-fit:contain;display:block;filter:brightness(0) invert(1);"/><div class="text-2xl font-black tracking-tighter text-white">SPORT CLUB UNNA</div>
-<div class="hidden md:flex gap-8">
-<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">VEREIN</a>
-<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">SPORT</a>
-<a class="text-white font-bold hover:text-red-600 transition-colors duration-100" href="#">JUGEND</a>
-<a class="text-red-600 font-black underline decoration-2 underline-offset-4 hover:text-red-600 transition-colors duration-100" href="#">AKTUELLES</a>
-</div>
-<button class="bg-primary-container text-white px-6 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">MITGLIED WERDEN</button>
+<body class="bg-black font-body text-white m-0 p-0 overflow-x-hidden">
+
+<!-- ═══════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 bg-black border-b-4 border-red-600 flex items-center justify-between px-4 md:px-6 py-3 gap-3 shadow-[0_4px_0_0_#dc2626]">
+  <!-- Logo -->
+  <a href="#hero" class="flex items-center gap-3 flex-shrink-0">
+    <img src="/sc-unna-logo-hq.jpg" alt="SC Unna" class="w-9 h-9 object-contain" style="filter:brightness(0) invert(1);"/>
+    <span class="font-headline font-black text-white text-lg tracking-tighter uppercase hidden sm:block">SPORT CLUB UNNA</span>
+  </a>
+  <!-- Nav Links (desktop) -->
+  <div class="hidden lg:flex items-center gap-1 font-headline font-black uppercase text-xs tracking-widest">
+    <a href="#ski"       class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">⛷ SKI</a>
+    <a href="#badminton" class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">🏸 BADMINTON</a>
+    <a href="#radfahren" class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">🚴 RADFAHREN</a>
+    <a href="#yoga"      class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">🧘 YOGA</a>
+    <a href="#pilates"   class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">🤸 PILATES</a>
+    <a href="#schwimmen" class="px-3 py-2 text-white/70 hover:text-red-500 transition-colors whitespace-nowrap">🏊 SCHWIMMEN</a>
+    <div class="w-px h-4 bg-white/20 mx-1"></div>
+    <a href="#aktuelles" class="px-3 py-2 text-white/50 hover:text-white transition-colors whitespace-nowrap">AKTUELLES</a>
+    <a href="#termine"   class="px-3 py-2 text-white/50 hover:text-white transition-colors whitespace-nowrap">TERMINE</a>
+    <a href="#vorstand"  class="px-3 py-2 text-white/50 hover:text-white transition-colors whitespace-nowrap">VORSTAND</a>
+  </div>
+  <div class="flex items-center gap-2 flex-shrink-0">
+    <a href="#mitglied" class="bg-red-600 text-white px-4 py-2 font-headline font-black uppercase text-xs tracking-widest shadow-[3px_3px_0_0_rgba(255,255,255,.3)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all hidden sm:block whitespace-nowrap">MITGLIED WERDEN</a>
+    <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="lg:hidden p-2 text-white/70 hover:text-white">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
 </nav>
-<!-- Hero Section -->
-<section class="relative h-[819px] w-full bg-primary-container overflow-hidden flex items-center justify-center">
-<div class="absolute inset-0 bg-black/60 z-10"></div>
-<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="Dynamic action shot of local football players in red jerseys during a high-stakes match on a lush green field" src="https://www.scunna.de/wp-content/uploads/2026/03/SportClubUnna.jpg"/>
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
-<span class="font-headline text-[25vw] text-white/10 tracking-tighter leading-none">1963</span>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="lg:hidden fixed top-[60px] left-0 right-0 z-40 bg-black border-b-4 border-red-600 flex-col px-4 py-3 gap-1 font-headline font-black uppercase text-xs tracking-widest">
+  <a href="#ski"       onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">⛷ SKI &amp; SNOWBOARD</a>
+  <a href="#badminton" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">🏸 BADMINTON</a>
+  <a href="#radfahren" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">🚴 RADFAHREN</a>
+  <a href="#yoga"      onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">🧘 YOGA</a>
+  <a href="#pilates"   onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">🤸 PILATES</a>
+  <a href="#schwimmen" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/70 hover:text-red-500 border-b border-white/10">🏊 SCHWIMMEN</a>
+  <a href="#aktuelles" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/50 hover:text-white border-b border-white/10">AKTUELLES</a>
+  <a href="#termine"   onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/50 hover:text-white border-b border-white/10">TERMINE</a>
+  <a href="#vorstand"  onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block py-2 text-white/50 hover:text-white border-b border-white/10">VORSTAND</a>
+  <a href="#mitglied"  onclick="document.getElementById('mobile-menu').classList.remove('open')" class="block mt-2 bg-red-600 text-white text-center py-2.5">MITGLIED WERDEN</a>
 </div>
-<div class="relative z-20 text-center px-4">
-<h2 class="font-headline text-white text-3xl md:text-5xl uppercase tracking-tighter leading-none mb-0">WIR SIND</h2>
-<h1 class="font-headline text-white text-7xl md:text-[10rem] uppercase tracking-tighter leading-none">UNNA.</h1>
-<div class="w-full h-1 bg-white mt-4 mb-6"></div>
-<p class="font-body text-white uppercase tracking-widest font-bold text-sm md:text-xl">Dein Verein. Dein Viertel. Deine Heimat.</p>
-</div>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section id="hero" class="relative h-[calc(100vh-60px)] w-full bg-red-600 overflow-hidden flex items-center justify-center min-h-[500px]">
+  <div class="absolute inset-0 bg-black/65 z-10"></div>
+  <img alt="Sport Club Unna" class="absolute inset-0 w-full h-full object-cover" src="https://www.scunna.de/wp-content/uploads/2026/03/SportClubUnna.jpg"/>
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+    <span class="font-headline font-black text-white/8" style="font-size:25vw;line-height:1;">1963</span>
+  </div>
+  <div class="relative z-20 text-center px-4 max-w-5xl">
+    <h2 class="font-headline font-black text-white text-2xl md:text-5xl uppercase tracking-tighter leading-none mb-0">WIR SIND</h2>
+    <h1 class="font-headline font-black text-white uppercase tracking-tighter leading-none" style="font-size:clamp(4rem,16vw,11rem);">UNNA.</h1>
+    <div class="w-full h-1 bg-white mt-4 mb-5"></div>
+    <p class="font-body text-white uppercase tracking-widest font-bold text-sm md:text-xl">Ski · Badminton · Yoga · Pilates · Radfahren · Schwimmen</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#mitglied" class="bg-red-600 text-white px-8 py-3 font-headline font-black uppercase tracking-widest text-sm shadow-[4px_4px_0_0_rgba(255,255,255,.4)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">MITGLIED WERDEN</a>
+      <a href="#aktuelles" class="border-2 border-white text-white px-8 py-3 font-headline font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors">AKTUELLES</a>
+    </div>
+  </div>
 </section>
-<!-- Ticker Strip -->
-<div class="bg-black py-4 overflow-hidden border-none relative z-30">
-<div class="animate-marquee whitespace-nowrap">
-<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · UNNA ·</span>
-<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · UNNA ·</span>
-<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · UNNA ·</span>
-<span class="font-headline text-white text-2xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · UNNA ·</span>
+
+<!-- TICKER -->
+<div class="bg-red-600 py-3 overflow-hidden border-y-4 border-black">
+  <div class="animate-marquee whitespace-nowrap">
+    <span class="font-headline font-black text-black text-xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · SKI · BADMINTON · YOGA · PILATES · RADFAHREN · SCHWIMMEN · UNNA ·</span>
+    <span class="font-headline font-black text-black text-xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · SKI · BADMINTON · YOGA · PILATES · RADFAHREN · SCHWIMMEN · UNNA ·</span>
+    <span class="font-headline font-black text-black text-xl uppercase mx-4">400+ MITGLIEDER · 6 SPORTARTEN · SEIT 1963 · SKI · BADMINTON · YOGA · PILATES · RADFAHREN · SCHWIMMEN · UNNA ·</span>
+  </div>
 </div>
-</div>
-<!-- Aktuelles Section -->
-<section class="bg-white py-20 px-6 md:px-12">
-<div class="max-w-7xl mx-auto">
-<h2 class="font-headline text-primary-container text-6xl md:text-8xl uppercase tracking-tighter mb-12">AKTUELLES.</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
-<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Enthusiastic group of children participating in indoor gymnastics and sports exercises in a brightly lit gymnasium" src="https://www.scunna.de/wp-content/uploads/2017/02/Schwimmbad.jpg"/>
-<div class="p-6 flex-grow">
-<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">TURNEN</span>
-<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">KINDERTURNEN STARTET NEU DURCH</h3>
-<p class="font-body text-sm text-on-surface">Jeden Mittwoch ab 16:00 Uhr in der Turnhalle Hemmerde. Bewegung, Spaß und Gemeinschaft für unsere Kleinsten.</p>
-</div>
-<div class="p-6 pt-0">
-<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
-<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Close up of a dart board with multiple darts hitting the bullseye in a dark atmospheric bar setting" src="https://www.scunna.de/wp-content/uploads/2023/11/YOGA-1.jpg"/>
-<div class="p-6 flex-grow">
-<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">DART</span>
-<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">PRÄZISION UND KONZENTRATION</h3>
-<p class="font-body text-sm text-on-surface">Unsere Dart-Abteilung sucht Verstärkung. Egal ob Anfänger oder Profi - komm vorbei und wirf deine ersten 180er.</p>
-</div>
-<div class="p-6 pt-0">
-<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-l-4 border-primary-container flex flex-col h-full transform transition-transform hover:-translate-y-1">
-<img alt="" class="w-full h-64 object-cover grayscale" data-alt="Young focused football player in a red jersey dribbling a ball on a sunny pitch with trees in background" src="https://www.scunna.de/wp-content/uploads/2026/03/SportClubUnna.jpg"/>
-<div class="p-6 flex-grow">
-<span class="font-headline text-primary-container text-sm tracking-widest uppercase block mb-2">FUSSBALL</span>
-<h3 class="font-headline text-2xl uppercase tracking-tighter mb-4 leading-none">NACHWUCHS IM FOKUS</h3>
-<p class="font-body text-sm text-on-surface">Erfolgreiches Wochenende für unsere F-Jugend. Mit Teamgeist und Leidenschaft zum Heimsieg gegen Unna.</p>
-</div>
-<div class="p-6 pt-0">
-<a class="font-headline text-black text-lg uppercase tracking-tight underline decoration-4 decoration-primary-container" href="#">WEITERLESEN</a>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ═══════════════════════════════════════════════════
+     FUSION
+═══════════════════════════════════════════════════ -->
+<section id="fusion" class="bg-white py-16 px-6 border-b-4 border-black">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+      <div class="flex-shrink-0 text-center">
+        <span class="font-headline font-black text-black" style="font-size:clamp(3rem,8vw,6rem);line-height:1;">01.04.<br/>2026</span>
+        <div class="w-full h-2 bg-red-600 mt-2"></div>
+      </div>
+      <div>
+        <p class="font-headline font-black text-red-600 text-sm uppercase tracking-widest mb-2">ZWEI VEREINE. EINE ZUKUNFT.</p>
+        <h2 class="font-headline font-black text-black uppercase tracking-tighter mb-3" style="font-size:clamp(1.5rem,3.5vw,2.5rem);">SKI-CLUB UNNA + BSC UNNA = SPORT CLUB UNNA</h2>
+        <p class="font-body text-gray-600 text-base leading-relaxed max-w-2xl">
+          Am 1. April 2026 fusionierten der Ski-Club Unna (gegr. 1963) und der BSC Unna zum <strong>Sport Club Unna e.V.</strong>
+          Gemeinsam bündeln wir Stärken: Wintersport-Expertise, Badminton-Leidenschaft und ein breites Breitensport-Angebot für alle Altersgruppen in Unna.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <span class="bg-black text-white font-headline font-black uppercase text-xs px-3 py-1.5 tracking-widest">⛷ Ski-Club Unna 1963</span>
+          <span class="bg-red-600 text-white font-headline font-black uppercase text-xs px-3 py-1.5 tracking-widest">+ BSC Unna</span>
+          <span class="border-4 border-black text-black font-headline font-black uppercase text-xs px-3 py-1.5 tracking-widest">= SC Unna e.V.</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Sports Block -->
-<section class="bg-primary-container w-full py-24 flex flex-col md:flex-row items-center justify-between px-6 md:px-20 overflow-hidden">
-<div class="flex-shrink-0 mb-12 md:mb-0">
-<span class="font-headline text-white text-[15rem] md:text-[25rem] leading-none select-none">6</span>
-</div>
-<div class="flex flex-col gap-4 w-full md:w-auto">
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">FUSSBALL</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">VOLLEYBALL</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">BASKETBALL</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">TURNEN</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">LEICHTATHLETIK</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-<div class="flex items-center justify-between gap-12 group cursor-pointer border-b-4 border-white/20 pb-4">
-<span class="font-headline text-white text-4xl md:text-7xl uppercase tracking-tighter">ZUMBA</span>
-<span class="font-headline text-white text-4xl md:text-7xl group-hover:translate-x-4 transition-transform">→</span>
-</div>
-</div>
+
+<!-- ═══════════════════════════════════════════════════
+     AKTUELLES
+═══════════════════════════════════════════════════ -->
+<section id="aktuelles" class="bg-black py-20 px-6">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="font-headline font-black text-red-600 uppercase tracking-tighter mb-12" style="font-size:clamp(3rem,8vw,6rem);">AKTUELLES.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 border-white/10">
+
+      <div class="border-r-4 border-b-4 md:border-b-0 border-white/10 flex flex-col group hover:bg-red-600 transition-colors">
+        <div class="h-56 overflow-hidden bg-gray-900">
+          <img src="https://www.scunna.de/wp-content/uploads/2026/03/SportClubUnna.jpg" alt="Fusion" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"/>
+        </div>
+        <div class="p-6 flex-grow">
+          <span class="font-headline font-black text-red-600 group-hover:text-black text-xs uppercase tracking-widest block mb-2">VEREINSLEBEN · 01.04.2026</span>
+          <h3 class="font-headline font-black text-white group-hover:text-black uppercase tracking-tighter text-2xl mb-3 leading-none">DER NEUE VEREIN IST DA!</h3>
+          <p class="font-body text-sm text-white/60 group-hover:text-black/70">Ski-Club Unna trifft BSC Unna — gemeinsam sind wir jetzt der Sport Club Unna e.V. Ein starker Verein für ganz Unna.</p>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#fusion" class="font-headline font-black text-white group-hover:text-black uppercase text-sm underline decoration-2 hover:no-underline">WEITERLESEN →</a>
+        </div>
+      </div>
+
+      <div class="border-r-4 border-b-4 md:border-b-0 border-white/10 flex flex-col group hover:bg-red-600 transition-colors">
+        <div class="h-56 overflow-hidden bg-gray-900">
+          <img src="https://www.scunna.de/wp-content/uploads/2025/01/Symbolbild_Abfahrt-300x158.jpg" alt="Skifreizeit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"/>
+        </div>
+        <div class="p-6 flex-grow">
+          <span class="font-headline font-black text-red-600 group-hover:text-black text-xs uppercase tracking-widest block mb-2">SKI · WINTER 2027</span>
+          <h3 class="font-headline font-black text-white group-hover:text-black uppercase tracking-tighter text-2xl mb-3 leading-none">SKIFREIZEIT ZELL AM ZILLER</h3>
+          <p class="font-body text-sm text-white/60 group-hover:text-black/70">Anmeldung geöffnet! Unsere Jahres-Skifreizeit führt uns ins Zillertal. Begrenzte Plätze — jetzt sichern.</p>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="/docs/2027%20Wi%20Zell%20Ausschreibung.pdf" target="_blank" class="font-headline font-black text-white group-hover:text-black uppercase text-sm underline decoration-2 hover:no-underline">AUSSCHREIBUNG (PDF) →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col group hover:bg-red-600 transition-colors">
+        <div class="h-56 overflow-hidden bg-gray-900">
+          <img src="https://www.scunna.de/wp-content/uploads/2023/11/YOGA-1.jpg" alt="Yoga" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"/>
+        </div>
+        <div class="p-6 flex-grow">
+          <span class="font-headline font-black text-red-600 group-hover:text-black text-xs uppercase tracking-widest block mb-2">YOGA · NEUE KURSE</span>
+          <h3 class="font-headline font-black text-white group-hover:text-black uppercase tracking-tighter text-2xl mb-3 leading-none">YOGA MIT KATRIN KONING</h3>
+          <p class="font-body text-sm text-white/60 group-hover:text-black/70">Neue Kurszeiten ab Herbst. Montag, Dienstag und Donnerstag — für alle Niveaus in der Dreifachhalle PWG.</p>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#yoga" class="font-headline font-black text-white group-hover:text-black uppercase text-sm underline decoration-2 hover:no-underline">KURSZEITEN →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Editorial Quote (Bonus for Style) -->
+
+<!-- ═══════════════════════════════════════════════════
+     SPORTARTEN OVERVIEW
+═══════════════════════════════════════════════════ -->
+<section class="bg-red-600 w-full py-24 px-6 md:px-20 overflow-hidden">
+  <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+    <div class="flex-shrink-0 text-center">
+      <span class="font-headline font-black text-black select-none" style="font-size:clamp(8rem,20vw,18rem);line-height:1;">6</span>
+      <div class="font-headline font-black text-white uppercase text-sm tracking-widest">SPORTARTEN</div>
+    </div>
+    <div class="flex flex-col gap-3 w-full max-w-lg">
+      <a href="#ski"       class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">⛷ SKI</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+      <a href="#badminton" class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">🏸 BADMINTON</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+      <a href="#radfahren" class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">🚴 RADFAHREN</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+      <a href="#yoga"      class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">🧘 YOGA</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+      <a href="#pilates"   class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">🤸 PILATES</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+      <a href="#schwimmen" class="flex items-center justify-between gap-6 group cursor-pointer border-b-4 border-black/20 pb-3 hover:border-black no-underline">
+        <span class="font-headline font-black text-white uppercase tracking-tighter group-hover:text-black transition-colors" style="font-size:clamp(2rem,5vw,4rem);">🏊 SCHWIMMEN</span>
+        <span class="font-headline text-white/60 group-hover:text-black text-3xl font-black transition-all group-hover:translate-x-3">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SKI
+═══════════════════════════════════════════════════ -->
+<section id="ski" class="bg-white py-20 px-6 border-b-4 border-black">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <div>
+      <span class="bg-black text-white font-headline font-black uppercase text-xs px-3 py-1 tracking-widest mb-4 inline-block">SKI-CLUB UNNA · SEIT 1963</span>
+      <h2 class="font-headline font-black text-black uppercase tracking-tighter leading-none mb-6" style="font-size:clamp(2.5rem,6vw,5rem);">SKI &amp;<br/>SNOWBOARD</h2>
+      <p class="font-body text-gray-700 leading-relaxed mb-6">
+        Das Herz unseres Vereins schlägt im Schnee. Seit 1963 organisieren wir Skifreizeiten in die besten Skigebiete der Alpen —
+        für Anfänger, Fortgeschrittene und alles dazwischen. Ob Abfahrt, Snowboard oder Langlauf: Wir fahren gemeinsam.
+      </p>
+      <div class="space-y-2 mb-8 font-body">
+        <div class="flex items-center gap-3 border-l-4 border-red-600 pl-4 py-1">
+          <span class="font-bold text-black">Zell am Ziller</span><span class="text-gray-500 text-sm">– Winterfreizeit · Osterfreizeit</span>
+        </div>
+        <div class="flex items-center gap-3 border-l-4 border-red-600 pl-4 py-1">
+          <span class="font-bold text-black">Saalbach-Hinterglemm</span><span class="text-gray-500 text-sm">– Winterfreizeit 2027</span>
+        </div>
+        <div class="flex items-center gap-3 border-l-4 border-red-600 pl-4 py-1">
+          <span class="font-bold text-black">Tagestouren NRW</span><span class="text-gray-500 text-sm">– Sauerland · Teutoburg</span>
+        </div>
+        <div class="flex items-center gap-3 border-l-4 border-red-600 pl-4 py-1">
+          <span class="font-bold text-black">Langlauf &amp; Snowboard</span><span class="text-gray-500 text-sm">– Kurse auf Anfrage</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/docs/2027%20Wi%20Zell%20Ausschreibung.pdf" target="_blank" class="bg-black text-white font-headline font-black uppercase text-xs px-5 py-3 tracking-widest shadow-[4px_4px_0_0_#dc2626] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all inline-block">AUSSCHREIBUNG ↓</a>
+        <a href="/docs/2027%20Wi%20Zell%20Anmeldung.pdf"     target="_blank" class="border-4 border-black text-black font-headline font-black uppercase text-xs px-5 py-3 tracking-widest hover:bg-black hover:text-white transition-colors inline-block">ANMELDUNG ↓</a>
+      </div>
+    </div>
+    <div class="space-y-3">
+      <div class="h-64 overflow-hidden border-4 border-black shadow-[8px_8px_0_0_#dc2626]">
+        <img src="https://www.scunna.de/wp-content/uploads/2025/01/Symbolbild_Abfahrt-300x158.jpg" alt="Abfahrt" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"/>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="h-36 overflow-hidden border-4 border-black">
+          <img src="https://www.scunna.de/wp-content/uploads/2025/01/Symbolbild_Snowboard-300x181.jpg" alt="Snowboard" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"/>
+        </div>
+        <div class="h-36 overflow-hidden border-4 border-black">
+          <img src="https://www.scunna.de/wp-content/uploads/2025/01/Symbolbild_Langlauf-300x183.jpg" alt="Langlauf" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     BADMINTON
+═══════════════════════════════════════════════════ -->
+<section id="badminton" class="bg-black py-20 px-6 border-b-4 border-white/10">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <div class="order-2 lg:order-1">
+      <div class="h-64 overflow-hidden border-4 border-red-600 shadow-[8px_8px_0_0_rgba(255,255,255,.15)]">
+        <img src="https://www.scunna.de/wp-content/uploads/2026/03/SportClubUnna.jpg" alt="Badminton" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"/>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <span class="bg-red-600 text-white font-headline font-black uppercase text-xs px-3 py-1 tracking-widest mb-4 inline-block">EHEMALS BSC UNNA</span>
+      <h2 class="font-headline font-black text-white uppercase tracking-tighter leading-none mb-6" style="font-size:clamp(2.5rem,6vw,5rem);">BADMINTON</h2>
+      <p class="font-body text-white/70 leading-relaxed mb-6">
+        Mit dem BSC Unna haben wir die stärkste Badminton-Tradition des Kreises aufgenommen.
+        Wir spielen in der Sporthalle Schillerstraße — von der Jugend bis zur Seniorengruppe ist jeder willkommen.
+      </p>
+      <div class="space-y-2 mb-6 font-body font-bold">
+        <div class="flex justify-between items-center border-b-2 border-white/10 pb-2">
+          <span class="text-white">Mo · Erwachsene</span>
+          <span class="text-red-500">18:00 – 20:00 Uhr</span>
+        </div>
+        <div class="flex justify-between items-center border-b-2 border-white/10 pb-2">
+          <span class="text-white">Di · Fortgeschrittene</span>
+          <span class="text-red-500">20:00 – 22:00 Uhr</span>
+        </div>
+        <div class="flex justify-between items-center border-b-2 border-white/10 pb-2">
+          <span class="text-white">Mi · Jugend (8–18 J.)</span>
+          <span class="text-red-500">17:00 – 19:00 Uhr</span>
+        </div>
+        <div class="text-white/40 text-xs font-body font-normal pt-1">📍 Sporthalle Schillerstraße, Unna</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     RADFAHREN + YOGA + PILATES + SCHWIMMEN  (kompakt)
+═══════════════════════════════════════════════════ -->
+<section class="bg-white py-20 px-6 border-b-4 border-black">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="font-headline font-black text-black uppercase tracking-tighter mb-12" style="font-size:clamp(2rem,5vw,4rem);">WEITERE SPORTANGEBOTE</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-0 border-4 border-black">
+
+      <!-- Radfahren -->
+      <div id="radfahren" class="border-r-0 md:border-r-4 border-b-4 xl:border-b-0 border-black p-6 group hover:bg-black transition-colors">
+        <div class="text-4xl mb-4">🚴</div>
+        <h3 class="font-headline font-black text-black group-hover:text-red-500 uppercase text-2xl tracking-tighter mb-3 leading-none">RADFAHREN</h3>
+        <p class="font-body text-sm text-gray-600 group-hover:text-white/60 leading-relaxed mb-4">MTB &amp; Rennrad · Sonntagsausfahrten · Familien willkommen · Alle Niveaus</p>
+        <div class="text-xs font-body font-bold text-gray-500 group-hover:text-white/40 space-y-1">
+          <div>🗓 So · 9:00 Uhr · MTB</div>
+          <div>🗓 Sa · 8:00 Uhr · Rennrad</div>
+          <div>📍 Marktplatz Unna</div>
+        </div>
+      </div>
+
+      <!-- Yoga -->
+      <div id="yoga" class="border-r-0 md:border-r-4 border-b-4 xl:border-b-0 border-black p-6 group hover:bg-black transition-colors">
+        <div class="text-4xl mb-4">🧘</div>
+        <h3 class="font-headline font-black text-black group-hover:text-red-500 uppercase text-2xl tracking-tighter mb-3 leading-none">YOGA</h3>
+        <p class="font-body text-sm text-gray-600 group-hover:text-white/60 leading-relaxed mb-4">Mit Katrin Koning · Anfänger &amp; Fortgeschrittene · Dreifachhalle PWG</p>
+        <div class="text-xs font-body font-bold text-gray-500 group-hover:text-white/40 space-y-1">
+          <div>🗓 Mo · 18:30 Uhr</div>
+          <div>🗓 Di · 17:00 &amp; 18:30 Uhr</div>
+          <div>🗓 Do · 18:00 Uhr</div>
+        </div>
+      </div>
+
+      <!-- Pilates -->
+      <div id="pilates" class="border-r-0 md:border-r-4 border-b-4 xl:border-b-0 border-black p-6 group hover:bg-black transition-colors">
+        <div class="text-4xl mb-4">🤸</div>
+        <h3 class="font-headline font-black text-black group-hover:text-red-500 uppercase text-2xl tracking-tighter mb-3 leading-none">PILATES</h3>
+        <p class="font-body text-sm text-gray-600 group-hover:text-white/60 leading-relaxed mb-4">Körpermitte stärken · Haltung verbessern · Gelenke schonen · Dreifachhalle PWG</p>
+        <div class="text-xs font-body font-bold text-gray-500 group-hover:text-white/40 space-y-1">
+          <div>🗓 Di · 19:30 Uhr</div>
+          <div>🗓 Fr · 10:00 Uhr</div>
+          <div>📍 Dreifachhalle PWG</div>
+        </div>
+      </div>
+
+      <!-- Schwimmen -->
+      <div id="schwimmen" class="p-6 group hover:bg-black transition-colors">
+        <div class="text-4xl mb-4">🏊</div>
+        <h3 class="font-headline font-black text-black group-hover:text-red-500 uppercase text-2xl tracking-tighter mb-3 leading-none">WASSERGYMNASTIK</h3>
+        <p class="font-body text-sm text-gray-600 group-hover:text-white/60 leading-relaxed mb-4">Sanft für die Gelenke · Falkschule Unna · Für alle Altersgruppen</p>
+        <div class="text-xs font-body font-bold text-gray-500 group-hover:text-white/40 space-y-1">
+          <div>🗓 Mi · 8:30 &amp; 9:30 Uhr</div>
+          <div>🗓 Fr · 8:30 Uhr</div>
+          <div>📍 Hallenbad Falkschule</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TERMINE
+═══════════════════════════════════════════════════ -->
+<section id="termine" class="bg-black py-20 px-6">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="font-headline font-black text-white uppercase tracking-tighter mb-12" style="font-size:clamp(3rem,8vw,6rem);">TERMINE.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="border-4 border-red-600 p-6 group hover:bg-red-600 transition-colors">
+        <span class="font-headline font-black text-red-600 group-hover:text-black text-xs uppercase tracking-widest block mb-2">⛷ WINTER 2027</span>
+        <h3 class="font-headline font-black text-white group-hover:text-black uppercase text-xl tracking-tighter mb-2 leading-none">SKIFREIZEIT ZELL AM ZILLER</h3>
+        <p class="font-body text-sm text-white/50 group-hover:text-black/60 mb-4">Zillertal · Alpin · Alle Niveaus · Begrenzte Plätze</p>
+        <div class="flex gap-2 flex-wrap">
+          <a href="/docs/2027%20Wi%20Zell%20Ausschreibung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">AUSSCHREIBUNG ↓</a>
+          <span class="text-white/30 group-hover:text-black/30">|</span>
+          <a href="/docs/2027%20Wi%20Zell%20Anmeldung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">ANMELDUNG ↓</a>
+        </div>
+      </div>
+
+      <div class="border-4 border-white/20 p-6 group hover:border-red-600 hover:bg-red-600 transition-colors">
+        <span class="font-headline font-black text-white/40 group-hover:text-black text-xs uppercase tracking-widest block mb-2">⛷ WINTER 2027</span>
+        <h3 class="font-headline font-black text-white group-hover:text-black uppercase text-xl tracking-tighter mb-2 leading-none">SKIFREIZEIT ULRICHSBERG</h3>
+        <p class="font-body text-sm text-white/50 group-hover:text-black/60 mb-4">Geheimtipp · Tolle Atmosphäre · Kleine Gruppen</p>
+        <div class="flex gap-2 flex-wrap">
+          <a href="/docs/2027%20Wi%20Ulrich%20Ausschreibung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">AUSSCHREIBUNG ↓</a>
+          <span class="text-white/20 group-hover:text-black/30">|</span>
+          <a href="/docs/2027%20Wi%20Ulrich%20Anmeldung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">ANMELDUNG ↓</a>
+        </div>
+      </div>
+
+      <div class="border-4 border-white/20 p-6 group hover:border-red-600 hover:bg-red-600 transition-colors">
+        <span class="font-headline font-black text-white/40 group-hover:text-black text-xs uppercase tracking-widest block mb-2">🐣 OSTERN 2027</span>
+        <h3 class="font-headline font-black text-white group-hover:text-black uppercase text-xl tracking-tighter mb-2 leading-none">OSTERFREIZEIT ZELL 2027</h3>
+        <p class="font-body text-sm text-white/50 group-hover:text-black/60 mb-4">Frühjahrsschnee · Familien willkommen · Kinderfreundlich</p>
+        <div class="flex gap-2 flex-wrap">
+          <a href="/docs/2027%20Ostern%20Zell%20Ausschreibung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">AUSSCHREIBUNG ↓</a>
+          <span class="text-white/20 group-hover:text-black/30">|</span>
+          <a href="/docs/2027%20Ostern%20Zell%20Anmeldung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">ANMELDUNG ↓</a>
+        </div>
+      </div>
+
+      <div class="border-4 border-white/20 p-6 group hover:border-red-600 hover:bg-red-600 transition-colors">
+        <span class="font-headline font-black text-white/40 group-hover:text-black text-xs uppercase tracking-widest block mb-2">🐣 OSTERN 2028</span>
+        <h3 class="font-headline font-black text-white group-hover:text-black uppercase text-xl tracking-tighter mb-2 leading-none">OSTERFREIZEIT ZELL 2028</h3>
+        <p class="font-body text-sm text-white/50 group-hover:text-black/60 mb-4">Frühzeitig buchen lohnt sich! Bereits buchbar.</p>
+        <div class="flex gap-2 flex-wrap">
+          <a href="/docs/2028%20Ostern%20Zell%20Ausschreibung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">AUSSCHREIBUNG ↓</a>
+          <span class="text-white/20 group-hover:text-black/30">|</span>
+          <a href="/docs/2028%20Ostern%20Zell%20Anmeldung.pdf" target="_blank" class="text-xs font-headline font-black text-white group-hover:text-black underline decoration-2 uppercase tracking-wider">ANMELDUNG ↓</a>
+        </div>
+      </div>
+
+      <div class="border-4 border-white/20 p-6">
+        <span class="font-headline font-black text-white/40 text-xs uppercase tracking-widest block mb-2">🏸 HERBST 2026</span>
+        <h3 class="font-headline font-black text-white uppercase text-xl tracking-tighter mb-2 leading-none">BADMINTON VEREINSTURNIER</h3>
+        <p class="font-body text-sm text-white/50">Internes Turnier für alle Mitglieder · Alle Klassen · Anmeldung per E-Mail</p>
+      </div>
+
+      <div class="border-4 border-white/20 p-6">
+        <span class="font-headline font-black text-white/40 text-xs uppercase tracking-widest block mb-2">🏛 NOVEMBER 2026</span>
+        <h3 class="font-headline font-black text-white uppercase text-xl tracking-tighter mb-2 leading-none">JAHRESHAUPTVERSAMMLUNG</h3>
+        <p class="font-body text-sm text-white/50">Alle Mitglieder willkommen · Berichte · Wahlen · Ausblick 2027</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     VORSTAND
+═══════════════════════════════════════════════════ -->
+<section id="vorstand" class="bg-white py-20 px-6 border-t-4 border-b-4 border-black">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="font-headline font-black text-black uppercase tracking-tighter mb-12" style="font-size:clamp(3rem,8vw,6rem);">VORSTAND.</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 border-4 border-black">
+
+      <div class="border-r-4 border-b-4 lg:border-b-0 border-black p-5 text-center group hover:bg-red-600 transition-colors">
+        <div class="w-20 h-20 overflow-hidden border-4 border-black mx-auto mb-4 group-hover:border-white shadow-[4px_4px_0_0_#dc2626] group-hover:shadow-[4px_4px_0_0_rgba(0,0,0,.3)]">
+          <img src="https://www.scunna.de/wp-content/uploads/2018/02/Erwin-2018.jpg" alt="Erwin Mittmann" class="w-full h-full object-cover grayscale group-hover:grayscale-0"/>
+        </div>
+        <h3 class="font-headline font-black text-black group-hover:text-white uppercase text-sm tracking-tight leading-none mb-1">ERWIN MITTMANN</h3>
+        <p class="font-body text-xs text-red-600 group-hover:text-black font-bold uppercase">1. Vorsitzender</p>
+      </div>
+
+      <div class="border-r-4 border-b-4 lg:border-b-0 border-black p-5 text-center group hover:bg-red-600 transition-colors">
+        <div class="w-20 h-20 overflow-hidden border-4 border-black mx-auto mb-4 group-hover:border-white shadow-[4px_4px_0_0_#dc2626] group-hover:shadow-[4px_4px_0_0_rgba(0,0,0,.3)]">
+          <img src="https://www.scunna.de/wp-content/uploads/Vorstand/Anne_klein.jpg" alt="Anne Hentrich" class="w-full h-full object-cover grayscale group-hover:grayscale-0"/>
+        </div>
+        <h3 class="font-headline font-black text-black group-hover:text-white uppercase text-sm tracking-tight leading-none mb-1">ANNE HENTRICH</h3>
+        <p class="font-body text-xs text-gray-500 group-hover:text-black font-bold uppercase">Kassenwart</p>
+      </div>
+
+      <div class="border-r-4 border-b-4 md:border-b-0 border-black p-5 text-center group hover:bg-red-600 transition-colors">
+        <div class="w-20 h-20 overflow-hidden border-4 border-black mx-auto mb-4 group-hover:border-white shadow-[4px_4px_0_0_#dc2626] group-hover:shadow-[4px_4px_0_0_rgba(0,0,0,.3)]">
+          <img src="https://www.scunna.de/wp-content/uploads/2019/03/Rainer_klein.jpg" alt="Rainer Nordhaus" class="w-full h-full object-cover grayscale group-hover:grayscale-0"/>
+        </div>
+        <h3 class="font-headline font-black text-black group-hover:text-white uppercase text-sm tracking-tight leading-none mb-1">RAINER NORDHAUS</h3>
+        <p class="font-body text-xs text-gray-500 group-hover:text-black font-bold uppercase">Ski Sport</p>
+      </div>
+
+      <div class="border-r-4 border-black p-5 text-center group hover:bg-red-600 transition-colors">
+        <div class="w-20 h-20 overflow-hidden border-4 border-black mx-auto mb-4 group-hover:border-white shadow-[4px_4px_0_0_#dc2626] group-hover:shadow-[4px_4px_0_0_rgba(0,0,0,.3)]">
+          <img src="https://www.scunna.de/wp-content/uploads/2016/10/Ingo_klein-150x150.jpg" alt="Ingo Filbrandt" class="w-full h-full object-cover grayscale group-hover:grayscale-0"/>
+        </div>
+        <h3 class="font-headline font-black text-black group-hover:text-white uppercase text-sm tracking-tight leading-none mb-1">INGO FILBRANDT</h3>
+        <p class="font-body text-xs text-gray-500 group-hover:text-black font-bold uppercase">Badminton</p>
+      </div>
+
+      <div class="p-5 text-center group hover:bg-red-600 transition-colors">
+        <div class="w-20 h-20 overflow-hidden border-4 border-black mx-auto mb-4 group-hover:border-white shadow-[4px_4px_0_0_#dc2626] group-hover:shadow-[4px_4px_0_0_rgba(0,0,0,.3)]">
+          <img src="https://www.scunna.de/wp-content/uploads/2022/02/Oliver-Knieling.jpg" alt="Oliver Knieling" class="w-full h-full object-cover grayscale group-hover:grayscale-0"/>
+        </div>
+        <h3 class="font-headline font-black text-black group-hover:text-white uppercase text-sm tracking-tight leading-none mb-1">OLIVER KNIELING</h3>
+        <p class="font-body text-xs text-gray-500 group-hover:text-black font-bold uppercase">Allgemeinsport</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     DOWNLOADS
+═══════════════════════════════════════════════════ -->
+<section id="downloads" class="bg-black py-20 px-6 border-b-4 border-white/10">
+  <div class="max-w-screen-xl mx-auto">
+    <h2 class="font-headline font-black text-white uppercase tracking-tighter mb-12" style="font-size:clamp(3rem,8vw,6rem);">DOWNLOADS.</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <a href="/docs/2026%20Sport%20Club%20Unna%20Beitrittserklärung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-red-600 p-4 group hover:bg-red-600 transition-colors no-underline">
+        <span class="material-symbols-outlined text-red-600 group-hover:text-black" style="font-size:28px;">description</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">BEITRITTSERKLÄRUNG</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Sport Club Unna e.V. · 2026</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+      <a href="/docs/2027%20Wi%20Zell%20Ausschreibung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-white/10 p-4 group hover:border-red-600 hover:bg-red-600 transition-colors no-underline">
+        <span class="text-2xl">⛷</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">SKIFREIZEIT 2027 ZELL</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Ausschreibung · Winter</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+      <a href="/docs/2027%20Wi%20Zell%20Anmeldung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-white/10 p-4 group hover:border-red-600 hover:bg-red-600 transition-colors no-underline">
+        <span class="text-2xl">⛷</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">ANMELDUNG ZELL 2027</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Anmeldeformular · Winter</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+      <a href="/docs/2027%20Wi%20Ulrich%20Ausschreibung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-white/10 p-4 group hover:border-red-600 hover:bg-red-600 transition-colors no-underline">
+        <span class="text-2xl">⛷</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">SKIFREIZEIT ULRICHSBERG</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Ausschreibung · Winter 2027</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+      <a href="/docs/2027%20Ostern%20Zell%20Ausschreibung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-white/10 p-4 group hover:border-red-600 hover:bg-red-600 transition-colors no-underline">
+        <span class="text-2xl">🐣</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">OSTERFREIZEIT 2027</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Ausschreibung · Zell am Ziller</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+      <a href="/docs/2028%20Ostern%20Zell%20Ausschreibung.pdf" target="_blank" class="flex items-center gap-4 border-4 border-white/10 p-4 group hover:border-red-600 hover:bg-red-600 transition-colors no-underline">
+        <span class="text-2xl">🐣</span>
+        <div>
+          <div class="font-headline font-black text-white group-hover:text-black uppercase text-sm tracking-tight">OSTERFREIZEIT 2028</div>
+          <div class="font-body text-xs text-white/40 group-hover:text-black/60">Ausschreibung · Zell am Ziller</div>
+        </div>
+        <span class="material-symbols-outlined text-white/30 group-hover:text-black ml-auto" style="font-size:20px;">download</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     EDITORIAL QUOTE
+═══════════════════════════════════════════════════ -->
 <section class="bg-black py-32 px-6 flex flex-col items-center justify-center text-center">
-<span class="font-headline text-white text-2xl uppercase tracking-widest bg-primary-container px-4 py-1 mb-8 transform -rotate-2">TRADITION SEIT 1963</span>
-<h2 class="font-headline text-white text-4xl md:text-6xl uppercase tracking-tighter max-w-4xl leading-tight">
-            "IN UNNA SCHLÄGT DAS HERZ <br/> <span class="text-primary-container">ROT UND WEISS.</span> ÜBERALL UND JEDERZEIT."
-        </h2>
+  <span class="font-headline font-black text-white text-xs uppercase tracking-widest bg-red-600 px-4 py-1 mb-8 inline-block transform -rotate-1">TRADITION SEIT 1963</span>
+  <h2 class="font-headline font-black text-white uppercase tracking-tighter max-w-4xl leading-tight mb-4" style="font-size:clamp(1.8rem,4vw,3.5rem);">
+    "IN UNNA SCHLÄGT DAS HERZ<br/><span class="text-red-600">ROT-WEISS.</span> ÜBERALL UND JEDERZEIT."
+  </h2>
+  <p class="font-body text-white/40 text-sm max-w-md">Sport Club Unna e.V. · Gegründet 1963 · Vereint seit 01.04.2026</p>
 </section>
-<!-- Footer -->
-<footer class="bg-black text-red-600 font-['Work_Sans'] text-sm uppercase tracking-widest text-white docked full-width rounded-none border-t-4 border-red-600 flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6">
-<div class="flex flex-col items-center md:items-start">
-<div class="text-xl font-black text-white mb-2">SPORT CLUB UNNA</div>
-<p class="text-white/60 text-center md:text-left">© 1963 Sport Club Unna e.V. Stralsunder Straße 63, 59427 Unna</p>
-</div>
-<div class="flex gap-8">
-<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Impressum</a>
-<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Datenschutz</a>
-<a class="text-white hover:text-red-600 transition-all active:scale-95" href="#">Kontakt</a>
-</div>
+
+<!-- ═══════════════════════════════════════════════════
+     MITGLIED WERDEN
+═══════════════════════════════════════════════════ -->
+<section id="mitglied" class="bg-red-600 py-24 px-6 border-y-4 border-black">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-headline font-black text-black uppercase tracking-tighter leading-none mb-6" style="font-size:clamp(2.5rem,6vw,5rem);">WERDE MITGLIED!</h2>
+    <p class="font-body text-black/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+      Dein Sport, dein Verein. Ski, Badminton, Yoga, Pilates, Radfahren, Wassergymnastik —
+      finde dein Sportzuhause beim SC Unna. Jetzt Aufnahmeantrag herunterladen.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <a href="/docs/2026%20Sport%20Club%20Unna%20Beitrittserklärung.pdf" target="_blank"
+         class="bg-black text-white font-headline font-black uppercase text-sm px-8 py-4 tracking-widest shadow-[6px_6px_0_0_rgba(255,255,255,.3)] hover:shadow-none hover:translate-x-[6px] hover:translate-y-[6px] transition-all inline-flex items-center gap-2 justify-center">
+        <span class="material-symbols-outlined" style="font-size:18px;">download</span> BEITRITTSFORMULAR
+      </a>
+      <a href="mailto:info@scunna.de"
+         class="border-4 border-black text-black font-headline font-black uppercase text-sm px-8 py-4 tracking-widest hover:bg-black hover:text-white transition-colors inline-flex items-center gap-2 justify-center">
+        <span class="material-symbols-outlined" style="font-size:18px;">mail</span> KONTAKT
+      </a>
+    </div>
+    <div class="grid grid-cols-3 gap-3 max-w-xs mx-auto font-headline font-black uppercase text-xs">
+      <div class="bg-black text-white px-2 py-3 text-center">
+        <div class="text-lg">Erwachsene</div>
+        <div class="text-red-500 font-body font-normal text-xs">ab 60 €/Jahr</div>
+      </div>
+      <div class="bg-black text-white px-2 py-3 text-center">
+        <div class="text-lg">Jugend</div>
+        <div class="text-red-500 font-body font-normal text-xs">ab 30 €/Jahr</div>
+      </div>
+      <div class="bg-black text-white px-2 py-3 text-center">
+        <div class="text-lg">Familie</div>
+        <div class="text-red-500 font-body font-normal text-xs">Auf Anfrage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer class="bg-black text-white border-t-4 border-red-600 py-14 px-6">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/sc-unna-logo-hq.jpg" alt="SC Unna" class="w-10 h-10 object-contain" style="filter:brightness(0) invert(1);"/>
+          <span class="font-headline font-black text-white uppercase tracking-tighter text-xl">SPORT CLUB UNNA</span>
+        </div>
+        <p class="font-body text-white/50 text-sm mb-4 leading-relaxed">Aus der Fusion von Ski-Club Unna (1963) und BSC Unna entstand am 01.04.2026 der Sport Club Unna e.V. — mehr Sport, mehr Gemeinschaft, mehr Unna.</p>
+        <div class="space-y-1.5 text-sm font-body">
+          <div class="text-white/40">📍 Stralsunder Straße 63, 59427 Unna</div>
+          <div class="text-white/40">☎ <a href="tel:+4923032196" class="hover:text-white transition-colors">02303 / 21960</a></div>
+          <div class="text-white/40">✉ <a href="mailto:info@scunna.de" class="hover:text-white transition-colors">info@scunna.de</a></div>
+          <div class="text-white/40">🌐 <a href="https://www.scunna.de" target="_blank" class="hover:text-white transition-colors">www.scunna.de</a></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-headline font-black text-white uppercase text-xs tracking-widest mb-4">SPORTARTEN</h4>
+        <ul class="space-y-1.5 font-body text-sm">
+          <li><a href="#ski"       class="text-white/50 hover:text-red-500 transition-colors">⛷ Ski &amp; Snowboard</a></li>
+          <li><a href="#badminton" class="text-white/50 hover:text-red-500 transition-colors">🏸 Badminton</a></li>
+          <li><a href="#radfahren" class="text-white/50 hover:text-red-500 transition-colors">🚴 Radfahren</a></li>
+          <li><a href="#yoga"      class="text-white/50 hover:text-red-500 transition-colors">🧘 Yoga</a></li>
+          <li><a href="#pilates"   class="text-white/50 hover:text-red-500 transition-colors">🤸 Pilates</a></li>
+          <li><a href="#schwimmen" class="text-white/50 hover:text-red-500 transition-colors">🏊 Wassergymnastik</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-headline font-black text-white uppercase text-xs tracking-widest mb-4">LINKS</h4>
+        <ul class="space-y-1.5 font-body text-sm">
+          <li><a href="#aktuelles" class="text-white/50 hover:text-white transition-colors">Aktuelles</a></li>
+          <li><a href="#termine"   class="text-white/50 hover:text-white transition-colors">Termine</a></li>
+          <li><a href="#vorstand"  class="text-white/50 hover:text-white transition-colors">Vorstand</a></li>
+          <li><a href="#downloads" class="text-white/50 hover:text-white transition-colors">Downloads</a></li>
+          <li><a href="#fusion"    class="text-white/50 hover:text-white transition-colors">Geschichte</a></li>
+          <li><a href="#mitglied"  class="text-red-500 hover:text-red-400 transition-colors font-bold">Mitglied werden</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t-4 border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-body text-xs text-white/30">© 1963 Sport Club Unna e.V. · Stralsunder Straße 63, 59427 Unna</p>
+      <div class="flex gap-6 font-body text-xs text-white/30">
+        <a href="#" class="hover:text-white transition-colors">Impressum</a>
+        <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+        <a href="#" class="hover:text-white transition-colors">Satzung</a>
+      </div>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+<!-- CHATBOT -->
+<button class="chat-btn" title="Chat" aria-label="Chatbot öffnen">
+  <div class="chat-pulse"></div>
+  <span class="material-symbols-outlined text-white" style="font-size:28px;line-height:1;">chat</span>
+</button>
+<div class="hidden fixed bottom-24 right-6 z-50 w-72 bg-black border-4 border-red-600 shadow-[8px_8px_0_0_rgba(220,38,38,.3)]" id="chatbubble">
+  <div class="bg-red-600 px-4 py-3 flex items-center justify-between">
+    <span class="font-headline font-black text-white uppercase tracking-widest text-sm">SC UNNA CHAT</span>
+    <button id="chat-close" class="text-white/70 hover:text-white"><span class="material-symbols-outlined" style="font-size:18px;">close</span></button>
+  </div>
+  <div class="p-4">
+    <div class="bg-white/10 px-4 py-3 mb-3">
+      <p class="font-body text-white text-sm">👋 Hallo! Ich bin dein Vereins-Assistent. Wie kann ich dir helfen?</p>
+    </div>
+    <div class="flex flex-col gap-2 mb-3">
+      <button class="text-left text-xs bg-red-600/20 hover:bg-red-600 text-red-400 hover:text-white px-3 py-2 font-headline font-black uppercase tracking-widest transition-colors">⛷ SKIFREIZEITEN INFO</button>
+      <button class="text-left text-xs bg-white/5 hover:bg-white/10 text-white/60 hover:text-white px-3 py-2 font-headline font-black uppercase tracking-widest transition-colors">🏸 BADMINTON TRAINING</button>
+      <button class="text-left text-xs bg-white/5 hover:bg-white/10 text-white/60 hover:text-white px-3 py-2 font-headline font-black uppercase tracking-widest transition-colors">💳 MITGLIED WERDEN</button>
+    </div>
+    <div class="flex gap-2">
+      <input type="text" placeholder="Deine Frage..." class="flex-1 text-sm bg-white/10 border border-white/20 text-white placeholder-white/30 px-3 py-2 outline-none focus:border-red-500 font-body"/>
+      <button class="bg-red-600 text-white w-9 h-9 flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined" style="font-size:18px;">send</span>
+      </button>
+    </div>
+    <p class="font-body text-white/30 text-xs text-center mt-3">info@scunna.de · 02303/21960</p>
+  </div>
+</div>
+<script>
+  document.querySelector('.chat-btn').addEventListener('click',function(){document.getElementById('chatbubble').classList.toggle('hidden');});
+  document.getElementById('chat-close').addEventListener('click',function(e){e.stopPropagation();document.getElementById('chatbubble').classList.add('hidden');});
+</script>
+</body>
+</html>
